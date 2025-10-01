@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sgacabados.pe
+
+# Sitemaps
+Sitemap: https://www.sgacabados.pe/sitemap.xml
