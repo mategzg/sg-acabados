@@ -11,6 +11,18 @@ const nextConfig = {
         hostname: 'images.pexels.com'
       }
     ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/images/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }]
+      },
+      {
+        source: '/logos/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }]
+      }
+    ]
   }
 }
 

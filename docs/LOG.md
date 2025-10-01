@@ -244,3 +244,20 @@ pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†
   SEO: Revisar tags `rel="canonical"` y `hreflang`; deben apuntar a URLs con prefijo `/es`. El sitemap (`/sitemap.xml`) debe listar rutas canónicas con `/es`.
   Comando: `npm run build` debe terminar sin errores.
 - Hallazgos clave: Middleware ahora reescribe rutas sin locale a su equivalente `/es` y mantiene redirección 308 en `/`. `LocalizedLink` usa `defaultLocale` cuando no hay `params.locale`, generando `/es/...` por defecto y respetando assets estáticos. Metadata canónica y hreflang se fijan a `/es`, y el sitemap expone rutas con `/es` como canónicas. Build pasa en verde.
+
+- Tarea: Preparación prod (Vercel): redirect raíz, SEO/OG base, robots/sitemap y headers de cache.
+- Archivos creados/alterados:
+  - src/middleware.ts (redirect 308 de "/" a "/es"; matcher excluye _next, api, images, logos, favicons, robots y sitemap)
+  - src/app/layout.tsx (Open Graph images apunta a '/images/og/sg-acabados.svg')
+  - src/app/robots.ts (usa NEXT_PUBLIC_SITE_URL; reglas allow '/'; sitemap opcional)
+  - src/app/sitemap.ts (lista estática canónica bajo '/es' con frecuencia semanal y prioridades)
+  - next.config.mjs (headers de cache para '/images/*' y '/logos/*')
+  - public/images/og/sg-acabados.svg (placeholder OG)
+- Cómo probar:
+  - Abrir '/' → redirige 308 a '/es'.
+  - Navegación bajo '/es' funciona completa (home, productos, soluciones, proyectos, contacto, cotizar).
+  - '/images/*' y '/api/*' no sufren redirecciones ni rewrites.
+  - Revisar <head>: Open Graph images incluye '/images/og/sg-acabados.svg'.
+  - Verificar '/sitemap.xml' y '/robots.txt' utilizan NEXT_PUBLIC_SITE_URL.
+- Build: 
+pm run build OK.

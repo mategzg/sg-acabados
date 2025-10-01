@@ -1,19 +1,10 @@
-﻿import type { MetadataRoute } from 'next'
-
-import { siteConfig } from '@/config/site'
+import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = siteConfig.siteUrl.replace(/\/$/, '')
-
+  const base = process.env.NEXT_PUBLIC_SITE_URL ?? ''
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api', '/api/*']
-      }
-    ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl
+    rules: [{ userAgent: '*', allow: '/' }],
+    sitemap: base ? [`${base.replace(/\/$/, '')}/sitemap.xml`] : undefined
   }
 }
+

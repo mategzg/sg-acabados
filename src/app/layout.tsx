@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     url: siteConfig.siteUrl,
     siteName: siteConfig.name,
     locale: 'es_PE',
-    type: 'website'
+    type: 'website',
+    images: ['/images/og/sg-acabados.svg']
   },
   twitter: {
     card: 'summary_large_image',

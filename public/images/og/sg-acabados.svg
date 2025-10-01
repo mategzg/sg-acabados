@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SG Acabados">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(80,100)">
+    <rect x="0" y="0" width="160" height="160" rx="24" fill="#22c55e"/>
+    <text x="200" y="70" fill="#ffffff" font-size="56" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="700">SG Acabados</text>
+    <text x="200" y="130" fill="#cbd5e1" font-size="28" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">Acabados corporativos, mobiliario e instalaciones en Perú</text>
+  </g>
+  <g transform="translate(80,480)">
+    <text x="0" y="0" fill="#94a3b8" font-size="22" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">www.sgacabados.pe</text>
+  </g>
+</svg>
