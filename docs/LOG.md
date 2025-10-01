@@ -230,4 +230,17 @@ pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†
 - Archivos tocados: src/components/contact-form.tsx; src/components/quote-lead-form.tsx; src/components/quote-builder.tsx; docs/PLAN.md.
 - Como probar en localhost: Levantar npm run dev; navegar a /es/contacto y /es/cotizar; completar formularios con consent marcado y verificar toasts 'Enviado', reset de campos, trackLead en consola; intentar enviar sin consent para confirmar bloqueo; observar respuesta 429 tras 3 envios rapidos (usar curl o repetir submit).
 - Hallazgos clave: Se normalizo fetch JSON con headers, botones muestran estado Enviando y se invoca trackLead solo en exito; errores sirven toast descriptivo.
-- Siguiente tarea: #61 Documentar QA y validar build con npm run build.
+  - Siguiente tarea: #61 Documentar QA y validar build con npm run build.
+
+
+- Tarea: i18n middleware redirect/rewrite + nav/SEO ajustes y build.
+- Archivos tocados: src/middleware.ts; src/components/localized-link.tsx; src/lib/routing.ts; src/lib/seo.ts; src/app/layout.tsx; src/app/sitemap.ts; docs/LOG.md.
+- Como probar en localhost:
+  a) Entrar a `/` → redirige 308 a `/es`.
+  b) Entrar a `/contacto` (sin `/es`) → muestra página de contacto vía rewrite a `/es/contacto` (la URL se mantiene sin `/es`).
+  c) Entrar a `/es/contacto` → muestra igual contenido.
+  d) Entrar a `/images/*` y `/api/*` → NO se redirige ni se reescribe.
+  Extra: Verificar navegación en header/footer; los enlaces internos deben generar `href` con `/es/...` por defecto y no prefijar `/es` en assets de `public/` (ej. `/images/*`, `/logos/*`, `/descargas/*`).
+  SEO: Revisar tags `rel="canonical"` y `hreflang`; deben apuntar a URLs con prefijo `/es`. El sitemap (`/sitemap.xml`) debe listar rutas canónicas con `/es`.
+  Comando: `npm run build` debe terminar sin errores.
+- Hallazgos clave: Middleware ahora reescribe rutas sin locale a su equivalente `/es` y mantiene redirección 308 en `/`. `LocalizedLink` usa `defaultLocale` cuando no hay `params.locale`, generando `/es/...` por defecto y respetando assets estáticos. Metadata canónica y hreflang se fijan a `/es`, y el sitemap expone rutas con `/es` como canónicas. Build pasa en verde.

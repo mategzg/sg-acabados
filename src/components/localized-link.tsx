@@ -6,6 +6,7 @@ import NextLink, { type LinkProps } from 'next/link'
 import { useParams } from 'next/navigation'
 
 import type { Locale } from '@/lib/i18n-config'
+import { defaultLocale } from '@/lib/i18n-config'
 import { isAssetPath, localizePath } from '@/lib/routing'
 
 type LocalizedLinkProps = LinkProps &
@@ -39,11 +40,10 @@ function LocalizedLinkBase(
   ref: ForwardedRef<HTMLAnchorElement>
 ) {
   const params = useParams() as { locale?: string } | null
-  const resolvedLocale = locale ?? (params?.locale as Locale | undefined)
+  const resolvedLocale = (locale ?? (params?.locale as Locale | undefined) ?? defaultLocale) as Locale
 
   const assetHref = isAssetPath(href) ? normalizeAssetHref(href) : null
-  const finalHref =
-    assetHref ?? (!resolvedLocale || isExternalHref(href) ? href : localizePath(resolvedLocale, href))
+  const finalHref = assetHref ?? (isExternalHref(href) ? href : localizePath(resolvedLocale, href))
 
   return <NextLink ref={ref} href={finalHref} {...props} />
 }

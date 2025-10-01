@@ -51,8 +51,10 @@ export function createMetadata({
   keywords?: string[]
   image?: ImageOverride
 }): Metadata {
-  const localizedPath = resolvePath(locale, path)
-  const canonical = absoluteUrl(localizedPath)
+  // Always canonicalize to include locale prefix, even for default 'es'
+  const normalized = path.startsWith('/') ? path : `/${path}`
+  const canonicalPath = `/${locale}${normalized}`
+  const canonical = absoluteUrl(canonicalPath)
   const mergedKeywords = Array.from(new Set([...(siteConfig.keywords ?? []), ...keywords]))
 
   const ogImage = image
@@ -71,7 +73,7 @@ export function createMetadata({
     alternates: {
       canonical,
       languages: {
-        'es-PE': absoluteUrl(resolvePath('es', path)),
+        'es-PE': absoluteUrl(`/es${normalized}`),
         'en-US': absoluteUrl(resolvePath('en', path))
       }
     },

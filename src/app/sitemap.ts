@@ -14,10 +14,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getProjects()
   ])
 
-  const toRoute = (path: string): MetadataRoute.Sitemap[number] => ({
-    url: `${baseUrl}${path.startsWith('/') ? path : `/${path}`}`,
-    lastModified: now
-  })
+  const toRoute = (path: string): MetadataRoute.Sitemap[number] => {
+    const normalized = path.startsWith('/') ? path : `/${path}`
+    return {
+      url: `${baseUrl}/es${normalized}`,
+      lastModified: now
+    }
+  }
 
   const staticRoutes = [
     '/',

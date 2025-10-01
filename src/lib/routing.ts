@@ -1,6 +1,6 @@
 import type { Locale } from '@/lib/i18n-config'
 
-const ASSET_PREFIXES = ['/logos/', '/images/'] as const
+const ASSET_PREFIXES = ['/logos/', '/images/', '/descargas/', '/favicon'] as const
 
 export function isAssetPath(path: string | null | undefined) {
   if (!path) {
