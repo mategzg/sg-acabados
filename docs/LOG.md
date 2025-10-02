@@ -270,3 +270,7 @@ pm run build OK.
 - Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
 - Como probar en localhost: npm run build; abrir /es/nosotros en sm (360px), md (768px) y lg (1280px); verificar Card 2-col balanceada, columna derecha compacta con ícono Globe2 y lista de checks, badges neutrales, botones accesibles.
 - Hallazgos clave: Se compactó la columna derecha con Card interior y lista CheckCircle, badges usan bg-neutral-100, botones outline equilibran visualmente y alturas quedan pareadas en md+.
+- Tarea: Simplificar sección "Sedes y cobertura" con layout balanceado y textos UTF-8.
+- Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
+- Cómo probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en móviles (≤640px), md (768px) y desktop (≥1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
+- Hallazgos clave: Se eliminó el mapa ficticio, se usó un section sencillo con grid 2-col, se normalizaron acentos (Operación, cotización) y se reutilizaron datos de contacto existentes en siteConfig.
