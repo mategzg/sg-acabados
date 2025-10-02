@@ -1,10 +1,10 @@
 ﻿import type { Metadata } from 'next'
 
 import { Section } from '@/components/section'
+import { SedesCobertura } from '@/components/sections/sedes-cobertura'
 import { CatalogBanner } from '@/components/catalog-banner'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
-import { siteConfig } from '@/config/site'
 import { createMetadata } from '@/lib/seo'
 
 export const revalidate = 3600
@@ -101,21 +101,7 @@ export default function NosotrosPage() {
                 </Card>
               </div>
             </div>
-            <Card className="bg-secondary/30">
-              <CardContent className="space-y-4 p-6">
-                <h2 className="font-heading text-lg font-semibold text-foreground">Sedes y cobertura</h2>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  {siteConfig.offices.map((office) => (
-                    <li key={office.city}>
-                      <span className="font-semibold text-foreground">{office.city}</span> - {office.address}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-muted-foreground">
-                  Ejecutamos proyectos en Lima, Arequipa, Cusco, Trujillo y operaciones remotas coordinadas para mineria e industria.
-                </p>
-              </CardContent>
-            </Card>
+            <SedesCobertura />
           </div>
         </div>
       </Section>

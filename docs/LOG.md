@@ -261,3 +261,8 @@ pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†
   - Verificar '/sitemap.xml' y '/robots.txt' utilizan NEXT_PUBLIC_SITE_URL.
 - Build: 
 pm run build OK.
+- Tarea: Rediseñar bloque "Sedes y cobertura" en Nosotros con Card 2-col, badges e íconos accesibles.
+- Archivos tocados: src/app/[locale]/(marketing)/nosotros/page.tsx; src/components/sections/sedes-cobertura.tsx; src/components/ui/separator.tsx; docs/LOG.md.
+- Como probar en localhost: npm run build; navegar a /es/nosotros y validar la tarjeta (badges de cobertura, CTAs, mapa referencial con pin, checks secundarios y focos accesibles en botones/enlaces).
+- Hallazgos clave: Nuevo componente client reutiliza datos de siteConfig para contacto, integra LocalizedLink con locale "es", crea separador shadcn y patrón CSS con variables de tema para el mapa.
+- Siguiente tarea: No aplica (entregado).
