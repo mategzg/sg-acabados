@@ -266,3 +266,7 @@ pm run build OK.
 - Como probar en localhost: npm run build; navegar a /es/nosotros y validar la tarjeta (badges de cobertura, CTAs, mapa referencial con pin, checks secundarios y focos accesibles en botones/enlaces).
 - Hallazgos clave: Nuevo componente client reutiliza datos de siteConfig para contacto, integra LocalizedLink con locale "es", crea separador shadcn y patrón CSS con variables de tema para el mapa.
 - Siguiente tarea: No aplica (entregado).
+- Tarea: Ajuste final "Sedes y cobertura" en Nosotros (estructura balanceada, nuevo bloque visual).
+- Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
+- Como probar en localhost: npm run build; abrir /es/nosotros en sm (360px), md (768px) y lg (1280px); verificar Card 2-col balanceada, columna derecha compacta con ícono Globe2 y lista de checks, badges neutrales, botones accesibles.
+- Hallazgos clave: Se compactó la columna derecha con Card interior y lista CheckCircle, badges usan bg-neutral-100, botones outline equilibran visualmente y alturas quedan pareadas en md+.
