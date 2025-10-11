@@ -236,10 +236,10 @@ pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†
 - Tarea: i18n middleware redirect/rewrite + nav/SEO ajustes y build.
 - Archivos tocados: src/middleware.ts; src/components/localized-link.tsx; src/lib/routing.ts; src/lib/seo.ts; src/app/layout.tsx; src/app/sitemap.ts; docs/LOG.md.
 - Como probar en localhost:
-  a) Entrar a `/` → redirige 308 a `/es`.
-  b) Entrar a `/contacto` (sin `/es`) → muestra página de contacto vía rewrite a `/es/contacto` (la URL se mantiene sin `/es`).
-  c) Entrar a `/es/contacto` → muestra igual contenido.
-  d) Entrar a `/images/*` y `/api/*` → NO se redirige ni se reescribe.
+  a) Entrar a `/` ? redirige 308 a `/es`.
+  b) Entrar a `/contacto` (sin `/es`) ? muestra página de contacto vía rewrite a `/es/contacto` (la URL se mantiene sin `/es`).
+  c) Entrar a `/es/contacto` ? muestra igual contenido.
+  d) Entrar a `/images/*` y `/api/*` ? NO se redirige ni se reescribe.
   Extra: Verificar navegación en header/footer; los enlaces internos deben generar `href` con `/es/...` por defecto y no prefijar `/es` en assets de `public/` (ej. `/images/*`, `/logos/*`, `/descargas/*`).
   SEO: Revisar tags `rel="canonical"` y `hreflang`; deben apuntar a URLs con prefijo `/es`. El sitemap (`/sitemap.xml`) debe listar rutas canónicas con `/es`.
   Comando: `npm run build` debe terminar sin errores.
@@ -254,7 +254,7 @@ pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†
   - next.config.mjs (headers de cache para '/images/*' y '/logos/*')
   - public/images/og/sg-acabados.svg (placeholder OG)
 - Cómo probar:
-  - Abrir '/' → redirige 308 a '/es'.
+  - Abrir '/' ? redirige 308 a '/es'.
   - Navegación bajo '/es' funciona completa (home, productos, soluciones, proyectos, contacto, cotizar).
   - '/images/*' y '/api/*' no sufren redirecciones ni rewrites.
   - Revisar <head>: Open Graph images incluye '/images/og/sg-acabados.svg'.
@@ -272,7 +272,7 @@ pm run build OK.
 - Hallazgos clave: Se compactó la columna derecha con Card interior y lista CheckCircle, badges usan bg-neutral-100, botones outline equilibran visualmente y alturas quedan pareadas en md+.
 - Tarea: Simplificar sección "Sedes y cobertura" con layout balanceado y textos UTF-8.
 - Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
-- Cómo probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en móviles (≤640px), md (768px) y desktop (≥1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
+- Cómo probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en móviles (=640px), md (768px) y desktop (=1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
 - Hallazgos clave: Se eliminó el mapa ficticio, se usó un section sencillo con grid 2-col, se normalizaron acentos (Operación, cotización) y se reutilizaron datos de contacto existentes en siteConfig.
 ## 2025-10-10
 
@@ -282,3 +282,10 @@ pm run build OK.
 - Cómo probar en localhost: Definir NEXT_PUBLIC_ZAPIER_PUBLIC_URL en .env.local; ejecutar npm run dev; confirmar botón flotante bottom-right, panel abre/cierra con animación, se recuerda estado tras reload, soporta ESC y foco inicial; en /es/cotizar no se ve; eliminar o vaciar la variable para ver warning y widget oculto.
 - Cómo validar en producción: Confirmar que Vercel inyecta el iframe sin CSP bloqueada, probar fallback Abrir chat si el iframe falla, verificar build automático tras push.
 - Nota: El enlace público de Zapier no requiere dominios permitidos; si X-Frame-Options bloquea la carga, usar la opción Abrir chat en nueva pestaña.
+- Tarea: Actualizar widget a Zapier Interfaces oficial.
+- Archivos tocados: src/components/chatbot/zapier-widget.tsx; src/app/layout.tsx; next.config.mjs; docs/LOG.md (se retiró el fallback anterior).
+- Envs requeridas: NEXT_PUBLIC_ZAPIER_CHATBOT_ID, NEXT_PUBLIC_ZAPIER_EMBED_SRC.
+- Cómo probar en localhost: definir ambas envs en .env.local, ejecutar npm run dev, navegar a /es (widget visible) y /es/cotizar (oculto); abrir consola para asegurar ausencia de errores/CSP; validar que el script no se inserta duplicado y que convivie con #whatsapp-fab.
+- Cómo validar en producción: confirmar variables en Vercel, revisar deployment para ver el popup y que no se superpone al FAB de WhatsApp; revisar headers si hubiese bloqueos de CSP (ajustar script-src en next.config.mjs si cambia el dominio de Zapier).
+
+

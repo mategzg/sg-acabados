@@ -2,7 +2,7 @@
 import Script from 'next/script'
 
 import './globals.css'
-import { ChatbotWidget } from '@/components/chatbot/widget'
+import { ZapierWidget } from '@/components/chatbot/zapier-widget'
 import { siteConfig } from '@/config/site'
 import { fontVariables } from '@/styles/fonts'
 
@@ -101,10 +101,13 @@ export default function RootLayout({
           {structuredData}
         </Script>
         {children}
-        <ChatbotWidget />
+        <ZapierWidget />
       </body>
     </html>
   )
 }
+
+
+
 
 

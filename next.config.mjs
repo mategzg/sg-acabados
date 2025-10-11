@@ -1,4 +1,4 @@
-﻿/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -18,8 +18,9 @@ const nextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self'; frame-src 'self' https://*.zapier.app; child-src 'self' https://*.zapier.app;"
+            key: 'Content-Security-Policy', // Allow Zapier embed script
+            value:
+              "script-src 'self' https://interfaces.zapier.com; frame-ancestors 'self'; frame-src 'self' https://*.zapier.app; child-src 'self' https://*.zapier.app;"
           },
           { key: 'Referrer-Policy', value: 'no-referrer' }
         ]
@@ -37,5 +38,3 @@ const nextConfig = {
 }
 
 export default nextConfig
-
-
