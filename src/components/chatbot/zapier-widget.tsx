@@ -73,7 +73,25 @@ export function ZapierWidget() {
     }
 
     const computeOffset = () => {
-      const hasOtherFab = Boolean(document.getElementById('whatsapp-fab') || document.getElementById('cta-fab'))
+      if (typeof window === 'undefined') {
+        setOffsetClass('bottom-5')
+        return
+      }
+
+      const isOnRightSide = (element: HTMLElement | null) => {
+        if (!element) {
+          return false
+        }
+        const rect = element.getBoundingClientRect()
+        return rect.left >= window.innerWidth / 2
+      }
+
+      const fabElements = [
+        document.getElementById('whatsapp-fab') as HTMLElement | null,
+        document.getElementById('cta-fab') as HTMLElement | null
+      ]
+
+      const hasOtherFab = fabElements.some(isOnRightSide)
       setOffsetClass(hasOtherFab ? 'bottom-24' : 'bottom-5')
     }
 

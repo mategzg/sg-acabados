@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useCallback } from 'react'
 import { LocalizedLink as Link } from '@/components/localized-link'
@@ -27,7 +27,8 @@ export function StickyCTA() {
 
   return (
     <div
-      className="fixed inset-x-4 bottom-4 z-50 flex flex-col gap-space-sm rounded-3xl bg-white/95 p-space-sm shadow-soft backdrop-blur-sm sm:inset-auto sm:bottom-4 sm:right-4 sm:w-auto sm:flex-row sm:items-center"
+      id="cta-fab"
+      className="fixed bottom-4 left-4 right-4 z-50 flex flex-col gap-space-sm rounded-3xl bg-white/95 p-space-sm shadow-soft backdrop-blur-sm sm:inset-auto sm:bottom-4 sm:left-4 sm:right-auto sm:w-auto sm:flex-row sm:items-center"
       role="region"
       aria-live="polite"
       aria-label="Atajos de contacto"
@@ -42,6 +43,7 @@ export function StickyCTA() {
       </Button>
       <Button asChild size="sm" variant="outline" className="w-full bg-white shadow-none sm:w-auto">
         <a
+          id="whatsapp-fab"
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer"

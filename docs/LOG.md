@@ -303,3 +303,5 @@ pm run build OK.
 - Archivos tocados: src/components/chatbot/zapier-widget.tsx; next.config.mjs; docs/LOG.md.
 - Como probar en localhost: definir envs de Zapier, ejecutar npm run dev, visitar /es?debug=chatbot (sin errores CSP, script modulo cargado, widget visible) y /es/cotizar (no aparece); abrir /es/contacto y verificar mapa OSM dentro del iframe.
 
+- Ajuste: StickyCTA movido a bottom-left (ids CTA/WhatsApp) y offset Zapier solo si FABs estan a la derecha.
+
