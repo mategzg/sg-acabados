@@ -17,20 +17,21 @@ declare global {
 
 const EMBED_SRC = (process.env.NEXT_PUBLIC_ZAPIER_EMBED_SRC || '').trim()
 const CHATBOT_ID = (process.env.NEXT_PUBLIC_ZAPIER_CHATBOT_ID || '').trim()
+const FAB_SIZE = 16
 
 export function ZapierWidget() {
   const pathname = usePathname()
-  const [isMounted, setIsMounted] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [viewportWidth, setViewportWidth] = useState<number | null>(null)
+  const [viewportWidth, setViewportWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0)
   const [fabStyle, setFabStyle] = useState<CSSProperties>({
-    bottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)',
-    right: '16px'
+    bottom: `calc(env(safe-area-inset-bottom, 0px) + ${FAB_SIZE}px)`,
+    right: `${FAB_SIZE}px`
   })
   const fabRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
-    setIsMounted(true)
+    setMounted(true)
   }, [])
 
   const shouldRender = useMemo(() => {
@@ -76,15 +77,13 @@ export function ZapierWidget() {
       extra += 16
     }
 
-    const bottomValue = `calc(env(safe-area-inset-bottom, 0px) + 16px + ${extra}px)`
-
-    const multipleFabs = extra >= 128
-    const moveLeft = width < 360 || multipleFabs
+    const bottomValue = `calc(env(safe-area-inset-bottom, 0px) + ${FAB_SIZE}px + ${extra}px)`
+    const moveLeft = width < 360 || extra >= 128
 
     setFabStyle({
       bottom: bottomValue,
-      right: moveLeft ? 'initial' : '16px',
-      left: moveLeft ? '16px' : 'initial'
+      right: moveLeft ? 'initial' : `${FAB_SIZE}px`,
+      left: moveLeft ? `${FAB_SIZE}px` : 'initial'
     })
 
     const fab = fabRef.current
@@ -100,9 +99,7 @@ export function ZapierWidget() {
 
     computeFabPosition()
 
-    const observer = new MutationObserver(() => {
-      computeFabPosition()
-    })
+    const observer = new MutationObserver(() => computeFabPosition())
     observer.observe(document.body, { childList: true, subtree: true })
 
     window.addEventListener('resize', computeFabPosition)
@@ -114,14 +111,16 @@ export function ZapierWidget() {
   }, [shouldRender, computeFabPosition])
 
   useEffect(() => {
-    computeFabPosition()
+    if (isOpen) {
+      computeFabPosition()
+    }
   }, [isOpen, computeFabPosition])
 
-  if (!isMounted || !shouldRender) {
+  if (!mounted || !shouldRender) {
     return null
   }
 
-  const isMobile = (viewportWidth ?? 0) < 768
+  const isMobile = viewportWidth < 768
 
   const panel = !isOpen
     ? null
@@ -133,15 +132,17 @@ export function ZapierWidget() {
             onClick={() => setIsOpen(false)}
           />
           {isMobile ? (
-            <div className="fixed inset-x-0 bottom-0 z-[80] rounded-t-2xl bg-background shadow-2xl">
-              <div className="absolute -top-3 left-1/2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-muted" />
-              <div className="h-[85dvh] max-h-[720px] w-full overflow-hidden rounded-t-2xl pb-[calc(env(safe-area-inset-bottom,0px)+16px)]">
-                <zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+            <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center">
+              <div className="relative mx-auto w-[min(96vw,480px)] h-[min(88dvh,720px)] rounded-t-2xl border bg-background shadow-2xl overflow-hidden">
+                <div className="absolute left-1/2 top-2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-muted" />
+                <zapier-interfaces-chatbot-embed className="h-full w-full" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
               </div>
             </div>
           ) : (
-            <div className="fixed bottom-[calc(16px+env(safe-area-inset-bottom,0px))] right-4 z-[80] w-[420px] max-h-[720px] overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-border">
-              <zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+            <div className="fixed bottom-[calc(env(safe-area-inset-bottom, 0px) + 16px)] right-4 z-[80]">
+              <div className="relative w-[min(96vw,480px)] h-[min(88dvh,720px)] rounded-2xl border bg-background shadow-2xl overflow-hidden">
+                <zapier-interfaces-chatbot-embed className="h-full w-full" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+              </div>
             </div>
           )}
         </>
@@ -158,7 +159,6 @@ export function ZapierWidget() {
         className="fixed bottom-4 right-4 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         onClick={() => setIsOpen(true)}
         aria-expanded={isOpen}
-        aria-controls="zapier-chatbot-panel"
         aria-label="Abrir asistente"
       >
         <span className="text-lg font-semibold">SG</span>
