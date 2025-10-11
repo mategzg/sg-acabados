@@ -139,7 +139,7 @@ export function ZapierWidget() {
               </div>
             </div>
           ) : (
-            <div className="fixed bottom-[calc(env(safe-area-inset-bottom, 0px) + 16px)] right-4 z-[80]">
+            <div className="fixed z-[80] right-4 bottom-[calc(env(safe-area-inset-bottom,0px)+84px)]">
               <div className="relative w-[min(96vw,480px)] h-[min(88dvh,720px)] rounded-2xl border bg-background shadow-2xl overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+12px)]">
                 <zapier-interfaces-chatbot-embed className="h-full w-full" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
               </div>
