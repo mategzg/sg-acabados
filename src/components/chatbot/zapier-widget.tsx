@@ -143,7 +143,7 @@ export function ZapierWidget() {
   return (
     <>
       {shouldLoadScript ? (
-        <Script id="zapier-chatbot-script" src={EMBED_SRC} strategy="afterInteractive" onLoad={handleScriptLoad} onError={handleScriptError} />
+        <Script id="zapier-chatbot-script" src={EMBED_SRC} strategy="afterInteractive" type="module" onLoad={handleScriptLoad} onError={handleScriptError} />
       ) : null}
       <div
         id="zapier-fab"
@@ -155,5 +155,6 @@ export function ZapierWidget() {
     </>
   )
 }
+
 
 

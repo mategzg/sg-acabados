@@ -46,7 +46,7 @@ const requiredCsp = {
   "base-uri": ["'self'"],
   "script-src": ["'self'", "'unsafe-inline'", 'https://interfaces.zapier.com', 'https://www.googletagmanager.com'],
   "connect-src": ["'self'", 'https://interfaces.zapier.com', 'https://www.google-analytics.com', 'https://region1.google-analytics.com'],
-  "frame-src": ['https://interfaces.zapier.com', 'https://*.zapier.app'],
+  "frame-src": ['https://interfaces.zapier.com', 'https://*.zapier.app', 'https://www.openstreetmap.org'],
   "frame-ancestors": ["'self'"],
   "img-src": ["'self'", 'data:', 'https:'],
   "style-src": ["'self'", "'unsafe-inline'"],
@@ -94,3 +94,4 @@ const nextConfig = {
 }
 
 export default nextConfig
+

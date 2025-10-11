@@ -299,3 +299,7 @@ pm run build OK.
 - Archivos tocados: next.config.mjs.
 - Como probar en localhost: npm run dev; abrir /es?debug=chatbot y verificar en consola que no aparece el error de CSP (inline script bloqueado) y que el widget carga; validar que GA o scripts externos (gtag) no muestran bloqueos.
 - Nota: se implemento parseCsp/mergeCsp para combinar CSP previa y mantener dominios existentes.
+- Tarea: Zapier module + CSP OpenStreetMap.
+- Archivos tocados: src/components/chatbot/zapier-widget.tsx; next.config.mjs; docs/LOG.md.
+- Como probar en localhost: definir envs de Zapier, ejecutar npm run dev, visitar /es?debug=chatbot (sin errores CSP, script modulo cargado, widget visible) y /es/cotizar (no aparece); abrir /es/contacto y verificar mapa OSM dentro del iframe.
+
