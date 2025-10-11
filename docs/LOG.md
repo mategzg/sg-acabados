@@ -314,3 +314,6 @@ pm run build OK.
 - Archivos tocados: src/components/layout/navbar.tsx; docs/LOG.md.
 - Como probar: npm run dev; revisar header en desktop/mobile asegurando texto centrado y sin tagline.
 - Ajuste: Header muestra tagline 'Plazos cumplidos en Peru' centrado (sin duplicar nombre).
+- Tarea: Corregir CSP para Zapier (script/frames/connect) y restaurar widget controlado.
+- Archivos tocados: next.config.mjs; docs/LOG.md.
+- QA: npm run build; en /es?debug=chatbot verificar popup funcionando sin errores CSP y iframe Zapier visible.
