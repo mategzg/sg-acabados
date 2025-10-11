@@ -135,13 +135,13 @@ export function ZapierWidget() {
             <div className="fixed inset-x-0 bottom-0 z-[80] flex justify-center">
               <div className="relative mx-auto w-[min(96vw,480px)] h-[min(88dvh,720px)] rounded-t-2xl border bg-background shadow-2xl overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+12px)]">
                 <div className="absolute left-1/2 top-2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-muted" />
-                <zapier-interfaces-chatbot-embed className="h-full w-full" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+                <div className="block h-full w-full min-h-0"><zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed></div>
               </div>
             </div>
           ) : (
             <div className="fixed z-[80] right-4 bottom-[calc(env(safe-area-inset-bottom,0px)+84px)]">
               <div className="relative w-[min(96vw,480px)] h-[min(88dvh,720px)] rounded-2xl border bg-background shadow-2xl overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+12px)]">
-                <zapier-interfaces-chatbot-embed className="h-full w-full" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+                <div className="block h-full w-full min-h-0"><zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed></div>
               </div>
             </div>
           )}
