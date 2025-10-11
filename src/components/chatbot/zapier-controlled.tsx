@@ -207,10 +207,11 @@ export function ZapierWidget() {
           <zapier-interfaces-chatbot-embed
             is-popup="true"
             chatbot-id={CHATBOT_ID}
-            class="flex h-[85dvh] w-full min-h-0 flex-1 overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+16px)] rounded-t-2xl md:h-[80dvh] md:pb-4"
+            className="flex h-[85dvh] w-full min-h-0 flex-1 overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+16px)] rounded-t-2xl md:h-[80dvh] md:pb-4"
           ></zapier-interfaces-chatbot-embed>
         </div>
       </div>
     </>
   )
 }
+

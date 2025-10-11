@@ -310,3 +310,6 @@ pm run build OK.
 - Tarea: Chatbot mobile safe-area y FAB inteligente.
 - Archivos tocados: src/components/chatbot/zapier-controlled.tsx; src/app/layout.tsx; src/app/globals.css; docs/LOG.md.
 - Como probar en mobile: emular iPhone SE / iPhone 14 / Pixel 7; en /es?debug=chatbot validar FAB sin recortes ni solapes, en /es/cotizar oculto.
+- Tarea: Simplificar header (solo SG Acabados centrado).
+- Archivos tocados: src/components/layout/navbar.tsx; docs/LOG.md.
+- Como probar: npm run dev; revisar header en desktop/mobile asegurando texto centrado y sin tagline.

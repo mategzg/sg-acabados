@@ -35,9 +35,8 @@ export function Navbar() {
           <span className="flex items-center justify-center">
             <Logo width={180} height={72} />
           </span>
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-heading text-lg font-semibold tracking-tight text-foreground">SG Acabados</span>
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Plazos cumplidos en Peru</span>
+          <span className="hidden sm:flex flex-col items-center leading-tight">
+            <span className="font-heading text-lg font-semibold tracking-tight text-foreground text-center">SG Acabados</span>
           </span>
         </Link>
 
