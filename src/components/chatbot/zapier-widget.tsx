@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { type HTMLAttributes, useEffect, useMemo, useState } from 'react'
 import Script from 'next/script'
@@ -21,8 +21,11 @@ const CHATBOT_ID = (process.env.NEXT_PUBLIC_ZAPIER_CHATBOT_ID || '').trim()
 
 export function ZapierWidget() {
   const pathname = usePathname()
-  const [shouldLoadScript, setShouldLoadScript] = useState(true)
-  const [hasWhatsappFab, setHasWhatsappFab] = useState(false)
+  const [shouldLoadScript, setShouldLoadScript] = useState(false)
+  const [offsetClass, setOffsetClass] = useState<'bottom-5' | 'bottom-24'>('bottom-5')
+  const [debugMode, setDebugMode] = useState(false)
+  const [scriptPresent, setScriptPresent] = useState(false)
+  const [embedPresent, setEmbedPresent] = useState(false)
 
   const shouldRender = useMemo(() => {
     if (!EMBED_SRC || !CHATBOT_ID) {
@@ -35,40 +38,122 @@ export function ZapierWidget() {
   }, [pathname])
 
   useEffect(() => {
-    if (!shouldRender || !EMBED_SRC) {
+    if (typeof window === 'undefined') {
+      return
+    }
+    const params = new URLSearchParams(window.location.search)
+    const isDebug = params.get('debug') === 'chatbot'
+    setDebugMode(isDebug)
+
+    if (isDebug) {
+      console.table({ id: CHATBOT_ID || '(missing)', src: EMBED_SRC || '(missing)' })
+      if (!EMBED_SRC || !CHATBOT_ID) {
+        console.warn('ZapierWidget debug: faltan variables NEXT_PUBLIC_ZAPIER_CHATBOT_ID o NEXT_PUBLIC_ZAPIER_EMBED_SRC; no se renderizara el widget.')
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!shouldRender || typeof document === 'undefined' || !EMBED_SRC) {
+      setScriptPresent(false)
       setShouldLoadScript(false)
       return
     }
 
     const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${EMBED_SRC}"]`)
-    if (existingScript) {
-      setShouldLoadScript(false)
-    } else {
-      setShouldLoadScript(true)
+    const hasScript = Boolean(existingScript)
+    setScriptPresent(hasScript)
+    setShouldLoadScript(!hasScript)
+  }, [shouldRender])
+
+  useEffect(() => {
+    if (!shouldRender || typeof window === 'undefined' || typeof document === 'undefined') {
+      setOffsetClass('bottom-5')
+      return
+    }
+
+    const computeOffset = () => {
+      const hasOtherFab = Boolean(document.getElementById('whatsapp-fab') || document.getElementById('cta-fab'))
+      setOffsetClass(hasOtherFab ? 'bottom-24' : 'bottom-5')
+    }
+
+    computeOffset()
+
+    const observer = new MutationObserver(computeOffset)
+    observer.observe(document.body, { childList: true, subtree: true })
+
+    window.addEventListener('resize', computeOffset)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', computeOffset)
     }
   }, [shouldRender])
 
   useEffect(() => {
-    if (!shouldRender) {
+    if (!shouldRender || typeof document === 'undefined') {
+      setEmbedPresent(false)
       return
     }
-    setHasWhatsappFab(Boolean(document.getElementById('whatsapp-fab')))
+
+    const checkEmbed = () => {
+      setEmbedPresent(Boolean(document.querySelector('zapier-interfaces-chatbot-embed')))
+    }
+
+    checkEmbed()
+
+    const observer = new MutationObserver(checkEmbed)
+    observer.observe(document.body, { childList: true, subtree: true })
+
+    return () => observer.disconnect()
   }, [shouldRender])
+
+  useEffect(() => {
+    if (!debugMode) {
+      return
+    }
+
+    if (!shouldRender) {
+      console.info('ZapierWidget debug: widget oculto (ruta sensible o variables faltantes).')
+      return
+    }
+
+    console.info('ZapierWidget debug: script presente ->', scriptPresent)
+    console.info('ZapierWidget debug: embed presente ->', embedPresent)
+    console.info('ZapierWidget debug: offset ->', offsetClass)
+  }, [debugMode, shouldRender, scriptPresent, embedPresent, offsetClass])
+
+  const handleScriptLoad = () => {
+    setScriptPresent(true)
+    if (debugMode) {
+      console.info('ZapierWidget debug: script de Zapier cargado correctamente.')
+    }
+  }
+
+  const handleScriptError = () => {
+    if (debugMode) {
+      console.error('ZapierWidget debug: error al cargar el script de Zapier.')
+    }
+  }
 
   if (!shouldRender) {
     return null
   }
 
-  const bottomClass = hasWhatsappFab ? 'bottom-20' : 'bottom-5'
-
   return (
     <>
       {shouldLoadScript ? (
-        <Script id="zapier-chatbot-script" src={EMBED_SRC} strategy="afterInteractive" />
+        <Script id="zapier-chatbot-script" src={EMBED_SRC} strategy="afterInteractive" onLoad={handleScriptLoad} onError={handleScriptError} />
       ) : null}
-      <div aria-label="Abrir asistente SG" className={cn('fixed right-5 z-[60] pointer-events-auto md:bottom-5', bottomClass)}>
+      <div
+        id="zapier-fab"
+        aria-label="Abrir asistente SG"
+        className={cn('fixed right-5 z-[60] pointer-events-auto transition-all', offsetClass)}
+      >
         <zapier-interfaces-chatbot-embed is-popup="true" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
       </div>
     </>
   )
 }
+
+

@@ -1,4 +1,4 @@
-﻿# LOG  Progreso
+# LOG  Progreso
 
 ## 2025-09-30
 
@@ -287,5 +287,11 @@ pm run build OK.
 - Envs requeridas: NEXT_PUBLIC_ZAPIER_CHATBOT_ID, NEXT_PUBLIC_ZAPIER_EMBED_SRC.
 - Cómo probar en localhost: definir ambas envs en .env.local, ejecutar npm run dev, navegar a /es (widget visible) y /es/cotizar (oculto); abrir consola para asegurar ausencia de errores/CSP; validar que el script no se inserta duplicado y que convivie con #whatsapp-fab.
 - Cómo validar en producción: confirmar variables en Vercel, revisar deployment para ver el popup y que no se superpone al FAB de WhatsApp; revisar headers si hubiese bloqueos de CSP (ajustar script-src en next.config.mjs si cambia el dominio de Zapier).
+
+
+- Tarea: Endurecer widget Zapier (offset FABs, modo debug, CSP).
+- Archivos tocados: src/components/chatbot/zapier-widget.tsx; next.config.mjs; docs/LOG.md.
+- Cómo probar en localhost: definir NEXT_PUBLIC_ZAPIER_CHATBOT_ID y NEXT_PUBLIC_ZAPIER_EMBED_SRC en .env.local; ejecutar npm run dev; navegar a /es?debug=chatbot y revisar consola (console.table con id/src, logs de script/embed/offset); confirmar que el FAB baja a bottom-24 si existen #whatsapp-fab o #cta-fab; visitar /es/cotizar para confirmar widget oculto.
+- Cómo validar en producción: comprobar que CSP permite cargar https://interfaces.zapier.com (sin errores en consola); verificar offsets en dispositivos móviles y desktop; usar parámetro ?debug=chatbot en la URL de producción para diagnósticos puntuales.
 
 
