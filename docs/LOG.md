@@ -298,3 +298,4 @@ pm run build OK.
 - Tarea: Ajustar CSP para widget Zapier.
 - Archivos tocados: next.config.mjs.
 - Como probar en localhost: npm run dev; abrir /es?debug=chatbot y verificar en consola que no aparece el error de CSP (inline script bloqueado) y que el widget carga; validar que GA o scripts externos (gtag) no muestran bloqueos.
+- Nota: se implemento parseCsp/mergeCsp para combinar CSP previa y mantener dominios existentes.
