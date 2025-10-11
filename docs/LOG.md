@@ -272,7 +272,7 @@ pm run build OK.
 - Hallazgos clave: Se compactó la columna derecha con Card interior y lista CheckCircle, badges usan bg-neutral-100, botones outline equilibran visualmente y alturas quedan pareadas en md+.
 - Tarea: Simplificar sección "Sedes y cobertura" con layout balanceado y textos UTF-8.
 - Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
-- Cómo probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en móviles (=640px), md (768px) y desktop (=1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
+- Como probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en móviles (=640px), md (768px) y desktop (=1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
 - Hallazgos clave: Se eliminó el mapa ficticio, se usó un section sencillo con grid 2-col, se normalizaron acentos (Operación, cotización) y se reutilizaron datos de contacto existentes en siteConfig.
 ## 2025-10-10
 
@@ -280,7 +280,7 @@ pm run build OK.
 - Archivos tocados: src/components/chatbot/fallback-widget.tsx; src/components/chatbot/widget.tsx; src/app/layout.tsx; next.config.mjs; docs/LOG.md.
 - Env requerida: NEXT_PUBLIC_ZAPIER_PUBLIC_URL (URL pública de Zapier Interfaces).
 - Cómo probar en localhost: Definir NEXT_PUBLIC_ZAPIER_PUBLIC_URL en .env.local; ejecutar npm run dev; confirmar botón flotante bottom-right, panel abre/cierra con animación, se recuerda estado tras reload, soporta ESC y foco inicial; en /es/cotizar no se ve; eliminar o vaciar la variable para ver warning y widget oculto.
-- Cómo validar en producción: Confirmar que Vercel inyecta el iframe sin CSP bloqueada, probar fallback Abrir chat si el iframe falla, verificar build automático tras push.
+- Como validar en produccion: Confirmar que Vercel inyecta el iframe sin CSP bloqueada, probar fallback Abrir chat si el iframe falla, verificar build automático tras push.
 - Nota: El enlace público de Zapier no requiere dominios permitidos; si X-Frame-Options bloquea la carga, usar la opción Abrir chat en nueva pestaña.
 - Tarea: Actualizar widget a Zapier Interfaces oficial.
 - Archivos tocados: src/components/chatbot/zapier-widget.tsx; src/app/layout.tsx; next.config.mjs; docs/LOG.md (se retiró el fallback anterior).
@@ -295,3 +295,6 @@ pm run build OK.
 - Cómo validar en producción: comprobar que CSP permite cargar https://interfaces.zapier.com (sin errores en consola); verificar offsets en dispositivos móviles y desktop; usar parámetro ?debug=chatbot en la URL de producción para diagnósticos puntuales.
 
 
+- Tarea: Ajustar CSP para widget Zapier.
+- Archivos tocados: next.config.mjs.
+- Como probar en localhost: npm run dev; abrir /es?debug=chatbot y verificar en consola que no aparece el error de CSP (inline script bloqueado) y que el widget carga; validar que GA o scripts externos (gtag) no muestran bloqueos.
