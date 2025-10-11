@@ -15,6 +15,16 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self'; frame-src 'self' https://*.zapier.app; child-src 'self' https://*.zapier.app;"
+          },
+          { key: 'Referrer-Policy', value: 'no-referrer' }
+        ]
+      },
+      {
         source: '/images/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }]
       },
@@ -27,3 +37,5 @@ const nextConfig = {
 }
 
 export default nextConfig
+
+

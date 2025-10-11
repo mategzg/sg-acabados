@@ -2,6 +2,7 @@
 import Script from 'next/script'
 
 import './globals.css'
+import { ChatbotWidget } from '@/components/chatbot/widget'
 import { siteConfig } from '@/config/site'
 import { fontVariables } from '@/styles/fonts'
 
@@ -100,7 +101,10 @@ export default function RootLayout({
           {structuredData}
         </Script>
         {children}
+        <ChatbotWidget />
       </body>
     </html>
   )
 }
+
+
