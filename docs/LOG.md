@@ -303,5 +303,7 @@ pm run build OK.
 - Archivos tocados: src/components/chatbot/zapier-widget.tsx; next.config.mjs; docs/LOG.md.
 - Como probar en localhost: definir envs de Zapier, ejecutar npm run dev, visitar /es?debug=chatbot (sin errores CSP, script modulo cargado, widget visible) y /es/cotizar (no aparece); abrir /es/contacto y verificar mapa OSM dentro del iframe.
 
-- Ajuste: StickyCTA movido a bottom-left (ids CTA/WhatsApp) y offset Zapier solo si FABs estan a la derecha.
 
+- Tarea: Retiro sticky CTA para evitar solapamiento con chatbot.
+- Archivos tocados: src/app/[locale]/(marketing)/page.tsx; src/app/[locale]/(marketing)/productos/page.tsx; src/components/sticky-cta.tsx; src/components/chatbot/zapier-widget.tsx; docs/LOG.md.
+- Como probar en localhost: npm run dev; verificar que ya no se muestra el FAB inferior, el chatbot permanece en bottom-right sin solaparse y los enlaces de contacto siguen accesibles en las secciones correspondientes.

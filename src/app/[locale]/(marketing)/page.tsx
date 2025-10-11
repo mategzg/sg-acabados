@@ -5,7 +5,6 @@ import { ServicesSection } from '@/components/home/services-section'
 import { FeaturedProjectsSection } from '@/components/home/featured-projects-section'
 import { FinalCallToAction } from '@/components/home/final-call-to-action'
 import { CatalogBanner } from '@/components/catalog-banner'
-import { StickyCTA } from '@/components/sticky-cta'
 import { createMetadata } from '@/lib/seo'
 
 export const revalidate = 3600
@@ -29,7 +28,6 @@ export default function HomePage() {
       <FeaturedProjectsSection />
       <FinalCallToAction />
       <CatalogBanner />
-      <StickyCTA />
     </>
   )
 }

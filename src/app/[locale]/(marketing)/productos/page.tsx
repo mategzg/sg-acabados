@@ -5,7 +5,6 @@ import { LocalizedLink as Link } from '@/components/localized-link'
 import { productFamilies } from '@/data/product-families'
 import { CatalogBanner } from '@/components/catalog-banner'
 import { FinalCallToAction } from '@/components/home/final-call-to-action'
-import { StickyCTA } from '@/components/sticky-cta'
 import { Section } from '@/components/section'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -107,7 +106,6 @@ export default function ProductosPage() {
 
       <CatalogBanner />
       <FinalCallToAction />
-      <StickyCTA />
     </>
   )
 }
