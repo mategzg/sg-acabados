@@ -313,3 +313,4 @@ pm run build OK.
 - Tarea: Simplificar header (solo SG Acabados centrado).
 - Archivos tocados: src/components/layout/navbar.tsx; docs/LOG.md.
 - Como probar: npm run dev; revisar header en desktop/mobile asegurando texto centrado y sin tagline.
+- Ajuste: Header muestra tagline 'Plazos cumplidos en Peru' centrado (sin duplicar nombre).

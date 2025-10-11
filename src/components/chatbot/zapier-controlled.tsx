@@ -117,7 +117,8 @@ export function ZapierWidget() {
         left: wrapper.style.left,
         compact,
         hasAnyFab,
-        multipleFabs
+        multipleFabs,
+        open: wrapper.dataset.open
       })
     }
   }, [debugMode])
@@ -148,17 +149,40 @@ export function ZapierWidget() {
       return
     }
 
-    const checkEmbed = () => {
-      setEmbedPresent(Boolean(document.querySelector('zapier-interfaces-chatbot-embed')))
+    const wrapper = wrapperRef.current
+    const embed = wrapper?.querySelector('zapier-interfaces-chatbot-embed') as HTMLElement | null
+    setEmbedPresent(Boolean(embed))
+
+    if (!wrapper || !embed) {
+      return
     }
 
-    checkEmbed()
+    wrapper.dataset.open = wrapper.dataset.open ?? 'false'
 
-    const observer = new MutationObserver(checkEmbed)
-    observer.observe(document.body, { childList: true, subtree: true })
+    if (typeof ResizeObserver === 'undefined') {
+      return
+    }
 
-    return () => observer.disconnect()
-  }, [shouldRender])
+    const resizeObserver = new ResizeObserver((entries) => {
+      const entry = entries[0]
+      if (!entry) {
+        return
+      }
+
+      const { height } = entry.contentRect
+      const isOpen = height > 120
+      const host = wrapperRef.current
+      if (!host) {
+        return
+      }
+      host.dataset.open = isOpen ? 'true' : 'false'
+      updatePosition()
+    })
+
+    resizeObserver.observe(embed)
+
+    return () => resizeObserver.disconnect()
+  }, [shouldRender, updatePosition])
 
   useEffect(() => {
     if (!debugMode) {
@@ -201,17 +225,13 @@ export function ZapierWidget() {
         id="zapier-fab"
         ref={wrapperRef}
         aria-label="Abrir asistente SG"
-        className={cn('fixed z-[60] pointer-events-auto transition-transform')}
+        className={cn('pointer-events-auto transition-transform')}
       >
-        <div className="z-[70] flex w-[min(100vw-32px,420px)] flex-col overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-border md:w-[480px] md:h-[720px]">
-          <zapier-interfaces-chatbot-embed
-            is-popup="true"
-            chatbot-id={CHATBOT_ID}
-            className="flex h-[85dvh] w-full min-h-0 flex-1 overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+16px)] rounded-t-2xl md:h-[80dvh] md:pb-4"
-          ></zapier-interfaces-chatbot-embed>
-        </div>
+        <zapier-interfaces-chatbot-embed
+          is-popup="true"
+          chatbot-id={CHATBOT_ID}
+        ></zapier-interfaces-chatbot-embed>
       </div>
     </>
   )
 }
-
