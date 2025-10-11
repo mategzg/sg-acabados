@@ -1,8 +1,8 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Script from 'next/script'
 
 import './globals.css'
-import { ZapierWidget } from '@/components/chatbot/zapier-widget'
+import { ZapierWidget } from '@/components/chatbot/zapier-controlled'
 import { siteConfig } from '@/config/site'
 import { fontVariables } from '@/styles/fonts'
 
@@ -106,6 +106,7 @@ export default function RootLayout({
     </html>
   )
 }
+
 
 
 

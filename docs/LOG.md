@@ -304,6 +304,9 @@ pm run build OK.
 - Como probar en localhost: definir envs de Zapier, ejecutar npm run dev, visitar /es?debug=chatbot (sin errores CSP, script modulo cargado, widget visible) y /es/cotizar (no aparece); abrir /es/contacto y verificar mapa OSM dentro del iframe.
 
 
-- Tarea: Retiro sticky CTA para evitar solapamiento con chatbot.
-- Archivos tocados: src/app/[locale]/(marketing)/page.tsx; src/app/[locale]/(marketing)/productos/page.tsx; src/components/sticky-cta.tsx; src/components/chatbot/zapier-widget.tsx; docs/LOG.md.
-- Como probar en localhost: npm run dev; verificar que ya no se muestra el FAB inferior, el chatbot permanece en bottom-right sin solaparse y los enlaces de contacto siguen accesibles en las secciones correspondientes.
+- Tarea: Chatbot mobile safe-area y retiro sticky CTA.
+- Archivos tocados: src/app/[locale]/(marketing)/page.tsx; src/app/[locale]/(marketing)/productos/page.tsx; src/components/sticky-cta.tsx; src/components/chatbot/zapier-widget.tsx; src/app/globals.css; docs/LOG.md.
+- Como probar en localhost: npm run dev; en /es?debug=chatbot validar que el popup queda sobre barra del navegador y se eleva si existen FABs; en /es/contacto confirmar que no hay widget duplicado ni errores CSP; en /es/cotizar el widget sigue oculto.
+- Tarea: Chatbot mobile safe-area y FAB inteligente.
+- Archivos tocados: src/components/chatbot/zapier-controlled.tsx; src/app/layout.tsx; src/app/globals.css; docs/LOG.md.
+- Como probar en mobile: emular iPhone SE / iPhone 14 / Pixel 7; en /es?debug=chatbot validar FAB sin recortes ni solapes, en /es/cotizar oculto.

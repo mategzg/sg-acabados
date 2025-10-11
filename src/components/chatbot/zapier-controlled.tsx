@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes, useEffect, useMemo, useState } from 'react'
+import { type HTMLAttributes, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 
@@ -22,10 +22,10 @@ const CHATBOT_ID = (process.env.NEXT_PUBLIC_ZAPIER_CHATBOT_ID || '').trim()
 export function ZapierWidget() {
   const pathname = usePathname()
   const [shouldLoadScript, setShouldLoadScript] = useState(false)
-  const [offsetClass, setOffsetClass] = useState<'bottom-5' | 'bottom-24'>('bottom-5')
   const [debugMode, setDebugMode] = useState(false)
   const [scriptPresent, setScriptPresent] = useState(false)
   const [embedPresent, setEmbedPresent] = useState(false)
+  const wrapperRef = useRef<HTMLDivElement | null>(null)
 
   const shouldRender = useMemo(() => {
     if (!EMBED_SRC || !CHATBOT_ID) {
@@ -66,47 +66,81 @@ export function ZapierWidget() {
     setShouldLoadScript(!hasScript)
   }, [shouldRender])
 
-  useEffect(() => {
-    if (!shouldRender || typeof window === 'undefined' || typeof document === 'undefined') {
-      setOffsetClass('bottom-5')
+  const updatePosition = useCallback(() => {
+    if (typeof window === 'undefined') {
       return
     }
 
-    const computeOffset = () => {
-      if (typeof window === 'undefined') {
-        setOffsetClass('bottom-5')
-        return
-      }
-
-      const isOnRightSide = (element: HTMLElement | null) => {
-        if (!element) {
-          return false
-        }
-        const rect = element.getBoundingClientRect()
-        return rect.left >= window.innerWidth / 2
-      }
-
-      const fabElements = [
-        document.getElementById('whatsapp-fab') as HTMLElement | null,
-        document.getElementById('cta-fab') as HTMLElement | null
-      ]
-
-      const hasOtherFab = fabElements.some(isOnRightSide)
-      setOffsetClass(hasOtherFab ? 'bottom-24' : 'bottom-5')
+    const wrapper = wrapperRef.current
+    if (!wrapper) {
+      return
     }
 
-    computeOffset()
+    const width = window.innerWidth
+    const compact = width <= 360
+    if (compact) {
+      wrapper.dataset.compact = 'true'
+    } else {
+      delete wrapper.dataset.compact
+    }
 
-    const observer = new MutationObserver(computeOffset)
+    const baseBottom = 16
+    const baseSide = 16
+
+    const whatsappFab = document.getElementById('whatsapp-fab') as HTMLElement | null
+    const ctaFab = document.getElementById('cta-fab') as HTMLElement | null
+    const presentFabs = [whatsappFab, ctaFab].filter((fab): fab is HTMLElement => Boolean(fab))
+
+    const multipleFabs = presentFabs.length > 1
+    const hasAnyFab = presentFabs.length > 0
+
+    const moveLeft = width < 360 || multipleFabs
+    wrapper.dataset.side = moveLeft ? 'left' : 'right'
+
+    const extraOffset = hasAnyFab ? (width <= 420 ? 96 : 64) : 0
+    const bottomValue = `calc(${baseBottom}px + ${extraOffset}px + env(safe-area-inset-bottom, 0px))`
+
+    wrapper.style.bottom = bottomValue
+
+    if (moveLeft) {
+      wrapper.style.left = `${baseSide}px`
+      wrapper.style.right = 'initial'
+    } else {
+      wrapper.style.left = 'initial'
+      wrapper.style.right = `${baseSide}px`
+    }
+
+    if (debugMode) {
+      console.info('ZapierWidget debug: wrapper position ->', {
+        bottom: wrapper.style.bottom,
+        right: wrapper.style.right,
+        left: wrapper.style.left,
+        compact,
+        hasAnyFab,
+        multipleFabs
+      })
+    }
+  }, [debugMode])
+
+  useEffect(() => {
+    if (!shouldRender || typeof document === 'undefined') {
+      return
+    }
+
+    updatePosition()
+
+    const observer = new MutationObserver(() => {
+      updatePosition()
+    })
     observer.observe(document.body, { childList: true, subtree: true })
 
-    window.addEventListener('resize', computeOffset)
+    window.addEventListener('resize', updatePosition)
 
     return () => {
       observer.disconnect()
-      window.removeEventListener('resize', computeOffset)
+      window.removeEventListener('resize', updatePosition)
     }
-  }, [shouldRender])
+  }, [shouldRender, updatePosition])
 
   useEffect(() => {
     if (!shouldRender || typeof document === 'undefined') {
@@ -138,11 +172,11 @@ export function ZapierWidget() {
 
     console.info('ZapierWidget debug: script presente ->', scriptPresent)
     console.info('ZapierWidget debug: embed presente ->', embedPresent)
-    console.info('ZapierWidget debug: offset ->', offsetClass)
-  }, [debugMode, shouldRender, scriptPresent, embedPresent, offsetClass])
+  }, [debugMode, shouldRender, scriptPresent, embedPresent])
 
   const handleScriptLoad = () => {
     setScriptPresent(true)
+    updatePosition()
     if (debugMode) {
       console.info('ZapierWidget debug: script de Zapier cargado correctamente.')
     }
@@ -165,14 +199,18 @@ export function ZapierWidget() {
       ) : null}
       <div
         id="zapier-fab"
+        ref={wrapperRef}
         aria-label="Abrir asistente SG"
-        className={cn('fixed right-5 z-[60] pointer-events-auto transition-all', offsetClass)}
+        className={cn('fixed z-[60] pointer-events-auto transition-transform')}
       >
-        <zapier-interfaces-chatbot-embed is-popup="true" chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+        <div className="z-[70] flex w-[min(100vw-32px,420px)] flex-col overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-border md:w-[480px] md:h-[720px]">
+          <zapier-interfaces-chatbot-embed
+            is-popup="true"
+            chatbot-id={CHATBOT_ID}
+            class="flex h-[85dvh] w-full min-h-0 flex-1 overflow-hidden pb-[calc(env(safe-area-inset-bottom,0px)+16px)] rounded-t-2xl md:h-[80dvh] md:pb-4"
+          ></zapier-interfaces-chatbot-embed>
+        </div>
       </div>
     </>
   )
 }
-
-
-

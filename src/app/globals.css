@@ -134,3 +134,23 @@
   }
 }
 
+#zapier-fab {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  pointer-events: auto;
+  z-index: 60;
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+  #zapier-fab {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 420px) {
+  #zapier-fab[data-compact='true'] {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
