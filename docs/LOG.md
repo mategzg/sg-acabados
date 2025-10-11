@@ -317,3 +317,6 @@ pm run build OK.
 - Tarea: Corregir CSP para Zapier (script/frames/connect) y restaurar widget controlado.
 - Archivos tocados: next.config.mjs; docs/LOG.md.
 - QA: npm run build; en /es?debug=chatbot verificar popup funcionando sin errores CSP y iframe Zapier visible.
+- Tarea: CSP corregida y widget Zapier restaurado (sin errores).
+- Archivos tocados: next.config.mjs; src/components/chatbot/zapier-controlled.tsx; src/app/globals.css; docs/LOG.md.
+- QA: npm run build OK; en /es?debug=chatbot se ve el popup; /es/contacto sin bloqueos.
