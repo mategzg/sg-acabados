@@ -20,14 +20,17 @@ const CHATBOT_ID = (process.env.NEXT_PUBLIC_ZAPIER_CHATBOT_ID || '').trim()
 
 export function ZapierWidget() {
   const pathname = usePathname()
-  const [mounted, setMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [viewportWidth, setViewportWidth] = useState<number | null>(null)
-  const [fabStyle, setFabStyle] = useState<CSSProperties>({ bottom: '16px', right: '16px' })
+  const [fabStyle, setFabStyle] = useState<CSSProperties>({
+    bottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)',
+    right: '16px'
+  })
   const fabRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
-    setMounted(true)
+    setIsMounted(true)
   }, [])
 
   const shouldRender = useMemo(() => {
@@ -61,24 +64,27 @@ export function ZapierWidget() {
     }
 
     const width = window.innerWidth
-    const baseBottom = 16
-    const baseSide = 16
 
-    const whatsappFab = document.getElementById('whatsapp-fab')
-    const ctaFab = document.getElementById('cta-fab')
-    const presentFabs = [whatsappFab, ctaFab].filter(Boolean) as HTMLElement[]
+    let extra = 0
+    if (document.getElementById('whatsapp-fab')) {
+      extra += 64
+    }
+    if (document.getElementById('cta-fab')) {
+      extra += 64
+    }
+    if (width <= 420) {
+      extra += 16
+    }
 
-    const multipleFabs = presentFabs.length > 1
-    const hasAnyFab = presentFabs.length > 0
+    const bottomValue = `calc(env(safe-area-inset-bottom, 0px) + 16px + ${extra}px)`
 
+    const multipleFabs = extra >= 128
     const moveLeft = width < 360 || multipleFabs
-    const extraOffset = hasAnyFab ? (width <= 420 ? 96 : 64) : 0
-    const bottomValue = `calc(${baseBottom}px + ${extraOffset}px + env(safe-area-inset-bottom, 0px))`
 
     setFabStyle({
       bottom: bottomValue,
-      right: moveLeft ? 'initial' : `${baseSide}px`,
-      left: moveLeft ? `${baseSide}px` : 'initial'
+      right: moveLeft ? 'initial' : '16px',
+      left: moveLeft ? '16px' : 'initial'
     })
 
     const fab = fabRef.current
@@ -107,34 +113,39 @@ export function ZapierWidget() {
     }
   }, [shouldRender, computeFabPosition])
 
-  if (!mounted || !shouldRender) {
+  useEffect(() => {
+    computeFabPosition()
+  }, [isOpen, computeFabPosition])
+
+  if (!isMounted || !shouldRender) {
     return null
   }
 
   const isMobile = (viewportWidth ?? 0) < 768
 
-  const panel = isOpen ? (
-    <div className="fixed inset-0 z-[80]">
-      <button
-        type="button"
-        aria-label="Cerrar asistente"
-        className="absolute inset-0 bg-black/40"
-        onClick={() => setIsOpen(false)}
-      />
-      {isMobile ? (
-        <div className="absolute inset-x-0 bottom-0 z-[81] rounded-t-2xl bg-background shadow-2xl">
-          <div className="absolute -top-3 left-1/2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-muted" />
-          <div className="h-[85dvh] max-h-[720px] w-full overflow-hidden rounded-t-2xl pb-[calc(env(safe-area-inset-bottom,0px)+16px)]">
-            <zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
-          </div>
-        </div>
-      ) : (
-        <div className="absolute bottom-[calc(16px+env(safe-area-inset-bottom,0px))] right-4 z-[81] w-[420px] max-h-[720px] overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-border">
-          <zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
-        </div>
-      )}
-    </div>
-  ) : null
+  const panel = !isOpen
+    ? null
+    : (
+        <>
+          <div
+            className="fixed inset-0 z-[79] bg-black/40"
+            aria-hidden="true"
+            onClick={() => setIsOpen(false)}
+          />
+          {isMobile ? (
+            <div className="fixed inset-x-0 bottom-0 z-[80] rounded-t-2xl bg-background shadow-2xl">
+              <div className="absolute -top-3 left-1/2 h-1.5 w-12 -translate-x-1/2 rounded-full bg-muted" />
+              <div className="h-[85dvh] max-h-[720px] w-full overflow-hidden rounded-t-2xl pb-[calc(env(safe-area-inset-bottom,0px)+16px)]">
+                <zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+              </div>
+            </div>
+          ) : (
+            <div className="fixed bottom-[calc(16px+env(safe-area-inset-bottom,0px))] right-4 z-[80] w-[420px] max-h-[720px] overflow-hidden rounded-2xl bg-background shadow-2xl ring-1 ring-border">
+              <zapier-interfaces-chatbot-embed chatbot-id={CHATBOT_ID}></zapier-interfaces-chatbot-embed>
+            </div>
+          )}
+        </>
+      )
 
   return createPortal(
     <>
@@ -147,7 +158,7 @@ export function ZapierWidget() {
         className="fixed bottom-4 right-4 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         onClick={() => setIsOpen(true)}
         aria-expanded={isOpen}
-        aria-controls="zapier-chat-panel"
+        aria-controls="zapier-chatbot-panel"
         aria-label="Abrir asistente"
       >
         <span className="text-lg font-semibold">SG</span>
@@ -157,4 +168,3 @@ export function ZapierWidget() {
     document.body
   )
 }
-
