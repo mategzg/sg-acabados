@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import type { ReactNode } from 'react'
 
 import './globals.css'
-import { ZapierWidget } from '@/components/chatbot/zapier-controlled'
+import { ZapierNative } from '@/components/chatbot/zapier-native'
 import { siteConfig } from '@/config/site'
 import { fontVariables } from '@/styles/fonts'
 
@@ -79,7 +80,7 @@ const structuredData = JSON.stringify([organizationLd, ...localBusinesses])
 export default function RootLayout({
   children
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
@@ -101,14 +102,9 @@ export default function RootLayout({
           {structuredData}
         </Script>
         {children}
-        <ZapierWidget />
+        <ZapierNative />
       </body>
     </html>
   )
 }
-
-
-
-
-
 

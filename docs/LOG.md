@@ -325,3 +325,19 @@ pm run build OK.
 - Tarea: Chatbot en Portal con limites min/max y safe-area para evitar recortes.
 - Archivos tocados: src/components/chatbot/zapier-controlled.tsx; src/app/globals.css; docs/LOG.md.
 - QA: emular 360x740 y 390x844; FAB visible, panel sin recortes; build OK.
+## 2025-10-11
+
+- Tarea: Revertir chatbot Zapier al snippet oficial (sin portal ni FAB propio).
+- Archivos tocados: src/app/layout.tsx; src/app/globals.css; src/components/chatbot/zapier-controlled.tsx (eliminado); docs/LOG.md.
+- Envs requeridas: NEXT_PUBLIC_ZAPIER_CHATBOT_ID y NEXT_PUBLIC_ZAPIER_EMBED_SRC.
+- Como probar en localhost: definir NEXT_PUBLIC_ZAPIER_CHATBOT_ID en .env.local; ejecutar npm run dev; abrir /es y confirmar que aparece la burbuja oficial de Zapier con popup; vaciar la env para comprobar que no se inserta el snippet.
+- Hallazgos clave: Se retiraron componentes personalizados, estilos y portales previos; el layout monta directamente el script async module de interfaces.zapier.com cuando la env existe.
+
+- Ajuste: layout importa ZapierNative (componente client) que verifica si el script ya existe antes de insertarlo y mantiene el popup oficial activo en todas las rutas.
+
+- Nota: se anadio types/zapier.d.ts para tipar el custom element sin wrappers.
+
+
+
+
+- Reset Zapier: widget nativo (popup) + CSP mínima.

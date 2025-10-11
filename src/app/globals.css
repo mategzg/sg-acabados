@@ -135,5 +135,4 @@
 }
 
 
-#chatbot-fab{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));right:16px;}\n#chatbot-fab[data-side='left']{right:initial;left:16px;}\n
-#chatbot-fab { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); pointer-events: auto; z-index: 70; }
+
