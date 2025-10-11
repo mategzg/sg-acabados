@@ -322,3 +322,6 @@ pm run build OK.
 - QA: npm run build OK; en /es?debug=chatbot se ve el popup; /es/contacto sin bloqueos.
 - Ajuste: Chatbot via Portal (FAB + panel responsive).
 - Ajuste extra: FAB y panel sin recortes (Portal, pointer-events actualizados).
+- Tarea: Chatbot en Portal con limites min/max y safe-area para evitar recortes.
+- Archivos tocados: src/components/chatbot/zapier-controlled.tsx; src/app/globals.css; docs/LOG.md.
+- QA: emular 360x740 y 390x844; FAB visible, panel sin recortes; build OK.
