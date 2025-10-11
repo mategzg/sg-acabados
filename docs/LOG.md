@@ -321,3 +321,4 @@ pm run build OK.
 - Archivos tocados: next.config.mjs; src/components/chatbot/zapier-controlled.tsx; src/app/globals.css; docs/LOG.md.
 - QA: npm run build OK; en /es?debug=chatbot se ve el popup; /es/contacto sin bloqueos.
 - Ajuste: Chatbot via Portal (FAB + panel responsive).
+- Ajuste extra: FAB y panel sin recortes (Portal, pointer-events actualizados).
