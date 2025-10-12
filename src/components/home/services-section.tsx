@@ -42,18 +42,30 @@ type FamilyCard = {
 
 const productFamilies = getProductFamilies()
 
+
+const familyOverrides: Record<string, Partial<FamilyCard>> = {
+  iluminacion: {
+    title: 'Iluminación',
+    description: 'Soluciones LED para interior y exterior; escenas configurables e integración BMS.',
+    href: '/productos'
+  }
+}
+
 const familyCards: FamilyCard[] = FAMILY_ORDER.map((slug) => {
   const family = productFamilies.find((item) => item.slug === slug || normalizeSlug(item.slug) === slug)
   if (!family) {
     return null
   }
 
+  const normalizedSlug = normalizeSlug(family.slug)
+  const overrides = familyOverrides[normalizedSlug] ?? {}
+
   return {
     id: family.slug,
-    title: family.titulo,
-    description: family.intro,
-    href: `/productos/${family.slug}`,
-    icon: iconBySlug[slug] ?? Layers3
+    title: overrides.title ?? family.titulo,
+    description: overrides.description ?? family.intro,
+    href: overrides.href ?? `/productos/${family.slug}`,
+    icon: iconBySlug[slug] ?? iconBySlug[normalizedSlug] ?? Layers3
   }
 }).filter((item): item is FamilyCard => item !== null)
 
