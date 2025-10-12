@@ -7,3 +7,4 @@ Ortografía: 'WhatsApp' visible + 'clínica' ajustados; script scripts/fix-accen
 Ortografía ES-PE: tildes normalizadas (cotización, iluminación, técnico, acústico, térmico, área, página, Perú, tándem); 'm' estandarizado; sin cambios en URLs/slugs/marcas. Build OK.
 Contacto: mapa actualizado a Calle Misti 134 (Yanahuara). Cómo probar: /contacto (ver iframe).
 Home: restaurada tarjeta 'Iluminación' (6/6). Orden y copy unificados.
+Nosotros: ajuste layout (grid 7/5), tipograf?a, espaciados y consistencia visual.
