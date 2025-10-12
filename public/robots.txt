@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.sgacabados.pe
+Host: https://www.sgsac.com
 
 # Sitemaps
-Sitemap: https://www.sgacabados.pe/sitemap.xml
+Sitemap: https://www.sgsac.com/sitemap.xml

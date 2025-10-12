@@ -1,31 +1,35 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sgacabados.pe'),
+  siteUrl: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.sgsac.com'),
   generateRobotsTxt: true,
   exclude: ['/api/*'],
   transform: async (config, path) => {
-    if (path === '/es') {
+    const normalizedPath = stripDefaultLocale(path)
+
+    if (!normalizedPath) {
       return null
     }
-
-    const normalizedPath = normalizePath(path)
 
     return {
       loc: normalizedPath,
       changefreq: 'weekly',
-      priority: normalizedPath === '/' ? 1 : 0.7
+      priority: normalizedPath === '/' ? 1 : 0.8
     }
   }
 }
 
 function normalizeSiteUrl(value) {
-  const trimmed = value.replace(/\/+$/, '')
-  return trimmed.endsWith('/es') ? trimmed.slice(0, -3) : trimmed
+  return value.replace(/\/+$/, '').replace(/\/es$/, '')
 }
 
-function normalizePath(path) {
+function stripDefaultLocale(path) {
+  if (path === '/es' || path === '/es/') {
+    return null
+  }
+
   if (path.startsWith('/es/')) {
-    return '/' + path.slice(4)
+    const rest = path.slice(3)
+    return rest ? (rest.startsWith('/') ? rest : `/${rest}`) : '/'
   }
 
   return path

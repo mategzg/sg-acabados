@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     apple: '/favicon.svg'
   },
   alternates: {
-    canonical: '/es'
+    canonical: '/'
   }
 }
 

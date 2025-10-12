@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { siteConfig } from '@/config/site'
 import { defaultLocale, type Locale } from '@/lib/i18n-config'
@@ -20,6 +20,11 @@ const defaultOgImage = {
 
 export function resolvePath(locale: Locale, path: string) {
   const normalized = path.startsWith('/') ? path : `/${path}`
+
+  if (normalized === '/') {
+    return locale === defaultLocale ? '/' : `/${locale}`
+  }
+
   return locale === defaultLocale ? normalized : `/${locale}${normalized}`
 }
 
@@ -51,9 +56,13 @@ export function createMetadata({
   keywords?: string[]
   image?: ImageOverride
 }): Metadata {
-  // Always canonicalize to include locale prefix, even for default 'es'
   const normalized = path.startsWith('/') ? path : `/${path}`
-  const canonicalPath = `/${locale}${normalized}`
+  const canonicalPath =
+    locale === defaultLocale
+      ? normalized
+      : normalized === '/'
+        ? `/${locale}`
+        : `/${locale}${normalized}`
   const canonical = absoluteUrl(canonicalPath)
   const mergedKeywords = Array.from(new Set([...(siteConfig.keywords ?? []), ...keywords]))
 
@@ -62,7 +71,7 @@ export function createMetadata({
         url: toAbsoluteImageUrl(image.url),
         width: image.width ?? defaultOgImage.width,
         height: image.height ?? defaultOgImage.height,
-        alt: image.alt ?? `${title} – ${siteConfig.name}`
+        alt: image.alt ?? `${title} - ${siteConfig.name}`
       }
     : defaultOgImage
 
@@ -73,7 +82,7 @@ export function createMetadata({
     alternates: {
       canonical,
       languages: {
-        'es-PE': absoluteUrl(`/es${normalized}`),
+        'es-PE': absoluteUrl(normalized),
         'en-US': absoluteUrl(resolvePath('en', path))
       }
     },

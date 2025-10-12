@@ -1,4 +1,7 @@
-﻿export const siteConfig = {
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+const normalizedSiteUrl = rawSiteUrl.replace(/\/+$/, '').replace(/\/es$/, '')
+
+export const siteConfig = {
   name: 'SG Acabados',
   legalName: 'SG Acabados S.A.C.',
   description:
@@ -12,7 +15,7 @@
     'SG Servicios Generales'
   ],
   experienceYears: 20,
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  siteUrl: normalizedSiteUrl,
   whatsapp: {
     number: '+51 959 375 235',
     link: 'https://wa.me/51959375235'
@@ -48,5 +51,3 @@
 }
 
 export type SiteConfig = typeof siteConfig
-
-

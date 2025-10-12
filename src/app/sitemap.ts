@@ -1,18 +1,17 @@
 import type { MetadataRoute } from 'next'
 
-function normalizeBase() {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, '') ?? ''
-  if (!raw) return ''
-  return raw.endsWith('/es') ? raw.slice(0, -3) : raw
+function resolveBaseUrl() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.sgsac.com'
+  return raw.replace(/\/+$/, '').replace(/\/es$/, '')
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const origin = normalizeBase()
-  const pages = ['/', '/productos', '/soluciones', '/proyectos', '/contacto', '/cotizar']
+  const baseUrl = resolveBaseUrl()
+  const paths = ['/', '/productos', '/soluciones', '/proyectos', '/nosotros', '/contacto', '/cotizar']
 
-  return pages.map((path) => ({
-    url: origin ? `${origin}${path}` : path,
+  return paths.map((path) => ({
+    url: `${baseUrl}${path}`,
     changeFrequency: 'weekly',
-    priority: path === '/' ? 1 : 0.7
+    priority: path === '/' ? 1 : 0.8
   }))
 }

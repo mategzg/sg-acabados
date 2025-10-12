@@ -1,4 +1,4 @@
-import type { Locale } from '@/lib/i18n-config'
+import { defaultLocale, type Locale } from '@/lib/i18n-config'
 
 const ASSET_PREFIXES = ['/logos/', '/images/', '/descargas/', '/favicon'] as const
 
@@ -13,7 +13,7 @@ export function isAssetPath(path: string | null | undefined) {
 
 export function localizePath(locale: Locale, path: string) {
   if (!path) {
-    return `/${locale}`
+    return locale === defaultLocale ? '/' : `/${locale}`
   }
 
   if (
@@ -35,6 +35,14 @@ export function localizePath(locale: Locale, path: string) {
   }
 
   const normalized = path.startsWith('/') ? path : `/${path}`
+
+  if (normalized === '/') {
+    return locale === defaultLocale ? '/' : `/${locale}`
+  }
+
+  if (locale === defaultLocale) {
+    return normalized
+  }
 
   if (normalized === `/${locale}` || normalized.startsWith(`/${locale}/`)) {
     return normalized

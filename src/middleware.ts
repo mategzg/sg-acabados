@@ -1,49 +1,51 @@
-import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 
-const PUBLIC_FILE = /\.(.*)$/
-const IGNORED_PATHS = new Set([
+const EXCLUDE_PREFIXES = [
+  '/_next',
+  '/api',
+  '/favicon',
   '/robots.txt',
   '/sitemap.xml',
   '/sitemap-0.xml',
-  '/favicon.ico',
-  '/favicon.png'
-])
-const IGNORED_PREFIXES = ['/_next', '/api', '/_vercel']
-const LOCALES = new Set(['es', 'en'])
-const DEFAULT_LOCALE = 'es'
+  '/images',
+  '/logos',
+  '/og',
+  '/assets',
+  '/fonts'
+]
+
+const OTHER_LOCALES = ['en']
+const PUBLIC_FILE = /\.[^/]+$/
 
 export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl
+  const { pathname, search } = req.nextUrl
 
   if (
-    IGNORED_PATHS.has(pathname) ||
-    IGNORED_PREFIXES.some((prefix) => pathname.startsWith(prefix)) ||
+    EXCLUDE_PREFIXES.some((prefix) => pathname.startsWith(prefix)) ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next()
   }
 
-  const segments = pathname.split('/').filter(Boolean)
-  const locale = segments[0]
-
-  if (locale === DEFAULT_LOCALE) {
-    const url = req.nextUrl.clone()
-    const rest = segments.slice(1)
-    url.pathname = rest.length ? `/${rest.join('/')}` : '/'
+  if (pathname === '/es' || pathname.startsWith('/es/')) {
+    const stripped = pathname.replace(/^\/es(?=\/|$)/, '') || '/'
+    const url = new URL(`${stripped}${search}`, req.url)
     return NextResponse.redirect(url, 308)
   }
 
-  if (locale && LOCALES.has(locale)) {
+  if (OTHER_LOCALES.some((locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`))) {
     return NextResponse.next()
   }
 
-  const url = req.nextUrl.clone()
-  url.pathname = pathname === '/' ? `/${DEFAULT_LOCALE}` : `/${DEFAULT_LOCALE}${pathname}`
+  const targetPath = pathname === '/' ? '/es' : `/es${pathname}`
+  const target = new URL(`${targetPath}${search}`, req.url)
 
-  return NextResponse.rewrite(url)
+  return NextResponse.rewrite(target)
 }
 
 export const config = {
-  matcher: ['/:path*']
+  matcher: [
+    '/((?!_next|api|favicon|robots.txt|sitemap.xml|sitemap-0.xml|images|logos|og|assets|fonts).*)'
+  ]
 }

@@ -1,23 +1,16 @@
 import type { MetadataRoute } from 'next'
 
-function normalizeBase() {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, '') ?? ''
-  if (!raw) return ''
-  return raw.endsWith('/es') ? raw.slice(0, -3) : raw
+function resolveHost() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.sgsac.com'
+  return raw.replace(/\/+$/, '').replace(/\/es$/, '')
 }
 
 export default function robots(): MetadataRoute.Robots {
-  const origin = normalizeBase()
-  const sitemapUrl = origin ? `${origin}/sitemap.xml` : '/sitemap.xml'
+  const host = resolveHost()
 
-  const robotsConfig: MetadataRoute.Robots = {
+  return {
     rules: [{ userAgent: '*', allow: '/' }],
-    sitemap: [sitemapUrl]
+    sitemap: [`${host}/sitemap.xml`],
+    host
   }
-
-  if (origin) {
-    robotsConfig.host = origin
-  }
-
-  return robotsConfig
 }
