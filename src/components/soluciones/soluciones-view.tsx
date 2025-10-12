@@ -1,14 +1,15 @@
 ﻿"use client"
 
-import { useRef, useState } from "react"
+import { useRef } from "react"
 
 import { SegmentTabs, type SegmentTabsHandle } from "@/components/soluciones/segment-tabs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Section } from "@/components/section"
-import { track } from "@/lib/analytics"
 import type { SolutionsHero, SolutionsSegment } from "@/types/solutions"
+
+const containerClasses = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
 
 export type SolucionesViewProps = {
   hero: SolutionsHero
@@ -18,18 +19,16 @@ export type SolucionesViewProps = {
 
 export function SolucionesView({ hero, segments, defaultSegmentId }: SolucionesViewProps) {
   const segmentTabsRef = useRef<SegmentTabsHandle>(null)
-  const [activeSegment, setActiveSegment] = useState(defaultSegmentId)
 
   const handleHeroCta = () => {
-    track("click_solution_hero_cta", { segment: activeSegment })
     segmentTabsRef.current?.scrollToActive()
   }
 
   return (
-    <div className="space-y-space-2xl">
+    <div className="space-y-8 md:space-y-10 lg:space-y-12">
       <Section className="bg-white">
-        <div className="container grid gap-space-xl lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
-          <div className="space-y-space-md">
+        <div className={`${containerClasses} grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center`}>
+          <div className="space-y-4 md:space-y-6">
             <Badge variant="accent" className="w-fit">
               Soluciones
             </Badge>
@@ -37,11 +36,11 @@ export function SolucionesView({ hero, segments, defaultSegmentId }: SolucionesV
               {hero.title}
             </h1>
             <p className="max-w-2xl text-balance text-muted-foreground">{hero.subtitle}</p>
-            <Button size="lg" className="w-full sm:w-auto" onClick={handleHeroCta} aria-controls="segment-tabs">
+            <Button size="lg" className="w-full sm:w-auto" onClick={handleHeroCta} aria-controls="soluciones-tabs">
               {hero.cta}
             </Button>
           </div>
-          <Card className="space-y-space-sm rounded-3xl border border-border/70 bg-secondary/20 p-space-lg shadow-soft">
+          <Card className="space-y-2 rounded-3xl border border-border/70 bg-secondary/20 p-space-lg shadow-soft">
             <h2 className="font-heading text-xl font-semibold text-foreground">Qué incluye el servicio</h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>- Kickoff técnico y cronograma por especialidad</li>
@@ -52,14 +51,9 @@ export function SolucionesView({ hero, segments, defaultSegmentId }: SolucionesV
         </div>
       </Section>
 
-      <Section className="bg-white" id="segment-tabs">
-        <div className="container">
-          <SegmentTabs
-            ref={segmentTabsRef}
-            segments={segments}
-            defaultSegmentId={defaultSegmentId}
-            onSegmentChange={setActiveSegment}
-          />
+      <Section className="bg-white" id="soluciones-tabs">
+        <div className={`${containerClasses} space-y-8 md:space-y-10 lg:space-y-12`}>
+          <SegmentTabs ref={segmentTabsRef} segments={segments} defaultSegmentId={defaultSegmentId} />
         </div>
       </Section>
     </div>

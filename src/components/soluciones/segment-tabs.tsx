@@ -1,15 +1,16 @@
 ﻿"use client"
 
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react"
+import { forwardRef, useImperativeHandle, useRef, useState } from "react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 import { KitCard } from "@/components/soluciones/kit-card"
-import { LocalizedLink as Link } from "@/components/localized-link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { track } from "@/lib/analytics"
 import type { SolutionsSegment } from "@/types/solutions"
+
+import { LocalizedLink as Link } from "@/components/localized-link"
 
 export type SegmentTabsHandle = {
   scrollToActive: () => void
@@ -19,11 +20,10 @@ export type SegmentTabsHandle = {
 type SegmentTabsProps = {
   segments: SolutionsSegment[]
   defaultSegmentId: string
-  onSegmentChange?: (segmentId: string) => void
 }
 
 export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
-  ({ segments, defaultSegmentId, onSegmentChange }, ref) => {
+  ({ segments, defaultSegmentId }, ref) => {
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
@@ -34,11 +34,6 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
 
     const [activeSegment, setActiveSegment] = useState<string>(validInitial)
     const containerRef = useRef<HTMLDivElement | null>(null)
-
-    useEffect(() => {
-      onSegmentChange?.(validInitial)
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
     const updateQueryParam = (segmentId: string) => {
       const params = new URLSearchParams(searchParams?.toString())
@@ -54,7 +49,6 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
     const handleSegmentChange = (value: string) => {
       setActiveSegment(value)
       updateQueryParam(value)
-      onSegmentChange?.(value)
       track("select_segment", { segment: value })
     }
 
@@ -70,12 +64,12 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
     )
 
     return (
-      <div ref={containerRef} className="space-y-space-xl">
-        <Tabs value={activeSegment} onValueChange={handleSegmentChange} className="space-y-space-xl">
+      <div ref={containerRef} className="space-y-8 md:space-y-10 lg:space-y-12">
+        <Tabs value={activeSegment} onValueChange={handleSegmentChange} className="space-y-8 md:space-y-10 lg:space-y-12">
           <div className="overflow-x-auto">
-            <TabsList className="flex w-full min-w-max items-center gap-2 rounded-full bg-secondary/40 p-1">
+            <TabsList className="flex w-full min-w-max items-center gap-3 rounded-full bg-secondary/40 p-1">
               {segments.map((segment) => (
-                <TabsTrigger key={segment.id} value={segment.id} className="rounded-full px-5 py-2">
+                <TabsTrigger key={segment.id} value={segment.id} className="rounded-full px-6 py-2">
                   {segment.label}
                 </TabsTrigger>
               ))}
@@ -83,8 +77,8 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
           </div>
 
           {segments.map((segment) => (
-            <TabsContent key={segment.id} value={segment.id} className="space-y-space-xl">
-              <section className="space-y-space-md">
+            <TabsContent key={segment.id} value={segment.id} className="space-y-8 md:space-y-10 lg:space-y-12">
+              <section className="space-y-4">
                 <Badge variant="secondary" className="w-fit">
                   {segment.label}
                 </Badge>
@@ -102,23 +96,23 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
                 </div>
               </section>
 
-              <section className="space-y-space-md">
+              <section className="space-y-4">
                 <h3 className="font-heading text-lg font-semibold text-foreground">Kits listos para ejecutar</h3>
-                <div className="grid gap-space-md md:grid-cols-2 xl:grid-cols-3">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {segment.kits.map((kit) => (
-                    <KitCard key={`${segment.id}-${kit.name}`} kit={kit} />
+                    <KitCard key={`${segment.id}-${kit.name}`} kit={kit} segmentId={segment.id} />
                   ))}
                 </div>
               </section>
 
-              <div className="flex flex-col gap-space-sm md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div className="space-y-1">
                   <h4 className="font-heading text-lg font-semibold text-foreground">¿Necesitas una propuesta?</h4>
                   <p className="text-sm text-muted-foreground">
                     Agenda una llamada con el equipo SG o envía tu requerimiento para cotizar.
                   </p>
                 </div>
-                <div className="flex flex-col gap-space-sm md:flex-row">
+                <div className="flex flex-col gap-3 md:flex-row">
                   <Button asChild className="w-full md:w-auto">
                     <Link href={`/cotizar?segment=${segment.id}`} aria-label={`Solicitar cotización para ${segment.label}`}>
                       Solicitar cotización

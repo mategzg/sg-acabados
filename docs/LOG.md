@@ -1,1 +1,1 @@
-﻿Soluciones: UX simplificada (Corporativo, Inmobiliario, Particular) con intro, pains, kits y CTA a cotizar/contacto. Cómo probar: /soluciones.
+﻿Soluciones simplificada: tabs + dolores + kits + CTAs a /cotizar|/contacto; evidencia/formularios/benefits removidos.
