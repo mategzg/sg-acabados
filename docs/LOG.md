@@ -363,3 +363,4 @@ pm run build OK.
 - Proyectos: reordenados (° Aeropuerto, 2° VIDENA, 3° TECSUP). Cómo probar: /es/proyectos.
 - Dominio sgsac.com: middleware con rewrite / -> /es, redirect /es/*, robots/sitemap en raiz. Como probar: npm run dev; visitar /, /contacto y confirmar /es/* redirige y assets cargan.
 - Sitio raíz sin /es: middleware rewrite activo y redirect 308 desde /es/*; robots/sitemap/canonical actualizados. Cómo probar: https://www.sgsac.com/ (carga home) y https://www.sgsac.com/es/proyectos (redirige a /proyectos).
+- Header: logo ampliado y tagline actualizado (Más de 20 años cumpliendo). Cómo probar: https://www.sgsac.com/ (ver header).

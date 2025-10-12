@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from 'react'
 import { LocalizedLink as Link } from '@/components/localized-link'
@@ -33,10 +33,10 @@ export function Navbar() {
       <div className="container flex h-24 items-center justify-between gap-space-md">
         <Link href="/" className="inline-flex items-center gap-3 text-foreground" aria-label="SG Acabados">
           <span className="flex items-center justify-center">
-            <Logo width={220} height={88} />
+            <Logo width={260} height={104} />
           </span>
           <span className="hidden sm:flex flex-col items-center leading-tight">
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center">Más de 20 años cumpliendo en Perú</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center">Más de 20 años cumpliendo</span>
           </span>
         </Link>
 
@@ -135,3 +135,4 @@ export function Navbar() {
     </header>
   )
 }
+
