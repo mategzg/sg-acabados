@@ -1,23 +1,26 @@
-﻿import { Suspense } from 'react'
-import { notFound } from 'next/navigation'
-import type { Metadata } from 'next'
+﻿import { Suspense } from "react"
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 
-import { SolutionsIntentRouter } from '@/components/solutions/solutions-intent-router'
-import { getProjects } from '@/lib/content'
-import { getSolutionsContent, getSolutionsSegment } from '@/lib/solutions-intent'
-import { locales, type Locale } from '@/lib/i18n-config'
-import { createMetadata } from '@/lib/seo'
-import type { SolutionsProjectCard } from '@/types/solutions'
+import { SolucionesView } from "@/components/soluciones/soluciones-view"
+import type { SegmentWithProjects } from "@/components/soluciones/segment-tabs"
+import { getProjects } from "@/lib/content"
+import { getSolutionsContent, getSolutionsSegment } from "@/lib/solutions-intent"
+import { locales, type Locale } from "@/lib/i18n-config"
+import { createMetadata } from "@/lib/seo"
+import type { SolutionsProjectCard } from "@/types/solutions"
+
+import { siteConfig } from "@/config/site"
 
 const FALLBACK_IMAGE = {
-  src: '/images/placeholders/generic-card.webp',
-  alt: 'Proyecto de referencia en preparación'
+  src: "/images/placeholders/generic-card.webp",
+  alt: "Proyecto de referencia en preparación"
 }
 
 function humanizeSlug(value: string) {
   return value
-    .replace(/[-_]+/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
     .trim()
     .replace(/\b\w/g, (char) => char.toUpperCase())
 }
@@ -50,9 +53,9 @@ function mapEvidenceSlugs(
     return {
       slug: rawSlug,
       name: humanizeSlug(rawSlug),
-      summary: 'Pronto publicaremos la ficha completa de este proyecto.',
-      href: '/proyectos',
-      sector: 'Referencia',
+      summary: "Pronto publicaremos la ficha completa de este proyecto.",
+      href: "/proyectos",
+      sector: "Referencia",
       image: FALLBACK_IMAGE
     }
   })
@@ -78,8 +81,8 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
   if (!segment) {
     return createMetadata({
       locale: params.locale,
-      title: 'Solución no disponible',
-      description: 'La página solicitada no está disponible.',
+      title: "Solución no disponible",
+      description: "La página solicitada no está disponible.",
       path: `/soluciones/${params.sector}`
     })
   }
@@ -106,16 +109,21 @@ export default async function SegmentPage({ params }: SegmentPageProps) {
   }
 
   const projects = await getProjects()
-  const segmentsWithProjects = content.segments.map((item) => ({
+  const whatsappBase = siteConfig.whatsapp.link
+
+  const segments: SegmentWithProjects[] = content.segments.map((item) => ({
     ...item,
-    projects: mapEvidenceSlugs(item.evidenceSlugs, projects)
+    projects: mapEvidenceSlugs(item.evidenceSlugs, projects),
+    formId: `soluciones-form-${item.id}`,
+    whatsappHref: `${whatsappBase}?text=${encodeURIComponent(`Quiero cotizar (${item.id}) desde /soluciones`)}`
   }))
 
   return (
     <Suspense fallback={null}>
-      <SolutionsIntentRouter
+      <SolucionesView
         hero={content.hero}
-        segments={segmentsWithProjects}
+        segments={segments}
+        benefitsBar={content.benefitsBar}
         defaultSegmentId={segment.id}
       />
     </Suspense>

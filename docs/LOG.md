@@ -366,3 +366,4 @@ pm run build OK.
 - Header: logo ampliado y tagline actualizado (Más de 20 años cumpliendo). Cómo probar: https://www.sgsac.com/ (ver header).
 - Home: sincronizado con Productos (6 familias actualizadas) y Proyectos destacados (Aeropuerto, VIDENA, TECSUP). Cómo probar: / (botones enlazan a /productos/<slug>).
 - Soluciones: router por segmento (Corporativo/Inmobiliario/Particular) con formularios segmentados y GA activos. Cómo probar: /soluciones (tabs + formulario por segmento).
+- Soluciones: router de intención con tabs (Corporativo/Inmobiliario/Particular), formularios segmentados y GA (kit clicks + leads). Cómo probar: /soluciones (tabs actualizan query, CTA hero y formularios envían a /api/lead).

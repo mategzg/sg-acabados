@@ -15,22 +15,85 @@
         "Cumplimiento técnico (seguridad, acústica, limpieza, NFPA/HVAC cuando aplique)."
       ],
       "kits": [
-        { "name": "Oficinas", "items": ["Pisos vinílicos/SPC", "Iluminación interior", "Cortinas screen", "Sillería operativa", "Cielos modulares"] },
-        { "name": "Retail", "items": ["Porcelanato alto tránsito", "Iluminación decorativa/escénica", "Cortinas/persianas", "Mobiliario a medida"] },
-        { "name": "Salud", "items": ["Pisos conductivos", "Cielos sanitarios", "Puertas herméticas", "HVAC con presiones diferenciales"] },
-        { "name": "Educación", "items": ["Vinílico/alfombra modular", "Iluminación homogénea", "Cortinas"] },
-        { "name": "Industrial", "items": ["Pisos epóxicos o porcelanato técnico", "Iluminación industrial", "Control solar exterior"] },
-        { "name": "Aeropuertos / Transporte", "items": ["Control solar (celosías/lamas)", "Pisos de alto desempeño", "Audio/evacuación"] }
+        {
+          "name": "Oficinas",
+          "items": [
+            "Pisos vinílicos/SPC",
+            "Iluminación interior",
+            "Cortinas screen"
+          ]
+        },
+        {
+          "name": "Retail",
+          "items": [
+            "Porcelanato alto tránsito",
+            "Iluminación decorativa/escénica",
+            "Cortinas/persianas"
+          ]
+        },
+        {
+          "name": "Salud",
+          "items": [
+            "Pisos conductivos",
+            "Cielos sanitarios",
+            "Puertas herméticas"
+          ]
+        },
+        {
+          "name": "Educación",
+          "items": [
+            "Vinílico/alfombra modular",
+            "Iluminación homogénea",
+            "Cortinas"
+          ]
+        },
+        {
+          "name": "Industrial",
+          "items": [
+            "Pisos epóxicos o porcelanato técnico",
+            "Iluminación industrial",
+            "Control solar exterior"
+          ]
+        },
+        {
+          "name": "Aeropuertos / Transporte",
+          "items": [
+            "Control solar (celosías/lamas)",
+            "Pisos de alto desempeño",
+            "Audio/evacuación"
+          ]
+        }
       ],
       "evidenceSlugs": ["jorge-chavez", "cineplanet-cayma", "clinica-arequipa"],
       "form": {
-        "fields": ["empresa","nombre","email","telefono","ciudad","area_m2","uso_sector","plazo_objetivo","presupuesto_pen_m2","fileUrl","comentarios"],
+        "fields": [
+          "empresa",
+          "nombre",
+          "email",
+          "telefono",
+          "ciudad",
+          "area_m2",
+          "uso_sector",
+          "plazo_objetivo",
+          "presupuesto_pen_m2",
+          "fileUrl",
+          "comentarios"
+        ],
         "cta": "Solicitar cotización"
       },
       "faqs": [
-        { "q": "¿En cuánto tiempo cotizan?", "a": "Enviamos propuesta técnica y económica en 24 h hábiles con alcance y plazos." },
-        { "q": "¿Trabajan en operación?", "a": "Sí. Ejecutamos con planes de seguridad, limpieza y horarios coordinados." },
-        { "q": "¿Qué especialidades coordinan?", "a": "Pisos, iluminación, control solar, mobiliario y sistemas (HVAC, NFPA, CCTV, audio)." }
+        {
+          "q": "¿En cuánto tiempo cotizan?",
+          "a": "Enviamos propuesta técnica y económica en 24 h hábiles con alcance y plazos."
+        },
+        {
+          "q": "¿Trabajan en operación?",
+          "a": "Sí. Ejecutamos con planes de seguridad, limpieza y horarios coordinados."
+        },
+        {
+          "q": "¿Qué especialidades coordinan?",
+          "a": "Pisos, iluminación, control solar, mobiliario y sistemas (HVAC, NFPA, CCTV, audio)."
+        }
       ]
     },
     {
@@ -43,19 +106,61 @@
         "Logística y postventa documentada."
       ],
       "kits": [
-        { "name": "Departamentos (tipologías)", "items": ["SPC/Laminado en áreas secas", "Porcelanato en húmedos", "Cortinas screen/blackout", "Iluminación interior", "Ventanas termoacústicas (si aplica)"] },
-        { "name": "Áreas comunes", "items": ["Porcelanato antideslizante", "Iluminación exterior/interior", "Control solar en lobby", "Mobiliario de sala/recepción"] },
-        { "name": "Equipamientos (auditorio/sala multiuso)", "items": ["Revestimiento acústico", "Iluminación dimmable", "Butacas"] }
+        {
+          "name": "Departamentos (tipologías)",
+          "items": [
+            "SPC/Laminado en áreas secas",
+            "Porcelanato en húmedos",
+            "Cortinas screen/blackout"
+          ]
+        },
+        {
+          "name": "Áreas comunes",
+          "items": [
+            "Porcelanato antideslizante",
+            "Iluminación exterior/interior",
+            "Control solar en lobby"
+          ]
+        },
+        {
+          "name": "Equipamientos (auditorio/sala multiuso)",
+          "items": [
+            "Revestimiento acústico",
+            "Iluminación dimmable",
+            "Butacas"
+          ]
+        }
       ],
       "evidenceSlugs": ["edificio-luxus", "rio-alto", "agrega-city-center"],
       "form": {
-        "fields": ["empresa","nombre","email","telefono","ciudad","unidades","areas_comunes_m2","plazo_obra","presupuesto_pen_m2","fileUrl","comentarios"],
+        "fields": [
+          "empresa",
+          "nombre",
+          "email",
+          "telefono",
+          "ciudad",
+          "unidades",
+          "areas_comunes_m2",
+          "plazo_obra",
+          "presupuesto_pen_m2",
+          "fileUrl",
+          "comentarios"
+        ],
         "cta": "Solicitar propuesta para proyecto inmobiliario"
       },
       "faqs": [
-        { "q": "¿Cómo manejan tipologías?", "a": "Definimos fichas por tipología con materiales, rendimientos y precios por metro cuadrado." },
-        { "q": "¿Incluyen postventa?", "a": "Sí. Entregamos documentación y atendemos incidencias según garantía." },
-        { "q": "¿Pueden integrarse a cronogramas BIM?", "a": "Coordinamos con la planificación y restricciones de obra del cliente." }
+        {
+          "q": "¿Cómo manejan tipologías?",
+          "a": "Definimos fichas por tipología con materiales, rendimientos y precios por metro cuadrado."
+        },
+        {
+          "q": "¿Incluyen postventa?",
+          "a": "Sí. Entregamos documentación y atendemos incidencias según garantía."
+        },
+        {
+          "q": "¿Pueden integrarse a cronogramas BIM?",
+          "a": "Coordinamos con la planificación y restricciones de obra del cliente."
+        }
       ]
     },
     {
@@ -68,20 +173,66 @@
         "Precio claro y garantía."
       ],
       "kits": [
-        { "name": "Sala / Dormitorios", "items": ["SPC/Laminado", "Cortinas screen/blackout", "Iluminación cálida"] },
-        { "name": "Cocina / Baño", "items": ["Porcelanato", "Cortinas resistentes a humedad"] },
-        { "name": "Terraza", "items": ["Toldos/parasoles", "Iluminación exterior"] }
+        {
+          "name": "Sala / Dormitorios",
+          "items": [
+            "SPC/Laminado",
+            "Cortinas screen/blackout",
+            "Iluminación cálida"
+          ]
+        },
+        {
+          "name": "Cocina / Baño",
+          "items": [
+            "Porcelanato",
+            "Cortinas resistentes a humedad",
+            "Iluminación puntual"
+          ]
+        },
+        {
+          "name": "Terraza",
+          "items": [
+            "Toldos/parasoles",
+            "Iluminación exterior",
+            "Revestimientos antiderrapantes"
+          ]
+        }
       ],
       "evidenceSlugs": ["oficinas-city-center", "cineplanet-cayma", "aeropuerto-jorge-chavez"],
       "form": {
-        "fields": ["nombre","email","telefono","ciudad","tipo_vivienda","ambientes","presupuesto_pen_total","plazo_objetivo","fileUrl","comentarios"],
-        "cta": "Solicitar propuesta residencial"
+        "fields": [
+          "nombre",
+          "email",
+          "telefono",
+          "ciudad",
+          "ambiente",
+          "area_m2",
+          "presupuesto_pen_m2",
+          "comentarios"
+        ],
+        "cta": "Solicitar cotización"
       },
       "faqs": [
-        { "q": "¿Coordinan instalaciones fuera de horario?", "a": "Sí. Programamos visitas y montajes según tu disponibilidad incluyendo noches o fines de semana." },
-        { "q": "¿Puedo ver muestras antes de comprar?", "a": "Llevamos catálogos y muestras para definir colores y texturas antes de instalar." },
-        { "q": "¿Qué garantía ofrecen?", "a": "Garantía escrita por familia de productos y visitas post instalación para inspeccionar acabados." }
+        {
+          "q": "¿Cuánto demora?",
+          "a": "Medición en sitio y instalación en 48-72 h según disponibilidad."
+        },
+        {
+          "q": "¿Cómo cotizan?",
+          "a": "Referencias desde S/ por metro (material + instalación), sujeto a visita."
+        },
+        {
+          "q": "¿Incluye garantía?",
+          "a": "Sí, garantía por escrito según material e instalación."
+        }
       ]
     }
+  ],
+  "benefitsBar": [
+    "Plazos garantizados",
+    "Un solo responsable",
+    "Ejecución limpia",
+    "Presupuesto en PEN",
+    "Posventa documentada"
   ]
 }

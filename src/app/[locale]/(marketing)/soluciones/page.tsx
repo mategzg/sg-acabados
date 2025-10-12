@@ -1,11 +1,14 @@
 ﻿import { Suspense } from 'react'
 import type { Metadata } from 'next'
 
-import { SolutionsIntentRouter } from '@/components/solutions/solutions-intent-router'
+import { SolucionesView } from '@/components/soluciones/soluciones-view'
+import type { SegmentWithProjects } from '@/components/soluciones/segment-tabs'
 import { getProjects } from '@/lib/content'
 import { getSolutionsContent } from '@/lib/solutions-intent'
 import { createMetadata } from '@/lib/seo'
 import type { SolutionsProjectCard } from '@/types/solutions'
+
+import { siteConfig } from '@/config/site'
 
 export const revalidate = 3600
 
@@ -81,26 +84,26 @@ type SolucionesPageProps = {
 export default async function SolucionesPage({ searchParams }: SolucionesPageProps) {
   const content = getSolutionsContent()
   const projects = await getProjects()
+  const whatsappBase = siteConfig.whatsapp.link
 
-  const segmentsWithProjects = content.segments.map((segment) => ({
+  const segments: SegmentWithProjects[] = content.segments.map((segment) => ({
     ...segment,
-    projects: mapEvidenceSlugs(segment.evidenceSlugs, projects)
+    projects: mapEvidenceSlugs(segment.evidenceSlugs, projects),
+    formId: `soluciones-form-${segment.id}`,
+    whatsappHref: `${whatsappBase}?text=${encodeURIComponent(`Quiero cotizar (${segment.id}) desde /soluciones`)}`
   }))
 
   const requestedSegmentId = searchParams?.segment
-  const validSegment = segmentsWithProjects.find((segment) => segment.id === requestedSegmentId)
+  const validSegment = segments.find((segment) => segment.id === requestedSegmentId)
 
   return (
     <Suspense fallback={null}>
-      <SolutionsIntentRouter
+      <SolucionesView
         hero={content.hero}
-        segments={segmentsWithProjects}
-        defaultSegmentId={validSegment?.id}
+        segments={segments}
+        benefitsBar={content.benefitsBar}
+        defaultSegmentId={validSegment?.id ?? segments[0]?.id ?? 'corporativo'}
       />
     </Suspense>
   )
 }
-
-
-
-

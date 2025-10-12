@@ -33,6 +33,7 @@ export type SolutionsSegment = {
 export type SolutionsContent = {
   hero: SolutionsHero
   segments: SolutionsSegment[]
+  benefitsBar: string[]
 }
 
 export type SolutionsProjectCard = {
@@ -47,3 +48,5 @@ export type SolutionsProjectCard = {
     alt: string
   }
 }
+
+

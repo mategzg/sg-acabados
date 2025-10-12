@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.sgsac.com/en/politica-privacidad</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/politica-privacidad</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com</loc><changefreq>weekly</changefreq><priority>1</priority></url>
 <url><loc>https://www.sgsac.com/en/productos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/productos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/en/terminos-condiciones</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/terminos-condiciones</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com</loc><changefreq>weekly</changefreq><priority>1</priority></url>
-<url><loc>https://www.sgsac.com/sitemap.xml</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/robots.txt</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/contacto</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/contacto</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/terminos-condiciones</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/terminos-condiciones</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/sitemap.xml</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/robots.txt</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/productos/control-solar-arquitectonico</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/productos/iluminacion</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/productos/mobiliario</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -24,6 +22,8 @@
 <url><loc>https://www.sgsac.com/productos/recubrimiento-ventanas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/productos/sistemas-integrales</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/politica-privacidad</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/politica-privacidad</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/proyectos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/proyectos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/nosotros</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -34,6 +34,16 @@
 <url><loc>https://www.sgsac.com/soluciones/corporativo</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/soluciones/inmobiliario</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/soluciones/particular</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/proyectos/aeropuerto-jorge-chavez</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/proyectos/cineplanet-cayma</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/proyectos/clinica-arequipa</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/proyectos/oficinas-city-center</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/en/proyectos/videna-centro-deportivo</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/proyectos/aeropuerto-jorge-chavez</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/proyectos/cineplanet-cayma</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/proyectos/clinica-arequipa</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/proyectos/oficinas-city-center</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.sgsac.com/proyectos/videna-centro-deportivo</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/productos/control-solar/celosias-arquitectonicas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/productos/iluminacion/iluminacion-interior</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/en/productos/mobiliario/silleria-operativa</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -48,14 +58,4 @@
 <url><loc>https://www.sgsac.com/productos/recubrimientos-ventanas/cortinas-screen</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/productos/sistemas-integrales/aire-acondicionado</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.sgsac.com/productos/slug-de-la-familia/nombre-subfamilia</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/en/proyectos/aeropuerto-jorge-chavez</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/en/proyectos/cineplanet-cayma</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/en/proyectos/clinica-arequipa</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/en/proyectos/oficinas-city-center</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/en/proyectos/videna-centro-deportivo</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/proyectos/aeropuerto-jorge-chavez</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/proyectos/cineplanet-cayma</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/proyectos/clinica-arequipa</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/proyectos/oficinas-city-center</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://www.sgsac.com/proyectos/videna-centro-deportivo</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
