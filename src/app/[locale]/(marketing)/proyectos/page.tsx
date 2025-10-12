@@ -31,7 +31,7 @@ export default function ProyectosPage() {
   const metrics = [
     { label: 'Metros intervenidos', value: `${formatter.format(totalArea)} m` },
     { label: 'Duración promedio', value: '8 semanas' },
-    { label: 'Especialidades por proyecto', value: averageSpecialties.toFixed(1) }
+    { label: 'Especialidades proyecto', value: averageSpecialties.toFixed(1) }
   ]
 
   return (
