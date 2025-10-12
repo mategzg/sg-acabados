@@ -87,6 +87,7 @@ export function ServicesSection() {
                 <div className="mt-auto pt-space-sm">
                   <Link
                     href={service.href}
+                    aria-label={`Ver detalles de ${service.title}`}
                     className="text-sm font-semibold text-primary underline-offset-4 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                   >
                     Ver detalles
