@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { Clock4, Layers3, Ruler, Sparkles, Stethoscope } from 'lucide-react'
+import { Clock4, Layers3, MapPin, Ruler, Sparkles } from 'lucide-react'
 
 export type ProjectMetric = {
   label: string
@@ -20,50 +20,51 @@ export type FeaturedProject = {
 export const featuredProjects: FeaturedProject[] = [
   {
     id: 'jorge-chavez',
-    name: 'Aeropuerto Jorge Chavez',
-    sector: 'Aeropuertos',
-    summary: 'Renovacion de salas de embarque con pisos vinilicos, control solar y sistemas de audio evac.',
+    name: 'Aeropuerto Internacional Jorge Chávez  Ampliación',
+    sector: 'Aeropuertos y transporte',
+    summary: 'Suministro e instalación de tabiquería de drywall para el terminal del proyecto de ampliación.',
     metrics: [
       { label: 'Metros intervenidos', value: '3 200 m2', icon: Ruler },
-      { label: 'Especialidades', value: 'Pisos, audio, control solar', icon: Layers3 },
+      { label: 'Especialidades', value: 'Tabiquería drywall', icon: Layers3 },
       { label: 'Plazo', value: '8 semanas', icon: Clock4 }
     ],
     image: {
       src: '/images/proyectos/aeropuerto-jorge-chavez-1.jpg',
-      alt: 'Hall del aeropuerto Jorge Chavez con acabados SG'
+      alt: 'Sala de embarque renovada en el aeropuerto Jorge Chávez'
     },
     href: '/proyectos/aeropuerto-jorge-chavez'
   },
   {
-    id: 'cineplanet-cayma',
-    name: 'Cineplanet Cayma',
-    sector: 'Retail',
-    summary: 'Implementacion integral de salas premium con butacas, iluminacion y revestimientos acusticos.',
+    id: 'videna-control-solar',
+    name: 'VIDENA  Sistema de Control Solar y de Vientos',
+    sector: 'Deportes / Infraestructura',
+    summary: 'Venta e instalación de sistemas de control solar y vientos con celosías de lamas orientables exteriores.',
     metrics: [
-      { label: 'Metros intervenidos', value: '1 450 m2', icon: Ruler },
-      { label: 'Especialidades', value: 'Mobiliario, iluminacion', icon: Sparkles },
-      { label: 'Plazo', value: '6 semanas', icon: Clock4 }
+      { label: 'Especialidades', value: 'Control solar, celosías orientables', icon: Layers3 },
+      { label: 'Ubicación', value: 'San Luis, Lima', icon: MapPin },
+      { label: 'Entrega', value: 'Junio 2019', icon: Clock4 }
     ],
     image: {
-      src: '/images/proyectos/cineplanet-cayma-1.jpg',
-      alt: 'Sala de cine Cineplanet Cayma con iluminacion indirecta'
+      src: '/images/proyectos/videna-centro-deportivo-1.jpg',
+      alt: 'Celosías orientables instaladas en la VIDENA'
     },
-    href: '/proyectos/cineplanet-cayma'
+    href: '/proyectos/videna-centro-deportivo'
   },
   {
-    id: 'clinica-arequipa',
-    name: 'Clinica Arequipa',
-    sector: 'Salud',
-    summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en areas criticas de hospitalizacion.',
+    id: 'tecsup-auditorio',
+    name: 'TECSUP  Auditorio (Sede Arequipa)',
+    sector: 'Educación',
+    summary: 'Construcción de auditorio con tabiquería, cielos rasos, recubrimiento de pisos, butacas e iluminación.',
     metrics: [
-      { label: 'Metros intervenidos', value: '2 100 m2', icon: Ruler },
-      { label: 'Especialidades', value: 'Pisos, HVAC, carpinteria', icon: Stethoscope },
-      { label: 'Plazo', value: '10 semanas', icon: Clock4 }
+      { label: 'Alcance', value: 'Auditorio sede Arequipa', icon: Layers3 },
+      { label: 'Especialidades', value: 'Tabiquería, cielos, butacas', icon: Sparkles },
+      { label: 'Entrega', value: '2017', icon: Clock4 }
     ],
     image: {
-      src: '/images/proyectos/clinica-arequipa-1.jpg',
-      alt: 'Pasillo de la Clinica Arequipa con acabados sanitarios'
+      src: '/images/placeholders/generic-card.webp',
+      alt: 'Vista referencial de auditorio TECSUP en Arequipa'
     },
-    href: '/proyectos/clinica-arequipa'
+    href: '/cotizar?proyecto=tecsup-auditorio-arequipa'
   }
 ]
+

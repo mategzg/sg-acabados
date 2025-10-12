@@ -1,10 +1,55 @@
-﻿import { LocalizedLink as Link } from '@/components/localized-link'
+import type { LucideIcon } from 'lucide-react'
+import { Armchair, Building2, Layers3, Lightbulb, Settings2, SunMedium } from 'lucide-react'
 
-import { services } from '@/data/services'
+import { LocalizedLink as Link } from '@/components/localized-link'
 import { Section } from '@/components/section'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { getProductFamilies } from '@/lib/product-taxonomy'
+
+const FAMILY_ORDER = [
+  'pisos',
+  'iluminacion',
+  'recubrimiento-ventanas',
+  'control-solar-arquitectonico',
+  'mobiliario',
+  'sistemas-integrales'
+] as const
+
+const iconBySlug: Record<string, LucideIcon> = {
+  pisos: Layers3,
+  iluminacion: Lightbulb,
+  'recubrimiento-ventanas': Building2,
+  'control-solar-arquitectonico': SunMedium,
+  mobiliario: Armchair,
+  'sistemas-integrales': Settings2
+}
+
+type FamilyCard = {
+  id: string
+  title: string
+  description: string
+  href: string
+  icon: LucideIcon
+}
+
+const productFamilies = getProductFamilies()
+
+const familyCards: FamilyCard[] = FAMILY_ORDER.map((slug) => {
+  const family = productFamilies.find((item) => item.slug === slug)
+  if (!family) {
+    return null
+  }
+
+  return {
+    id: family.slug,
+    title: family.titulo,
+    description: family.intro,
+    href: `/productos/${family.slug}`,
+    icon: iconBySlug[slug] ?? Layers3
+  }
+}).filter((item): item is FamilyCard => item !== null)
 
 export function ServicesSection() {
   return (
@@ -25,7 +70,7 @@ export function ServicesSection() {
           </Button>
         </div>
         <div className="grid gap-space-lg md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => {
+          {familyCards.map((service) => {
             const Icon = service.icon
             return (
               <Card
@@ -55,4 +100,3 @@ export function ServicesSection() {
     </Section>
   )
 }
-
