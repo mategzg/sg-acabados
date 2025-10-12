@@ -1,4 +1,4 @@
-# LOG  Progreso
+﻿# LOG  Progreso
 
 ## 2025-09-30
 
@@ -10,7 +10,7 @@
 - Tarea: Inventariar assets necesarios (logos, imagenes) y confirmar disponibilidad.
 - Archivos tocados: docs/PLAN.md; docs/LOG.md.
 - Como probar en localhost: No aplica; verificacion de archivos en /public.
-- Hallazgos clave: Existe /public/descargas/CATALOGO-SG-2024.pdf (5.2 MB). Directorio /public/images contiene 33 placeholders (hero, familias, sectores, proyectos, subfamilias, og). /public/logos esta vacio; falta logo-sg.png requerido desde ruta local del brief. No hay favicon en /public.
+- Hallazgos clave: Existe /public/descargas/CATALOGO-SG-2025.pdf (5.2 MB). Directorio /public/images contiene 33 placeholders (hero, familias, sectores, proyectos, subfamilias, og). /public/logos esta vacio; falta logo-sg.png requerido desde ruta local del brief. No hay favicon en /public.
 - Siguiente tarea: #3 Verificar configuracion de TypeScript (baseUrl/paths) y planificar ajustes.
 - Tarea: Verificar configuracion de TypeScript (baseUrl/paths) y planificar ajustes.
 - Archivos tocados: tsconfig.json (solo lectura); docs/PLAN.md; docs/LOG.md.
@@ -35,7 +35,7 @@
 - Tarea: Ajuste urgente pagina 404.
 - Archivos tocados: src/app/not-found.tsx.
 - Como probar en localhost: Navegar a una ruta inexistente (por ejemplo /ruta-inexistente) y verificar que la pagina 404 muestre textos sin caracteres corruptos y botones responsivos.
-- Hallazgos clave: Se reemplazaron caracteres mal codificados (PÃ¯Â¿Â½gina, cotizaciÃ¯Â¿Â½n) por texto ASCII y se ajusto el layout para que los CTAs respondan en mobile.
+- Hallazgos clave: Se reemplazaron caracteres mal codificados (PÃƒÂ¯Ã‚Â¿Ã‚Â½gina, cotizaciÃƒÂ¯Ã‚Â¿Ã‚Â½n) por texto ASCII y se ajusto el layout para que los CTAs respondan en mobile.
 - Siguiente tarea: #15 Redactar metadata (title/description) para Home en App Router.
 - Tarea: Restablecer Home en ruta raiz.
 - Archivos tocados: src/app/page.tsx.
@@ -55,7 +55,7 @@
 - Tarea: #15 Redactar metadata (title/description) para Home en App Router.
 - Archivos tocados: src/app/[locale]/(marketing)/page.tsx; docs/PLAN.md.
 - Como probar en localhost: Ejecutar npm run build o revisar el tag <head> en http://localhost:3000 para confirmar que title y meta description se actualizan.
-- Hallazgos clave: Se refinÃ³ el copy SEO destacando especialidades y se aÃ±adieron keywords orientadas a acabados corporativos.
+- Hallazgos clave: Se refinÃƒÂ³ el copy SEO destacando especialidades y se aÃƒÂ±adieron keywords orientadas a acabados corporativos.
 - Siguiente tarea: #16 Preparar estructura de datos para familias de productos (nombre, descripcion, CTA).
 - Tarea: #16 Preparar estructura de datos para familias de productos.
 - Archivos tocados: src/data/product-families.ts; docs/PLAN.md.
@@ -175,7 +175,7 @@
 - Tarea: #47-#50 Iconografia Lucide, focus visibles y normalizacion de imports absolutos.
 - Archivos tocados: src/data/projects.ts; src/components/home/featured-projects-section.tsx; src/components/catalog-banner.tsx; src/components/home/final-call-to-action.tsx; src/components/sticky-cta.tsx; src/app/[locale]/(marketing)/contacto/page.tsx; src/components/home/services-section.tsx; tsconfig.json; vitest.config.ts; multiples archivos en src/** actualizados a alias '/'.
 - Como probar en localhost: Revisar / (home) y /contacto para validar iconos nuevos, focus visibles y CTA con lectores de teclado; ejecutar npm run lint para confirmar que los nuevos alias se resuelven sin errores.
-- Hallazgos clave: Se sumaron iconos Lucide en CTA, proyectos y contacto para reforzar jerarquia visual; se aÃ±adieron focus rings consistentes y se verifico que componentes interactivos mantienen 'use client'; se migraron todos los imports de '@/Â…' a '/Â…' y se ajustaron tsconfig/vitest para reflejar el nuevo alias.
+- Hallazgos clave: Se sumaron iconos Lucide en CTA, proyectos y contacto para reforzar jerarquia visual; se aÃƒÂ±adieron focus rings consistentes y se verifico que componentes interactivos mantienen 'use client'; se migraron todos los imports de '@/Ã‚â€¦' a '/Ã‚â€¦' y se ajustaron tsconfig/vitest para reflejar el nuevo alias.
 - Siguiente tarea: #51 Normalizar contenido estatico (copys) segun brand guidelines.
 - Tarea: #51-#53 Normalizar copys, optimizar placeholders y validar navegacion por teclado.
 - Archivos tocados: src/app/[locale]/(marketing)/cotizar/page.tsx; src/data/solutions.ts; src/components/home/featured-projects-section.tsx; src/components/catalog-banner.tsx; src/components/home/final-call-to-action.tsx; src/components/sticky-cta.tsx; src/components/product-card.tsx; src/components/project-card.tsx; src/components/projects/project-showcase-card.tsx; src/components/subfamily-card.tsx; src/app/[locale]/(marketing)/productos/page.tsx; src/app/[locale]/(marketing)/productos/[familia]/page.tsx; src/app/[locale]/(marketing)/productos/[familia]/[sub]/page.tsx; src/app/[locale]/(marketing)/proyectos/[slug]/page.tsx; src/components/hero.tsx; src/components/layout/logo.tsx; src/components/quote-builder.tsx; src/components/faq.tsx; src/app/[locale]/(marketing)/nosotros/page.tsx; src/lib/images.ts; tsconfig.json; vitest.config.ts; multiples archivos en src/** por normalizacion ASCII y actualizacion de alias.
@@ -205,7 +205,7 @@
 - Tarea: #57 Registrar resultado de smoke test navegando todas las paginas en LOG.
 - Archivos tocados: docs/LOG.md.
 - Como probar en localhost: Iniciar 
-pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†’ Productos/[familia]/[sub] â†’ Soluciones â†’ Soluciones/[sector] â†’ Proyectos â†’ Proyectos/[slug] â†’ Nosotros â†’ Contacto â†’ Cotizar. En Contacto y Cotizar enviar formularios con datos ficticios y verificar toasts de exito/error; revisar consola del navegador por advertencias, y confirmar que los enlaces externos (WhatsApp, catÃ¡logo) abren en nueva pestaÃ±a.
+pm run dev y recorrer Home Ã¢â€ â€™ Productos Ã¢â€ â€™ Productos/[familia] Ã¢â€ â€™ Productos/[familia]/[sub] Ã¢â€ â€™ Soluciones Ã¢â€ â€™ Soluciones/[sector] Ã¢â€ â€™ Proyectos Ã¢â€ â€™ Proyectos/[slug] Ã¢â€ â€™ Nosotros Ã¢â€ â€™ Contacto Ã¢â€ â€™ Cotizar. En Contacto y Cotizar enviar formularios con datos ficticios y verificar toasts de exito/error; revisar consola del navegador por advertencias, y confirmar que los enlaces externos (WhatsApp, catÃƒÂ¡logo) abren en nueva pestaÃƒÂ±a.
 - Hallazgos clave: Smoke test pendiente de ejecucion manual (sin navegador en esta sesion); checklist documentado para que el equipo lo corra antes del release.
 - Siguiente tarea: #58 Documentar backlog v2 y mejoras futuras tras MVP-1D.
 
@@ -237,62 +237,62 @@ pm run dev y recorrer Home â†’ Productos â†’ Productos/[familia] â†
 - Archivos tocados: src/middleware.ts; src/components/localized-link.tsx; src/lib/routing.ts; src/lib/seo.ts; src/app/layout.tsx; src/app/sitemap.ts; docs/LOG.md.
 - Como probar en localhost:
   a) Entrar a `/` ? redirige 308 a `/es`.
-  b) Entrar a `/contacto` (sin `/es`) ? muestra página de contacto vía rewrite a `/es/contacto` (la URL se mantiene sin `/es`).
+  b) Entrar a `/contacto` (sin `/es`) ? muestra pÃ¡gina de contacto vÃ­a rewrite a `/es/contacto` (la URL se mantiene sin `/es`).
   c) Entrar a `/es/contacto` ? muestra igual contenido.
   d) Entrar a `/images/*` y `/api/*` ? NO se redirige ni se reescribe.
-  Extra: Verificar navegación en header/footer; los enlaces internos deben generar `href` con `/es/...` por defecto y no prefijar `/es` en assets de `public/` (ej. `/images/*`, `/logos/*`, `/descargas/*`).
-  SEO: Revisar tags `rel="canonical"` y `hreflang`; deben apuntar a URLs con prefijo `/es`. El sitemap (`/sitemap.xml`) debe listar rutas canónicas con `/es`.
+  Extra: Verificar navegaciÃ³n en header/footer; los enlaces internos deben generar `href` con `/es/...` por defecto y no prefijar `/es` en assets de `public/` (ej. `/images/*`, `/logos/*`, `/descargas/*`).
+  SEO: Revisar tags `rel="canonical"` y `hreflang`; deben apuntar a URLs con prefijo `/es`. El sitemap (`/sitemap.xml`) debe listar rutas canÃ³nicas con `/es`.
   Comando: `npm run build` debe terminar sin errores.
-- Hallazgos clave: Middleware ahora reescribe rutas sin locale a su equivalente `/es` y mantiene redirección 308 en `/`. `LocalizedLink` usa `defaultLocale` cuando no hay `params.locale`, generando `/es/...` por defecto y respetando assets estáticos. Metadata canónica y hreflang se fijan a `/es`, y el sitemap expone rutas con `/es` como canónicas. Build pasa en verde.
+- Hallazgos clave: Middleware ahora reescribe rutas sin locale a su equivalente `/es` y mantiene redirecciÃ³n 308 en `/`. `LocalizedLink` usa `defaultLocale` cuando no hay `params.locale`, generando `/es/...` por defecto y respetando assets estÃ¡ticos. Metadata canÃ³nica y hreflang se fijan a `/es`, y el sitemap expone rutas con `/es` como canÃ³nicas. Build pasa en verde.
 
-- Tarea: Preparación prod (Vercel): redirect raíz, SEO/OG base, robots/sitemap y headers de cache.
+- Tarea: PreparaciÃ³n prod (Vercel): redirect raÃ­z, SEO/OG base, robots/sitemap y headers de cache.
 - Archivos creados/alterados:
   - src/middleware.ts (redirect 308 de "/" a "/es"; matcher excluye _next, api, images, logos, favicons, robots y sitemap)
   - src/app/layout.tsx (Open Graph images apunta a '/images/og/sg-acabados.svg')
   - src/app/robots.ts (usa NEXT_PUBLIC_SITE_URL; reglas allow '/'; sitemap opcional)
-  - src/app/sitemap.ts (lista estática canónica bajo '/es' con frecuencia semanal y prioridades)
+  - src/app/sitemap.ts (lista estÃ¡tica canÃ³nica bajo '/es' con frecuencia semanal y prioridades)
   - next.config.mjs (headers de cache para '/images/*' y '/logos/*')
   - public/images/og/sg-acabados.svg (placeholder OG)
-- Cómo probar:
+- CÃ³mo probar:
   - Abrir '/' ? redirige 308 a '/es'.
-  - Navegación bajo '/es' funciona completa (home, productos, soluciones, proyectos, contacto, cotizar).
+  - NavegaciÃ³n bajo '/es' funciona completa (home, productos, soluciones, proyectos, contacto, cotizar).
   - '/images/*' y '/api/*' no sufren redirecciones ni rewrites.
   - Revisar <head>: Open Graph images incluye '/images/og/sg-acabados.svg'.
   - Verificar '/sitemap.xml' y '/robots.txt' utilizan NEXT_PUBLIC_SITE_URL.
 - Build: 
 pm run build OK.
-- Tarea: Rediseñar bloque "Sedes y cobertura" en Nosotros con Card 2-col, badges e íconos accesibles.
+- Tarea: RediseÃ±ar bloque "Sedes y cobertura" en Nosotros con Card 2-col, badges e Ã­conos accesibles.
 - Archivos tocados: src/app/[locale]/(marketing)/nosotros/page.tsx; src/components/sections/sedes-cobertura.tsx; src/components/ui/separator.tsx; docs/LOG.md.
 - Como probar en localhost: npm run build; navegar a /es/nosotros y validar la tarjeta (badges de cobertura, CTAs, mapa referencial con pin, checks secundarios y focos accesibles en botones/enlaces).
-- Hallazgos clave: Nuevo componente client reutiliza datos de siteConfig para contacto, integra LocalizedLink con locale "es", crea separador shadcn y patrón CSS con variables de tema para el mapa.
+- Hallazgos clave: Nuevo componente client reutiliza datos de siteConfig para contacto, integra LocalizedLink con locale "es", crea separador shadcn y patrÃ³n CSS con variables de tema para el mapa.
 - Siguiente tarea: No aplica (entregado).
 - Tarea: Ajuste final "Sedes y cobertura" en Nosotros (estructura balanceada, nuevo bloque visual).
 - Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
-- Como probar en localhost: npm run build; abrir /es/nosotros en sm (360px), md (768px) y lg (1280px); verificar Card 2-col balanceada, columna derecha compacta con ícono Globe2 y lista de checks, badges neutrales, botones accesibles.
-- Hallazgos clave: Se compactó la columna derecha con Card interior y lista CheckCircle, badges usan bg-neutral-100, botones outline equilibran visualmente y alturas quedan pareadas en md+.
-- Tarea: Simplificar sección "Sedes y cobertura" con layout balanceado y textos UTF-8.
+- Como probar en localhost: npm run build; abrir /es/nosotros en sm (360px), md (768px) y lg (1280px); verificar Card 2-col balanceada, columna derecha compacta con Ã­cono Globe2 y lista de checks, badges neutrales, botones accesibles.
+- Hallazgos clave: Se compactÃ³ la columna derecha con Card interior y lista CheckCircle, badges usan bg-neutral-100, botones outline equilibran visualmente y alturas quedan pareadas en md+.
+- Tarea: Simplificar secciÃ³n "Sedes y cobertura" con layout balanceado y textos UTF-8.
 - Archivos tocados: src/components/sections/sedes-cobertura.tsx; docs/LOG.md.
-- Como probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en móviles (=640px), md (768px) y desktop (=1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
-- Hallazgos clave: Se eliminó el mapa ficticio, se usó un section sencillo con grid 2-col, se normalizaron acentos (Operación, cotización) y se reutilizaron datos de contacto existentes en siteConfig.
+- Como probar en localhost: npm run build; navegar a /es/nosotros y revisar el bloque "Sedes y cobertura" en mÃ³viles (=640px), md (768px) y desktop (=1024px) verificando columnas equilibradas, badges legibles, lista de checks y botones con foco accesible.
+- Hallazgos clave: Se eliminÃ³ el mapa ficticio, se usÃ³ un section sencillo con grid 2-col, se normalizaron acentos (OperaciÃ³n, cotizaciÃ³n) y se reutilizaron datos de contacto existentes en siteConfig.
 ## 2025-10-10
 
-- Tarea: Integrar widget de chatbot Zapier como fallback público.
+- Tarea: Integrar widget de chatbot Zapier como fallback pÃºblico.
 - Archivos tocados: src/components/chatbot/fallback-widget.tsx; src/components/chatbot/widget.tsx; src/app/layout.tsx; next.config.mjs; docs/LOG.md.
-- Env requerida: NEXT_PUBLIC_ZAPIER_PUBLIC_URL (URL pública de Zapier Interfaces).
-- Cómo probar en localhost: Definir NEXT_PUBLIC_ZAPIER_PUBLIC_URL en .env.local; ejecutar npm run dev; confirmar botón flotante bottom-right, panel abre/cierra con animación, se recuerda estado tras reload, soporta ESC y foco inicial; en /es/cotizar no se ve; eliminar o vaciar la variable para ver warning y widget oculto.
-- Como validar en produccion: Confirmar que Vercel inyecta el iframe sin CSP bloqueada, probar fallback Abrir chat si el iframe falla, verificar build automático tras push.
-- Nota: El enlace público de Zapier no requiere dominios permitidos; si X-Frame-Options bloquea la carga, usar la opción Abrir chat en nueva pestaña.
+- Env requerida: NEXT_PUBLIC_ZAPIER_PUBLIC_URL (URL pÃºblica de Zapier Interfaces).
+- CÃ³mo probar en localhost: Definir NEXT_PUBLIC_ZAPIER_PUBLIC_URL en .env.local; ejecutar npm run dev; confirmar botÃ³n flotante bottom-right, panel abre/cierra con animaciÃ³n, se recuerda estado tras reload, soporta ESC y foco inicial; en /es/cotizar no se ve; eliminar o vaciar la variable para ver warning y widget oculto.
+- Como validar en produccion: Confirmar que Vercel inyecta el iframe sin CSP bloqueada, probar fallback Abrir chat si el iframe falla, verificar build automÃ¡tico tras push.
+- Nota: El enlace pÃºblico de Zapier no requiere dominios permitidos; si X-Frame-Options bloquea la carga, usar la opciÃ³n Abrir chat en nueva pestaÃ±a.
 - Tarea: Actualizar widget a Zapier Interfaces oficial.
-- Archivos tocados: src/components/chatbot/zapier-widget.tsx; src/app/layout.tsx; next.config.mjs; docs/LOG.md (se retiró el fallback anterior).
+- Archivos tocados: src/components/chatbot/zapier-widget.tsx; src/app/layout.tsx; next.config.mjs; docs/LOG.md (se retirÃ³ el fallback anterior).
 - Envs requeridas: NEXT_PUBLIC_ZAPIER_CHATBOT_ID, NEXT_PUBLIC_ZAPIER_EMBED_SRC.
-- Cómo probar en localhost: definir ambas envs en .env.local, ejecutar npm run dev, navegar a /es (widget visible) y /es/cotizar (oculto); abrir consola para asegurar ausencia de errores/CSP; validar que el script no se inserta duplicado y que convivie con #whatsapp-fab.
-- Cómo validar en producción: confirmar variables en Vercel, revisar deployment para ver el popup y que no se superpone al FAB de WhatsApp; revisar headers si hubiese bloqueos de CSP (ajustar script-src en next.config.mjs si cambia el dominio de Zapier).
+- CÃ³mo probar en localhost: definir ambas envs en .env.local, ejecutar npm run dev, navegar a /es (widget visible) y /es/cotizar (oculto); abrir consola para asegurar ausencia de errores/CSP; validar que el script no se inserta duplicado y que convivie con #whatsapp-fab.
+- CÃ³mo validar en producciÃ³n: confirmar variables en Vercel, revisar deployment para ver el popup y que no se superpone al FAB de WhatsApp; revisar headers si hubiese bloqueos de CSP (ajustar script-src en next.config.mjs si cambia el dominio de Zapier).
 
 
 - Tarea: Endurecer widget Zapier (offset FABs, modo debug, CSP).
 - Archivos tocados: src/components/chatbot/zapier-widget.tsx; next.config.mjs; docs/LOG.md.
-- Cómo probar en localhost: definir NEXT_PUBLIC_ZAPIER_CHATBOT_ID y NEXT_PUBLIC_ZAPIER_EMBED_SRC en .env.local; ejecutar npm run dev; navegar a /es?debug=chatbot y revisar consola (console.table con id/src, logs de script/embed/offset); confirmar que el FAB baja a bottom-24 si existen #whatsapp-fab o #cta-fab; visitar /es/cotizar para confirmar widget oculto.
-- Cómo validar en producción: comprobar que CSP permite cargar https://interfaces.zapier.com (sin errores en consola); verificar offsets en dispositivos móviles y desktop; usar parámetro ?debug=chatbot en la URL de producción para diagnósticos puntuales.
+- CÃ³mo probar en localhost: definir NEXT_PUBLIC_ZAPIER_CHATBOT_ID y NEXT_PUBLIC_ZAPIER_EMBED_SRC en .env.local; ejecutar npm run dev; navegar a /es?debug=chatbot y revisar consola (console.table con id/src, logs de script/embed/offset); confirmar que el FAB baja a bottom-24 si existen #whatsapp-fab o #cta-fab; visitar /es/cotizar para confirmar widget oculto.
+- CÃ³mo validar en producciÃ³n: comprobar que CSP permite cargar https://interfaces.zapier.com (sin errores en consola); verificar offsets en dispositivos mÃ³viles y desktop; usar parÃ¡metro ?debug=chatbot en la URL de producciÃ³n para diagnÃ³sticos puntuales.
 
 
 - Tarea: Ajustar CSP para widget Zapier.
@@ -340,4 +340,13 @@ pm run build OK.
 
 
 
-- Reset Zapier: widget nativo (popup) + CSP m�nima.
+- Reset Zapier: widget nativo (popup) + CSP mínima.
+
+- Tarea: Agregar proyectos históricos al listado showcase (13 nuevos casos).
+- Archivos tocados: src/data/project-showcase.ts; public/images/placeholders/generic-card.webp.
+- Como probar en localhost: npm run dev; visitar /es/proyectos y verificar que las nuevas tarjetas se renderizan con imagen placeholder y sin duplicados; revisar consola para asegurar ausencia de errores.
+- Hallazgos clave: Se preservó el formato existente, se extendió el tipo de sector con nuevas etiquetas y se asignó guion largo (—) cuando no se reportó metraje disponible.
+- Tarea: Agregar 5 proyectos adicionales (Mi Banco Canto Grande/Cayma, Clínica San Juan de Dios, Universidad Andina Sicuani, Cerro Verde).
+- Archivos tocados: src/data/project-showcase.ts; public/images/proyectos/mibanco-agencia-canto-grande-1.webp; public/images/proyectos/mibanco-agencia-cayma-1.webp; public/images/proyectos/clinica-san-juan-de-dios-aire-acondicionado-1.webp; public/images/proyectos/universidad-andina-sicuani-1.webp; public/images/proyectos/cerro-verde-sujecion-chancadora-1.webp; docs/LOG.md.
+- Como probar en localhost: npm run dev; visitar /es/proyectos y confirmar que las cinco nuevas tarjetas aparecen con placeholder y sin errores en consola.
+- Hallazgos clave: Se sumaron los sectores 'Banca' y 'Minería / Mantenimiento' al tipo de proyecto y se copió el placeholder genérico a las rutas finales /images/proyectos/<slug>-1.webp.

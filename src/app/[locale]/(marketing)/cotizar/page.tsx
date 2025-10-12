@@ -117,7 +117,7 @@ export default function CotizarPage({ searchParams }: CotizarPageProps) {
               </Button>
               <Button asChild variant="outline" className="w-full sm:w-auto">
                 <CatalogDownloadLink
-                  href="/descargas/CATALOGO-SG-2024.pdf"
+                  href="/descargas/CATALOGO-SG-2025.pdf"
                   target="_blank"
                   rel="noreferrer"
                   context="cotizar-top"
@@ -176,4 +176,5 @@ export default function CotizarPage({ searchParams }: CotizarPageProps) {
     </>
   )
 }
+
 

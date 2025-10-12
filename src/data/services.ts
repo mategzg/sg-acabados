@@ -1,4 +1,4 @@
-import type { LucideIcon } from 'lucide-react'
+﻿import type { LucideIcon } from 'lucide-react'
 import {
   Layers3,
   Lightbulb,
@@ -26,7 +26,7 @@ export const services: ServiceItem[] = [
   },
   {
     id: 'iluminacion',
-    title: 'Iluminacion arquitectonica',
+    title: 'Iluminacion',
     description: 'Proyectos de iluminacion interior y exterior con fotometria, escenas programables y eficiencia energetica.',
     href: '/productos',
     icon: Lightbulb
@@ -60,3 +60,4 @@ export const services: ServiceItem[] = [
     icon: Building2
   }
 ]
+

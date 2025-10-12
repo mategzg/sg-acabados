@@ -24,13 +24,13 @@ export const productFamilies: ProductFamily[] = [
     href: '/cotizar?interes=pisos'
   },
   {
-    id: 'iluminacion-arquitectonica',
-    name: 'Iluminacion arquitectonica',
+    id: 'iluminacion',
+    name: 'Iluminacion',
     description:
       'Luminarias LED con control DALI y escenas configurables para oficinas, retail y espacios de atencion al cliente.',
     image: {
       src: '/images/familias/iluminacion-1.jpg',
-      alt: 'Iluminacion arquitectonica en sala de reuniones'
+      alt: 'Iluminacion en sala de reuniones'
     },
     highlights: ['Eficiencia energetica certificada', 'Layouts fotometricos incluidos', 'Integracion con BMS existente'],
     href: '/cotizar?interes=iluminacion'
@@ -84,3 +84,4 @@ export const productFamilies: ProductFamily[] = [
     href: '/cotizar?interes=sistemas-integrales'
   }
 ]
+

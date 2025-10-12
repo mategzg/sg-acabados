@@ -36,7 +36,7 @@ export function Navbar() {
             <Logo width={180} height={72} />
           </span>
           <span className="hidden sm:flex flex-col items-center leading-tight">
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center">Plazos cumplidos en Peru</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center">Más de 20 años cumpliendo en Perú</span>
           </span>
         </Link>
 

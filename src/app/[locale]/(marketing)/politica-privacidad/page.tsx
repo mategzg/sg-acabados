@@ -20,7 +20,7 @@ export default function PoliticaPrivacidadPage() {
     {
       title: '1. Responsable del tratamiento',
       content:
-        'SG Servicios Generales S.A.C. (SG Acabados) es responsable del tratamiento de los datos personales recopilados a traves del sitio web sgacabados.pe.'
+        'SG Acabados S.A.C. (SG Acabados) es responsable del tratamiento de los datos personales recopilados a traves del sitio web sgacabados.pe.'
     },
     {
       title: '2. Finalidades',

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { LocalizedLink as Link } from '@/components/localized-link'
 
@@ -89,11 +89,13 @@ export function Footer() {
       <div className="border-t border-border/60 bg-white/70 py-space-sm">
         <div className="container flex flex-col gap-space-xs text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <span>
-            {siteConfig.legalName} ? RUC 20603456789
+            {siteConfig.legalName} | RUC 20605249648
           </span>
-          <span>? {new Date().getFullYear()} SG Servicios Generales S.A.C. Todos los derechos reservados.</span>
+          <span>Copyright {new Date().getFullYear()} SG Acabados S.A.C. Todos los derechos reservados.</span>
         </div>
       </div>
     </footer>
   )
 }
+
+

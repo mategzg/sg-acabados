@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { Section } from '@/components/section'
 import { SedesCobertura } from '@/components/sections/sedes-cobertura'
@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return createMetadata({
     locale: 'es',
     title: 'Nosotros',
-    description: 'Conoce la historia, equipo y certificaciones de SG Acabados, unidad de SG Servicios Generales S.A.C.',
+    description: 'Conoce la historia, equipo y certificaciones de SG Acabados, unidad de SG Acabados S.A.C.',
     path: '/nosotros'
   })
 }
@@ -80,7 +80,7 @@ export default function NosotrosPage() {
                 +20 años elevando proyectos en el Peru
               </h1>
               <p className="text-lg text-muted-foreground">
-                SG Acabados es la unidad especializada de SG Servicios Generales S.A.C. enfocada en integrar acabados, mobiliario y sistemas para proyectos corporativos, retail, salud y aeropuertos.
+                SG Acabados es la unidad especializada de SG Acabados S.A.C. enfocada en integrar acabados, mobiliario y sistemas para proyectos corporativos, retail, salud y aeropuertos.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
                 <Card className="bg-white/95">

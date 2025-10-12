@@ -1,39 +1,39 @@
-﻿# SG Acabados � Sitio oficial
+﻿# SG Acabados ï¿½ Sitio oficial
 
-Sitio corporativo construido con Next.js 14 (App Router), TypeScript, Tailwind CSS y una capa de componentes inspirada en shadcn/ui para SG Acabados, l�nea especializada de SG Servicios Generales S.A.C.
+Sitio corporativo construido con Next.js 14 (App Router), TypeScript, Tailwind CSS y una capa de componentes inspirada en shadcn/ui para SG Acabados, lï¿½nea especializada de SG Acabados S.A.C.
 
-## Caracter�sticas clave
+## Caracterï¿½sticas clave
 
-- Contenido en espa�ol (es-PE) con base preparada para internacionalizaci�n futura.
-- Paleta Carb�n, Arena SG, Marfil y Neutro t�cnico; tipograf�as Plus Jakarta Sans e Inter v�a `next/font`.
+- Contenido en espaï¿½ol (es-PE) con base preparada para internacionalizaciï¿½n futura.
+- Paleta Carbï¿½n, Arena SG, Marfil y Neutro tï¿½cnico; tipografï¿½as Plus Jakarta Sans e Inter vï¿½a `next/font`.
 - Arquitectura de secciones completa: Inicio, Productos (familias y subfamilias), Soluciones por sector, Proyectos, Nosotros, Contacto y Cotizar.
-- Formularios validados con React Hook Form + Zod, multistep Quote Builder y API `/api/lead` que env�a v�a SMTP (Nodemailer) al correo corporativo.
-- Integraciones SEO/anal�tica: GA4 (eventos view_item_list, view_item, generate_lead, click_whatsapp, file_download), JSON-LD (Organization, LocalBusiness, Service, Project), `robots.txt` y `sitemap.xml`.
-- Accesibilidad enfocada en WCAG 2.2 AA: foco visible, navegaci�n por teclado, contraste y componentes sem�nticos.
-- C�digo formateado con Prettier y validado con `next lint`.
+- Formularios validados con React Hook Form + Zod, multistep Quote Builder y API `/api/lead` que envï¿½a vï¿½a SMTP (Nodemailer) al correo corporativo.
+- Integraciones SEO/analï¿½tica: GA4 (eventos view_item_list, view_item, generate_lead, click_whatsapp, file_download), JSON-LD (Organization, LocalBusiness, Service, Project), `robots.txt` y `sitemap.xml`.
+- Accesibilidad enfocada en WCAG 2.2 AA: foco visible, navegaciï¿½n por teclado, contraste y componentes semï¿½nticos.
+- Cï¿½digo formateado con Prettier y validado con `next lint`.
 
 ## Estructura del proyecto
 
 ```
 src/
   app/
-    (marketing)/               # P�ginas p�blicas
-      productos/[�]/�          # Familias y subfamilias
-      soluciones/[�]/�
-      proyectos/[�]/�
-      contacto/, cotizar/�
+    (marketing)/               # Pï¿½ginas pï¿½blicas
+      productos/[ï¿½]/ï¿½          # Familias y subfamilias
+      soluciones/[ï¿½]/ï¿½
+      proyectos/[ï¿½]/ï¿½
+      contacto/, cotizar/ï¿½
     api/lead/route.ts          # Endpoint SMTP
-    robots.ts, sitemap.ts      # SEO t�cnico
+    robots.ts, sitemap.ts      # SEO tï¿½cnico
   components/
     analytics/                 # Disparadores GA4
-    layout/, ui/, �            # Sistema de dise�o
-  config/site.ts               # Metadatos, navegaci�n, oficinas
+    layout/, ui/, ï¿½            # Sistema de diseï¿½o
+  config/site.ts               # Metadatos, navegaciï¿½n, oficinas
   content/                     # Contenido MDX (familias, sectores, etc.)
-  lib/                         # Utilities (content loader, SEO, gtag�)
+  lib/                         # Utilities (content loader, SEO, gtagï¿½)
   types/                       # Definiciones tipadas
 public/
   logos/logo-sg.png            # Logo provisto
-  descargas/CATALOGO-SG-2024.pdf
+  descargas/CATALOGO-SG-2025.pdf
   images/                      # Placeholders locales listos para reemplazar
 ```
 
@@ -51,7 +51,7 @@ import Image from 'next/image'
 <Image src="/images/ejemplo.webp" alt="Descripcion del recurso" width={800} height={600} />
 ```
 
-Los contenidos est�n modelados en MDX (`src/content`) y se cargan mediante utilidades asincr�nicas tipadas. Para a�adir nuevas familias o proyectos basta con replicar el formato existente.
+Los contenidos estï¿½n modelados en MDX (`src/content`) y se cargan mediante utilidades asincrï¿½nicas tipadas. Para aï¿½adir nuevas familias o proyectos basta con replicar el formato existente.
 
 ## Variables de entorno
 
@@ -83,18 +83,18 @@ npm run dev
 ```
 
 - `npm run lint` valida con ESLint.
-- `npm run typecheck` ejecuta comprobaci�n de tipos con `tsc --noEmit`.
+- `npm run typecheck` ejecuta comprobaciï¿½n de tipos con `tsc --noEmit`.
 - `npm run test` corre las pruebas unitarias con Vitest.
-- `npm run build` prepara la aplicaci�n para producci�n.
+- `npm run build` prepara la aplicaciï¿½n para producciï¿½n.
 - `npm run start` ejecuta la build ya generada.
 
-## Anal�tica y medici�n
+## Analï¿½tica y mediciï¿½n
 
 - GA4 via `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Se inicializa en `app/(marketing)/layout.tsx`.
 - Eventos enviados desde componentes cliente (`lib/gtag.ts`):
   - `view_item_list`: familias/subfamilias mostradas.
   - `view_item`: detalle de subfamilia.
-  - `generate_lead`: env�os de formularios de cotizaci�n/contacto.
+  - `generate_lead`: envï¿½os de formularios de cotizaciï¿½n/contacto.
   - `click_whatsapp` y `file_download` para CTA clave.
 - JSON-LD para Organization, dos sedes (LocalBusiness), Service (familias) y Project (detalle de caso).
 - Checklist de QA (accesibilidad, SEO, performance) disponible en `docs/QA_CHECKLIST.md`.
@@ -104,7 +104,7 @@ npm run dev
 - Familias, subfamilias, sectores, proyectos y FAQs viven en `src/content/**/*.mdx`.
 - Quote Builder (`src/components/quote-builder.tsx`) es multistep, admite adjuntos PDF/DWG (hasta 10 MB) y alimenta `/api/lead`.
 - Contacto reutiliza el mismo endpoint como `type=contacto`.
-- Detalles del pipeline y buenas pr�cticas en `docs/FORMS.md`.
+- Detalles del pipeline y buenas prï¿½cticas en `docs/FORMS.md`.
 
 ## Despliegue en Vercel
 
@@ -153,13 +153,14 @@ Recomendaciones:
 - Confirma en los logs que /api/lead retorna 200 y llega el correo SMTP.
 - Valida en GA4 que se registran eventos generate_lead, click_whatsapp y file_download.
 
-## Pr�ximos pasos sugeridos
+## Prï¿½ximos pasos sugeridos
 
-- Cargar im�genes finales (reemplazar placeholders en `/public/images`).
-- Ajustar textos y contenidos MDX con informaci�n oficial.
-- Integrar reCAPTCHA o soluci�n antispam en `/api/lead` si se requiere.
-- A�adir pruebas E2E (Playwright/Cypress) una vez estabilizada la UX.
-- Preparar el locale EN cuando se defina la traducci�n oficial.
+- Cargar imï¿½genes finales (reemplazar placeholders en `/public/images`).
+- Ajustar textos y contenidos MDX con informaciï¿½n oficial.
+- Integrar reCAPTCHA o soluciï¿½n antispam en `/api/lead` si se requiere.
+- Aï¿½adir pruebas E2E (Playwright/Cypress) una vez estabilizada la UX.
+- Preparar el locale EN cuando se defina la traducciï¿½n oficial.
+
 
 
 

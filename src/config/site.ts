@@ -1,12 +1,12 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: 'SG Acabados',
-  legalName: 'SG Servicios Generales S.A.C.',
+  legalName: 'SG Acabados S.A.C.',
   description:
     'Acabados integrales, mobiliario y sistemas para proyectos corporativos y de infraestructura en todo el Peru.',
   keywords: [
     'acabados integrales',
     'pisos vinilicos',
-    'iluminacion arquitectonica',
+    'iluminacion',
     'mobiliario corporativo',
     'control solar',
     'SG Servicios Generales'
@@ -34,7 +34,7 @@ export const siteConfig = {
       { label: 'Cotizar', href: '/cotizar' }
     ],
     footer: [
-      { label: 'Descargar catalogo', href: '/descargas/CATALOGO-SG-2024.pdf', external: true },
+      { label: 'Descargar catalogo', href: '/descargas/CATALOGO-SG-2025.pdf', external: true },
       { label: 'Politica de privacidad', href: '/politica-privacidad' },
       { label: 'Terminos y condiciones', href: '/terminos-condiciones' }
     ]
@@ -48,3 +48,5 @@ export const siteConfig = {
 }
 
 export type SiteConfig = typeof siteConfig
+
+

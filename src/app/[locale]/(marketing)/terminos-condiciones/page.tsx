@@ -29,7 +29,7 @@ const clauses = [
   {
     title: '3. Propiedad intelectual',
     content:
-      'Los contenidos, logotipos y materiales descargables son propiedad de SG Servicios Generales S.A.C. Queda prohibida su reproduccion sin autorizacion.'
+      'Los contenidos, logotipos y materiales descargables son propiedad de SG Acabados S.A.C. Queda prohibida su reproduccion sin autorizacion.'
   },
   {
     title: '4. Confidencialidad',
