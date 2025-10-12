@@ -1,1 +1,1 @@
-﻿Soluciones simplificada: tabs + dolores + kits + CTAs a /cotizar|/contacto; evidencia/formularios/benefits removidos.
+﻿Soluciones simplificada: tabs + dolores + kits + CTAs a /cotizar|/contacto; evidencia/formularios/benefits removidos.Soluciones: removida barra de pestañas duplicada bajo header; se mantiene única barra en sección; build OK.

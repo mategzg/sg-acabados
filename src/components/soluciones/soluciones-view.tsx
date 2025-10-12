@@ -26,7 +26,7 @@ export function SolucionesView({ hero, segments, defaultSegmentId }: SolucionesV
 
   return (
     <div className="space-y-8 md:space-y-10 lg:space-y-12">
-      <Section className="bg-white">
+      <Section className="bg-white py-10 md:py-12">
         <div className={`${containerClasses} grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center`}>
           <div className="space-y-4 md:space-y-6">
             <Badge variant="accent" className="w-fit">
