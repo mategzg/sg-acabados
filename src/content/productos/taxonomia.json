@@ -1,0 +1,81 @@
+﻿{
+  "familias": [
+    {
+      "slug": "pisos",
+      "titulo": "Pisos",
+      "intro": "Acabados de alto tránsito con instalación flotante o pegada. Continuidad visual y mantenimiento rápido.",
+      "brands": ["Forbo", "Shaw Hard Surface", "Fitnice", "Amazfloors", "Alcalagres"],
+      "subfamilias": [
+        {"slug": "vinilicos", "nombre": "Vinílicos", "resumen": "Rollo, LVT/LVP y SPC; higiene, acústica y resistencia al fuego.", "image": "/images/subfamilias/pisos-vinilicos-1.webp"},
+        {"slug": "porcelanato", "nombre": "Porcelanato", "resumen": "Alta durabilidad y bajo mantenimiento en humedad y temperatura.", "image": "/images/subfamilias/pisos-porcelanato-1.webp"},
+        {"slug": "alfombras", "nombre": "Alfombras", "resumen": "Módulos o rollo; absorción acústica y confort.", "image": "/images/subfamilias/pisos-alfombras-1.webp"},
+        {"slug": "deportivos", "nombre": "Deportivos", "resumen": "Performance y amortiguación por disciplina.", "image": "/images/subfamilias/pisos-deportivos-1.webp"},
+        {"slug": "grass-sintetico", "nombre": "Grass sintético", "resumen": "Solución exterior de bajo mantenimiento.", "image": "/images/subfamilias/pisos-grass-sintetico-1.webp"},
+        {"slug": "laminados", "nombre": "Laminados", "resumen": "Instalación rápida con sistema click.", "image": "/images/subfamilias/pisos-laminados-1.webp"},
+        {"slug": "estructurados-madera", "nombre": "Estructurados de madera", "resumen": "Núcleo estable; apariencia natural.", "image": "/images/subfamilias/pisos-estructurados-madera-1.webp"},
+        {"slug": "madera-natural", "nombre": "Madera natural", "resumen": "Tablas macizas con acabados de alto desempeño.", "image": "/images/subfamilias/pisos-madera-natural-1.webp"}
+      ]
+    },
+    {
+      "slug": "iluminacion",
+      "titulo": "Iluminación",
+      "intro": "Soluciones LED para interior y exterior; escenas configurables e integración BMS.",
+      "brands": ["Lightech", "Josfel"],
+      "subfamilias": [
+        {"slug": "interior", "nombre": "Interior", "resumen": "Downlights, lineales, perfiles y empotrados.", "image": "/images/subfamilias/iluminacion-interior-1.webp"},
+        {"slug": "exterior", "nombre": "Exterior", "resumen": "Baños de muro, proyectores y bollards.", "image": "/images/subfamilias/iluminacion-exterior-1.webp"},
+        {"slug": "industrial", "nombre": "Industrial", "resumen": "Campanas, herméticos e IP altos.", "image": "/images/subfamilias/iluminacion-industrial-1.webp"},
+        {"slug": "decorativa", "nombre": "Decorativa", "resumen": "Luminarias statement para áreas de alto impacto.", "image": "/images/subfamilias/iluminacion-decorativa-1.webp"}
+      ]
+    },
+    {
+      "slug": "recubrimiento-ventanas",
+      "titulo": "Recubrimiento de ventanas",
+      "intro": "Control de luz y privacidad con telas técnicas y automatización.",
+      "brands": ["Hunter Douglas"],
+      "subfamilias": [
+        {"slug": "cortinas", "nombre": "Cortinas", "resumen": "Rollers, panel track y telas blackout o screen.", "image": "/images/subfamilias/recubrimientos-cortinas-1.webp"},
+        {"slug": "persianas", "nombre": "Persianas", "resumen": "Aluminio y madera con control preciso de luz.", "image": "/images/subfamilias/recubrimientos-persianas-1.webp"},
+        {"slug": "toldos-arquitectonicos", "nombre": "Toldos arquitectónicos", "resumen": "Proyección y protección solar en terrazas y accesos.", "image": "/images/subfamilias/recubrimientos-toldos-1.webp"}
+      ]
+    },
+    {
+      "slug": "control-solar-arquitectonico",
+      "titulo": "Sistema de control solar",
+      "intro": "Confort térmico-visual y eficiencia con celosías y lamas orientables.",
+      "brands": ["Tamiluz", "Hunter Douglas Architectural"],
+      "subfamilias": [
+        {"slug": "celosias", "nombre": "Celosías", "resumen": "Sombras y ventilación con módulos fijos o móviles.", "image": "/images/subfamilias/control-celosias-1.webp"},
+        {"slug": "lamas-orientables", "nombre": "Lamas orientables", "resumen": "Ángulo regulable según recorrido solar.", "image": "/images/subfamilias/control-lamas-1.webp"},
+        {"slug": "quiebrasoles-quiebravistas", "nombre": "Quiebrasoles / Quiebravistas", "resumen": "Protección solar y visual para fachadas.", "image": "/images/subfamilias/control-quiebrasoles-1.webp"}
+      ]
+    },
+    {
+      "slug": "mobiliario",
+      "titulo": "Mobiliario",
+      "intro": "Workstations, salas colaborativas y equipamiento con ergonomía certificada.",
+      "brands": ["Fursys", "Quadrifoglio", "Aresline", "EUN Mobile"],
+      "subfamilias": [
+        {"slug": "hospitalario", "nombre": "Hospitalario", "resumen": "Superficies y piezas para entornos clínicos.", "image": "/images/subfamilias/mobiliario-hospitalario-1.webp"},
+        {"slug": "tandem", "nombre": "Tándem", "resumen": "Sillas corridas para salas de espera.", "image": "/images/subfamilias/mobiliario-tandem-1.webp"},
+        {"slug": "butacas", "nombre": "Butacas", "resumen": "Auditorios y cines; tapices y accesorios.", "image": "/images/subfamilias/mobiliario-butacas-1.webp"},
+        {"slug": "archivos-moviles", "nombre": "Archivos móviles", "resumen": "Sistemas compactos de alta densidad.", "image": "/images/subfamilias/mobiliario-archivos-moviles-1.webp"},
+        {"slug": "mesas-escritorios", "nombre": "Mesas y escritorios", "resumen": "Bench, ejecutivas y regulación en altura.", "image": "/images/subfamilias/mobiliario-mesas-escritorios-1.webp"},
+        {"slug": "silleria", "nombre": "Sillería", "resumen": "Operativa, gerencial y visita; normas ANSI/BIFMA.", "image": "/images/subfamilias/mobiliario-silleria-1.webp"}
+      ]
+    },
+    {
+      "slug": "sistemas-integrales",
+      "titulo": "Sistemas integrales",
+      "intro": "Coordinación de A/A, NFPA, CCTV, audio y aislamiento termo-acústico.",
+      "brands": [],
+      "subfamilias": [
+        {"slug": "aire-acondicionado", "nombre": "Aire acondicionado", "resumen": "VRF, splits y ductería para confort y precisión.", "image": "/images/subfamilias/sistemas-aire-acondicionado-1.webp"},
+        {"slug": "contra-incendios", "nombre": "Contra incendios", "resumen": "Normativa NFPA; detección y supresión.", "image": "/images/subfamilias/sistemas-contra-incendios-1.webp"},
+        {"slug": "camaras-seguridad", "nombre": "Cámaras de seguridad", "resumen": "CCTV IP y videoanalítica.", "image": "/images/subfamilias/sistemas-camaras-1.webp"},
+        {"slug": "audio", "nombre": "Audio", "resumen": "Paging, EVAC y sonido ambiental por zonas.", "image": "/images/subfamilias/sistemas-audio-1.webp"},
+        {"slug": "aislamiento-termo-acustico", "nombre": "Aislamiento termo-acústico", "resumen": "Paneles y mantos para control de ruido y temperatura.", "image": "/images/subfamilias/sistemas-aislamiento-termo-acustico-1.webp"}
+      ]
+    }
+  ]
+}
