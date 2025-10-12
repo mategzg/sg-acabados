@@ -71,40 +71,44 @@ const timeline = [
 export default function NosotrosPage() {
   return (
     <>
-      <Section className="bg-white">
-        <div className="container space-y-8">
-          <Badge variant="accent" className="w-fit">Nosotros</Badge>
-          <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
-            <div className="space-y-4">
-              <h1 className="font-heading text-4xl font-semibold text-foreground md:text-5xl">
-                +20 años elevando proyectos en el Perú
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                SG Acabados es la unidad especializada de SG Acabados S.A.C. enfocada en integrar acabados, mobiliario y sistemas para proyectos corporativos, retail, salud y aeropuertos.
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <Card className="bg-white/95">
-                  <CardContent className="space-y-2 p-6">
-                    <h2 className="font-heading text-xl font-semibold text-foreground">Mision</h2>
-                    <p className="text-sm text-muted-foreground">
-                      Entregar espacios listos para operar, garantizando plazos, seguridad y sostenibilidad en cada especialidad.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-white/95">
-                  <CardContent className="space-y-2 p-6">
-                    <h2 className="font-heading text-xl font-semibold text-foreground">Vision</h2>
-                    <p className="text-sm text-muted-foreground">
-                      Ser el aliado preferido de las empresas lideres del pais para transformar infraestructura compleja en experiencias memorables.
-                    </p>
-                  </CardContent>
-                </Card>
+      <section className="bg-white py-12 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-10">
+            <Badge variant="accent" className="w-fit">Nosotros</Badge>
+            <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+              <div className="space-y-6 lg:col-span-7">
+                <h1 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-foreground">
+                  +20 años elevando proyectos en el Perú
+                </h1>
+                <p className="text-lg text-muted-foreground">
+                  SG Acabados es la unidad especializada de SG Acabados S.A.C. enfocada en integrar acabados, mobiliario y sistemas para proyectos corporativos, retail, salud y aeropuertos.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <Card className="bg-white/95">
+                    <CardContent className="space-y-2 p-6">
+                      <h2 className="font-heading text-xl font-semibold text-foreground">Mision</h2>
+                      <p className="text-sm text-muted-foreground">
+                        Entregar espacios listos para operar, garantizando plazos, seguridad y sostenibilidad en cada especialidad.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <Card className="bg-white/95">
+                    <CardContent className="space-y-2 p-6">
+                      <h2 className="font-heading text-xl font-semibold text-foreground">Vision</h2>
+                      <p className="text-sm text-muted-foreground">
+                        Ser el aliado preferido de las empresas lideres del pais para transformar infraestructura compleja en experiencias memorables.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
+              <aside className="mt-10 lg:mt-0 lg:col-span-5">
+                <SedesCobertura />
+              </aside>
             </div>
-            <SedesCobertura />
           </div>
         </div>
-      </Section>
+      </section>
 
       <Section className="bg-white">
         <div className="container space-y-8">
