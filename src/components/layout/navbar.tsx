@@ -30,10 +30,10 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-sm">
-      <div className="container flex h-24 items-center justify-between gap-space-md">
+      <div className="container flex h-20 items-center justify-between gap-space-md md:h-24">
         <Link href="/" className="inline-flex items-center gap-3 text-foreground" aria-label="SG Acabados">
-          <span className="flex items-center justify-center">
-            <Logo width={260} height={104} />
+          <span className="flex items-center justify-center gap-2">
+            <Logo width={160} height={64} className="h-auto w-[120px] md:w-[160px] max-h-10 md:max-h-12 object-contain" />
           </span>
           <span className="hidden sm:flex flex-col items-center leading-tight">
             <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center">Más de 20 años cumpliendo</span>
