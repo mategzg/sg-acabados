@@ -1,45 +1,23 @@
 ﻿"use client"
 
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 import { KitCard } from "@/components/soluciones/kit-card"
-import { EvidenceCarousel } from "@/components/soluciones/evidence-carousel"
-import { SegmentForm } from "@/components/soluciones/segment-form"
 import { LocalizedLink as Link } from "@/components/localized-link"
 import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { track } from "@/lib/analytics"
 import type { SolutionsSegment } from "@/types/solutions"
 
-export type SegmentWithProjects = SolutionsSegment & {
-  projects: SolutionsProject[]
-  formId: string
-  whatsappHref: string
-}
-
-export type SolutionsProject = {
-  slug: string
-  name: string
-  summary: string
-  href: string
-  sector?: string
-  image: {
-    src: string
-    alt: string
-  }
-}
-
 export type SegmentTabsHandle = {
-  scrollToActiveForm: () => void
+  scrollToActive: () => void
   getActiveSegment: () => string
 }
 
 type SegmentTabsProps = {
-  segments: SegmentWithProjects[]
+  segments: SolutionsSegment[]
   defaultSegmentId: string
   onSegmentChange?: (segmentId: string) => void
 }
@@ -55,14 +33,12 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
       : defaultSegmentId
 
     const [activeSegment, setActiveSegment] = useState<string>(validInitial)
-    const [selectedKitBySegment, setSelectedKitBySegment] = useState<Record<string, string | null>>({})
-    const formRefs = useRef<Record<string, HTMLDivElement | null>>({})
+    const containerRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-      if (!segments.some((segment) => segment.id === activeSegment)) {
-        setActiveSegment(defaultSegmentId)
-      }
-    }, [activeSegment, defaultSegmentId, segments])
+      onSegmentChange?.(validInitial)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const updateQueryParam = (segmentId: string) => {
       const params = new URLSearchParams(searchParams?.toString())
@@ -82,84 +58,43 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
       track("select_segment", { segment: value })
     }
 
-    const handleKitSelect = (segmentId: string, kitName: string) => {
-      setSelectedKitBySegment((prev) => ({ ...prev, [segmentId]: kitName }))
-      scrollToForm(segmentId)
-    }
-
-    const registerContainerRef = (segmentId: string) => (element: HTMLDivElement | null) => {
-      formRefs.current[segmentId] = element
-    }
-
-    const scrollToForm = (segmentId: string) => {
-      const node = formRefs.current[segmentId]
-      if (node) {
-        node.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
-    }
-
     useImperativeHandle(
       ref,
       () => ({
-        scrollToActiveForm: () => scrollToForm(activeSegment),
+        scrollToActive: () => {
+          containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+        },
         getActiveSegment: () => activeSegment
       }),
       [activeSegment]
     )
 
-    const activeSegmentData = useMemo(
-      () => segments.find((segment) => segment.id === activeSegment) ?? segments[0],
-      [segments, activeSegment]
-    )
-
-    useEffect(() => {
-      if (!activeSegmentData) {
-        return
-      }
-      onSegmentChange?.(activeSegmentData.id)
-    }, [activeSegmentData, onSegmentChange])
-
     return (
-      <Tabs value={activeSegment} onValueChange={handleSegmentChange} className="space-y-space-xl">
-        <div className="overflow-x-auto">
-          <TabsList className="flex w-full min-w-max items-center gap-2 rounded-full bg-secondary/40 p-1">
-            {segments.map((segment) => (
-              <TabsTrigger
-                key={segment.id}
-                value={segment.id}
-                className="rounded-full px-5 py-2"
-                aria-controls={`panel-${segment.id}`}
-              >
-                {segment.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </div>
+      <div ref={containerRef} className="space-y-space-xl">
+        <Tabs value={activeSegment} onValueChange={handleSegmentChange} className="space-y-space-xl">
+          <div className="overflow-x-auto">
+            <TabsList className="flex w-full min-w-max items-center gap-2 rounded-full bg-secondary/40 p-1">
+              {segments.map((segment) => (
+                <TabsTrigger key={segment.id} value={segment.id} className="rounded-full px-5 py-2">
+                  {segment.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
-        {segments.map((segment) => {
-          const selectedKit = selectedKitBySegment[segment.id] ?? null
-          return (
-            <TabsContent
-              key={segment.id}
-              value={segment.id}
-              id={`panel-${segment.id}`}
-              className="space-y-space-2xl"
-            >
-              <section className="space-y-space-lg">
-                <div className="space-y-space-sm">
-                  <Badge variant="secondary" className="w-fit">
-                    {segment.label}
-                  </Badge>
-                  <h2 className="text-balance font-heading text-3xl font-semibold text-foreground md:text-4xl">
-                    {segment.intro}
-                  </h2>
-                </div>
+          {segments.map((segment) => (
+            <TabsContent key={segment.id} value={segment.id} className="space-y-space-xl">
+              <section className="space-y-space-md">
+                <Badge variant="secondary" className="w-fit">
+                  {segment.label}
+                </Badge>
+                <p className="text-base text-muted-foreground">{segment.intro}</p>
                 <div className="rounded-3xl border border-border/60 bg-white/95 p-space-lg shadow-soft">
                   <h3 className="font-heading text-lg font-semibold text-foreground">Dolores clave</h3>
-                  <ul className="mt-space-sm grid gap-space-sm md:grid-cols-2">
+                  <ul className="mt-space-sm space-y-3 text-sm text-muted-foreground">
                     {segment.pains.map((pain) => (
-                      <li key={`${segment.id}-${pain}`} className="flex items-start gap-3 text-sm text-muted-foreground">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
+                      <li key={`${segment.id}-${pain}`} className="flex items-start gap-3">
+                        <span className="mt-1 h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
                         <span>{pain}</span>
                       </li>
                     ))}
@@ -168,100 +103,40 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
               </section>
 
               <section className="space-y-space-md">
-                <div className="flex flex-col gap-space-xs md:flex-row md:items-end md:justify-between">
-                  <div>
-                    <h3 className="font-heading text-lg font-semibold text-foreground">Kits listos para ejecutar</h3>
-                    <p className="text-sm text-muted-foreground">
-                    Envía la solicitud o agenda una llamada por WhatsApp con nuestro equipo.
-                  </p>
-                  </div>
-                </div>
+                <h3 className="font-heading text-lg font-semibold text-foreground">Kits listos para ejecutar</h3>
                 <div className="grid gap-space-md md:grid-cols-2 xl:grid-cols-3">
                   {segment.kits.map((kit) => (
-                    <KitCard
-                      key={`${segment.id}-${kit.name}`}
-                      segmentId={segment.id}
-                      kit={kit}
-                      onSelect={(kitName) => handleKitSelect(segment.id, kitName)}
-                    />
+                    <KitCard key={`${segment.id}-${kit.name}`} kit={kit} />
                   ))}
                 </div>
               </section>
 
-              <EvidenceCarousel projects={segment.projects} viewAllHref="/proyectos" />
-
-              <section className="space-y-space-sm">
-                <h3 className="font-heading text-lg font-semibold text-foreground">Preguntas frecuentes</h3>
-                <div className="grid gap-space-sm md:grid-cols-2">
-                  {segment.faqs.map((faq) => (
-                    <Card key={`${segment.id}-${faq.q}`} className="rounded-3xl border border-border/70 bg-white/95 p-space-lg shadow-soft">
-                      <p className="font-semibold text-foreground">{faq.q}</p>
-                      <p className="mt-2 text-sm text-muted-foreground">{faq.a}</p>
-                    </Card>
-                  ))}
-                </div>
-              </section>
-
-              <Card className="flex flex-col gap-space-sm rounded-3xl border border-border/60 bg-primary/5 p-space-lg shadow-soft md:flex-row md:items-center md:justify-between">
-                <div>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">
-                    ¿Listo para coordinar tu proyecto?
-                  </h3>
+              <div className="flex flex-col gap-space-sm md:flex-row md:items-center md:justify-between">
+                <div className="space-y-1">
+                  <h4 className="font-heading text-lg font-semibold text-foreground">¿Necesitas una propuesta?</h4>
                   <p className="text-sm text-muted-foreground">
-                    Envía la solicitud o agenda una llamada por WhatsApp con nuestro equipo.
+                    Agenda una llamada con el equipo SG o envía tu requerimiento para cotizar.
                   </p>
                 </div>
                 <div className="flex flex-col gap-space-sm md:flex-row">
-                  <Button
-                    type="submit"
-                    form={segment.formId}
-                    className="w-full md:w-auto"
-                    onClick={() => scrollToForm(segment.id)}
-                    aria-controls={`form-${segment.id}`}
-                  >
-                    Enviar propuesta
+                  <Button asChild className="w-full md:w-auto">
+                    <Link href={`/cotizar?segment=${segment.id}`} aria-label={`Solicitar cotización para ${segment.label}`}>
+                      Solicitar cotización
+                    </Link>
                   </Button>
                   <Button asChild variant="outline" className="w-full md:w-auto">
-                    <Link
-                      href={segment.whatsappHref}
-                      onClick={() => track("click_whatsapp", { segment: segment.id })}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Abrir WhatsApp para segmento ${segment.label}`}
-                    >
-                      WhatsApp <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                    <Link href={`/contacto?segment=${segment.id}`} aria-label={`Hablar con especialistas para ${segment.label}`}>
+                      Hablar con especialistas
                     </Link>
                   </Button>
                 </div>
-              </Card>
-
-              <SegmentForm
-                segmentId={segment.id}
-                formId={segment.formId}
-                fields={segment.form.fields}
-                cta={segment.form.cta}
-                selectedKit={selectedKit}
-                onClearKit={() => setSelectedKitBySegment((prev) => ({ ...prev, [segment.id]: null }))}
-                registerContainerRef={registerContainerRef(segment.id)}
-              />
+              </div>
             </TabsContent>
-          )
-        })}
-      </Tabs>
+          ))}
+        </Tabs>
+      </div>
     )
   }
 )
 
 SegmentTabs.displayName = "SegmentTabs"
-
-
-
-
-
-
-
-
-
-
-
-

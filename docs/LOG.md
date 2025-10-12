@@ -1,1 +1,1 @@
-﻿Soluciones: nueva UX por segmentos (Corporativo, Inmobiliario, Particular) con kits, evidencia, formularios y GA4. Cómo probar: /soluciones.
+﻿Soluciones: UX simplificada (Corporativo, Inmobiliario, Particular) con intro, pains, kits y CTA a cotizar/contacto. Cómo probar: /soluciones.

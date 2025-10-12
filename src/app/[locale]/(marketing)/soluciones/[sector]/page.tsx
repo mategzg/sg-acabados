@@ -3,63 +3,11 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { SolucionesView } from "@/components/soluciones/soluciones-view"
-import type { SegmentWithProjects } from "@/components/soluciones/segment-tabs"
-import { getProjects } from "@/lib/content"
 import { getSolutionsContent, getSolutionsSegment } from "@/lib/solutions-intent"
 import { locales, type Locale } from "@/lib/i18n-config"
 import { createMetadata } from "@/lib/seo"
-import type { SolutionsProjectCard } from "@/types/solutions"
 
-import { siteConfig } from "@/config/site"
-
-const FALLBACK_IMAGE = {
-  src: "/images/placeholders/generic-card.webp",
-  alt: "Proyecto de referencia en preparación"
-}
-
-function humanizeSlug(value: string) {
-  return value
-    .replace(/[-_]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (char) => char.toUpperCase())
-}
-
-function mapEvidenceSlugs(
-  slugs: string[],
-  projects: Awaited<ReturnType<typeof getProjects>>
-): SolutionsProjectCard[] {
-  return slugs.map((rawSlug) => {
-    const token = rawSlug.toLowerCase()
-    const match = projects.find((project) => {
-      const slug = project.slug.toLowerCase()
-      const name = project.nombre.toLowerCase()
-      return slug.includes(token) || name.includes(token)
-    })
-
-    if (match) {
-      const image = match.galeria?.[0] ?? FALLBACK_IMAGE
-      return {
-        slug: match.slug,
-        name: match.nombre,
-        summary: match.resumen,
-        href: `/proyectos/${match.slug}`,
-        sector: match.sector,
-        location: match.ubicacion,
-        image
-      }
-    }
-
-    return {
-      slug: rawSlug,
-      name: humanizeSlug(rawSlug),
-      summary: "Pronto publicaremos la ficha completa de este proyecto.",
-      href: "/proyectos",
-      sector: "Referencia",
-      image: FALLBACK_IMAGE
-    }
-  })
-}
+export const revalidate = 3600
 
 export function generateStaticParams() {
   const content = getSolutionsContent()
@@ -87,13 +35,25 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
     })
   }
 
-  return createMetadata({
+  const title = `${segment.label} | Soluciones SG`
+  const description = segment.intro
+  const baseMetadata = createMetadata({
     locale: params.locale,
-    title: `${segment.label} | Soluciones SG`,
-    description: segment.intro,
+    title,
+    description,
     path: `/soluciones/${segment.id}`,
     keywords: [segment.label, ...segment.pains.slice(0, 2)]
   })
+
+  return {
+    ...baseMetadata,
+    title,
+    description,
+    alternates: {
+      ...baseMetadata.alternates,
+      canonical: "/soluciones"
+    }
+  }
 }
 
 type SegmentPageProps = {
@@ -108,22 +68,13 @@ export default async function SegmentPage({ params }: SegmentPageProps) {
     notFound()
   }
 
-  const projects = await getProjects()
-  const whatsappBase = siteConfig.whatsapp.link
-
-  const segments: SegmentWithProjects[] = content.segments.map((item) => ({
-    ...item,
-    projects: mapEvidenceSlugs(item.evidenceSlugs, projects),
-    formId: `soluciones-form-${item.id}`,
-    whatsappHref: `${whatsappBase}?text=${encodeURIComponent(`Quiero cotizar (${item.id}) desde /soluciones`)}`
-  }))
+  const segments = content.segments
 
   return (
     <Suspense fallback={null}>
       <SolucionesView
         hero={content.hero}
         segments={segments}
-        benefitsBar={content.benefitsBar}
         defaultSegmentId={segment.id}
       />
     </Suspense>
