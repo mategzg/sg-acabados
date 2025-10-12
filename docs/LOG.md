@@ -5,3 +5,4 @@ Ortografía: interrogativos + 'posventa' normalizados; métricas en m (antes m2)
 Ortografía: 'Perú' capitalizado en keywords (home/contacto/cotizar). Cómo probar: revisar metadata de esas vistas.
 Ortografía: 'WhatsApp' visible + 'clínica' ajustados; script scripts/fix-accents.ts creado. Cómo probar: /contacto, /proyectos, revisar script (--dry-run).
 Ortografía ES-PE: tildes normalizadas (cotización, iluminación, técnico, acústico, térmico, área, página, Perú, tándem); 'm' estandarizado; sin cambios en URLs/slugs/marcas. Build OK.
+Contacto: mapa actualizado a Calle Misti 134 (Yanahuara). Cómo probar: /contacto (ver iframe).

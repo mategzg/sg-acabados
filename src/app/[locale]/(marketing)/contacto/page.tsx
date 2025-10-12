@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
 import { createMetadata } from '@/lib/seo'
 
-const mapEmbedUrl = 'https://www.openstreetmap.org/export/embed.html?bbox=-71.543%2C-16.404%2C-71.528%2C-16.392&layer=mapnik&marker=-16.3985%2C-71.5355'
+const mapEmbedUrl = 'https://www.openstreetmap.org/export/embed.html?bbox=-71.5430%2C-16.3935%2C-71.5395%2C-16.3905&layer=mapnik&marker=-16.39195%2C-71.54126'
 
 export const revalidate = 3600
 
@@ -139,7 +139,7 @@ export default function ContactoPage() {
             />
             <div className="px-space-md py-space-sm text-sm text-muted-foreground">
               <a
-                href="https://www.openstreetmap.org/?mlat=-16.3985&mlon=-71.5355#map=16/-16.3985/-71.5355"
+                href="https://www.openstreetmap.org/?mlat=-16.39195&mlon=-71.54126#map=17/-16.39195/-71.54126"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary underline-offset-4 hover:text-primary/80"
