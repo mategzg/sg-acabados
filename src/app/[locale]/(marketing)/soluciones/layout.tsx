@@ -1,11 +1,13 @@
-import type { ReactNode } from 'react'
+﻿import type { ReactNode } from 'react'
 
 import { SolutionsNav } from '@/components/solutions/solutions-nav'
-import { solutions } from '@/data/solutions'
+import { getSolutionsContent } from '@/lib/solutions-intent'
+
+const content = getSolutionsContent()
 
 const navItems = [
   { href: '/soluciones', label: 'Resumen' },
-  ...solutions.map((solution) => ({ href: `/soluciones/${solution.slug}`, label: solution.name }))
+  ...content.segments.map((segment) => ({ href: `/soluciones/${segment.id}`, label: segment.label }))
 ]
 
 export default function SolutionsLayout({ children }: { children: ReactNode }) {
