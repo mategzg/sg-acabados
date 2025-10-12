@@ -26,6 +26,12 @@ const iconBySlug: Record<string, LucideIcon> = {
   'sistemas-integrales': Settings2
 }
 
+const normalizeSlug = (value: string) =>
+  value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .normalize('NFC')
+
 type FamilyCard = {
   id: string
   title: string
@@ -37,7 +43,7 @@ type FamilyCard = {
 const productFamilies = getProductFamilies()
 
 const familyCards: FamilyCard[] = FAMILY_ORDER.map((slug) => {
-  const family = productFamilies.find((item) => item.slug === slug)
+  const family = productFamilies.find((item) => item.slug === slug || normalizeSlug(item.slug) === slug)
   if (!family) {
     return null
   }
