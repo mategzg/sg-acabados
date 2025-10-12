@@ -25,7 +25,7 @@ export default function PoliticaPrivacidadPage() {
     {
       title: '2. Finalidades',
       content:
-        'Utilizamos tu información para responder consultas comerciales, preparar propuestas, coordinar visitas técnicas y brindar seguimiento postventa.'
+        'Utilizamos tu información para responder consultas comerciales, preparar propuestas, coordinar visitas técnicas y brindar seguimiento posventa.'
     },
     {
       title: '3. Datos que recolectamos',

@@ -24,7 +24,7 @@ export const featuredProjects: FeaturedProject[] = [
     sector: 'Aeropuertos',
     summary: 'Renovación de salas de embarque con pisos vinilicos, control solar y sistemas de audio evac.',
     metrics: [
-      { label: 'Metros intervenidos', value: '3 200 m2', icon: Ruler },
+      { label: 'Metros intervenidos', value: '3 200 m', icon: Ruler },
       { label: 'Especialidades', value: 'Pisos, audio, control solar', icon: Layers3 },
       { label: 'Plazo', value: '8 semanas', icon: Clock4 }
     ],
@@ -40,7 +40,7 @@ export const featuredProjects: FeaturedProject[] = [
     sector: 'Retail',
     summary: 'Implementación integral de salas premium con butacas, iluminación y revestimientos acústicos.',
     metrics: [
-      { label: 'Metros intervenidos', value: '1 450 m2', icon: Ruler },
+      { label: 'Metros intervenidos', value: '1 450 m', icon: Ruler },
       { label: 'Especialidades', value: 'Mobiliario, iluminación', icon: Sparkles },
       { label: 'Plazo', value: '6 semanas', icon: Clock4 }
     ],
@@ -56,7 +56,7 @@ export const featuredProjects: FeaturedProject[] = [
     sector: 'Salud',
     summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en areas criticas de hospitalización.',
     metrics: [
-      { label: 'Metros intervenidos', value: '2 100 m2', icon: Ruler },
+      { label: 'Metros intervenidos', value: '2 100 m', icon: Ruler },
       { label: 'Especialidades', value: 'Pisos, HVAC, carpinteria', icon: Stethoscope },
       { label: 'Plazo', value: '10 semanas', icon: Clock4 }
     ],

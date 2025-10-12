@@ -45,7 +45,7 @@ export function SolucionesView({ hero, segments, defaultSegmentId }: SolucionesV
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>- Kickoff técnico y cronograma por especialidad</li>
               <li>- Coordinación de acabados, mobiliario y sistemas</li>
-              <li>- Entrega llave en mano con garantías y postventa</li>
+              <li>- Entrega llave en mano con garantías y posventa</li>
             </ul>
           </Card>
         </div>

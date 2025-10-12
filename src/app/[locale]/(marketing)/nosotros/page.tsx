@@ -33,7 +33,7 @@ const values = [
   },
   {
     title: 'Cercania y servicio',
-    description: 'Acompanamos al cliente desde la ingenieria hasta la postventa con indicadores de satisfacción compartidos.'
+    description: 'Acompanamos al cliente desde la ingenieria hasta la posventa con indicadores de satisfacción compartidos.'
   }
 ]
 

@@ -41,7 +41,7 @@ export const services: ServiceItem[] = [
   {
     id: 'mobiliario',
     title: 'Mobiliario y butacas',
-    description: 'Líneas corporativas, hospitalarias y butacas premium con ergonomía y garantía postventa.',
+    description: 'Líneas corporativas, hospitalarias y butacas premium con ergonomía y garantía posventa.',
     href: '/productos',
     icon: Armchair
   },

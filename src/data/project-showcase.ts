@@ -301,7 +301,7 @@ export const projectShowcase: ProjectShowcase[] = [
     name: 'Edificio Luxus \u2014 Piso Anacaspi (Yanahuara)',
     sector: 'Residencial',
     location: 'Av. Bolognesi 337, Yanahuara, Arequipa',
-    area: '1 200 m2',
+    area: '1 200 m',
     areaM2: 1200,
     timeframe: 'Agosto 2023',
     summary: 'Suministro e instalaci\xf3n de piso de madera Anacaspi en edificio residencial.',

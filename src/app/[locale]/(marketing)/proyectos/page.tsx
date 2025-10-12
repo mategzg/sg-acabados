@@ -29,7 +29,7 @@ export default function ProyectosPage() {
   const averageSpecialties = totalSpecialties / projectShowcase.length
 
   const metrics = [
-    { label: 'Metros intervenidos', value: `${formatter.format(totalArea)} m2` },
+    { label: 'Metros intervenidos', value: `${formatter.format(totalArea)} m` },
     { label: 'Duración promedio', value: '8 semanas' },
     { label: 'Especialidades por proyecto', value: averageSpecialties.toFixed(1) }
   ]

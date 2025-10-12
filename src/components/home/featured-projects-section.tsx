@@ -35,7 +35,7 @@ const FEATURED_PATTERNS: Array<{
       sector: 'Aeropuertos y transporte',
       summary: 'Suministro e instalación de tabiquería de drywall para el terminal del proyecto de ampliación.',
       metrics: [
-        { label: 'Metros intervenidos', value: '3 200 m2', icon: Ruler },
+        { label: 'Metros intervenidos', value: '3 200 m', icon: Ruler },
         { label: 'Especialidades', value: 'Tabiquería drywall', icon: Layers3 },
         { label: 'Plazo', value: '8 semanas', icon: Clock4 }
       ],

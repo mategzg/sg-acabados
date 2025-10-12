@@ -25,7 +25,7 @@ const quoteSchema = z.object({
   sector: z.string().min(2, 'Selecciona el sector'),
   familia: z.string().optional(),
   subfamilia: z.string().optional(),
-  area: z.coerce.number().min(1, 'Metraje minimo 1 m2'),
+  area: z.coerce.number().min(1, 'Metraje minimo 1 m'),
   uso: z.string().optional(),
   transito: z.string().optional(),
   presupuesto: z.string().min(1, 'Selecciona un rango de inversion'),

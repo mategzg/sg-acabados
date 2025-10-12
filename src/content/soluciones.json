@@ -103,7 +103,7 @@
       "pains": [
         "Control de costos por tipología.",
         "Rendimiento en áreas comunes y showrooms.",
-        "Logística y postventa documentada."
+        "Logística y posventa documentada."
       ],
       "kits": [
         {
@@ -154,7 +154,7 @@
           "a": "Definimos fichas por tipología con materiales, rendimientos y precios por metro cuadrado."
         },
         {
-          "q": "¿Incluyen postventa?",
+          "q": "¿Incluyen posventa?",
           "a": "Sí. Entregamos documentación y atendemos incidencias según garantía."
         },
         {

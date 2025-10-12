@@ -84,7 +84,7 @@ export default async function ProyectoPage({
   const metrics = [
     { label: 'Cliente', value: project.cliente },
     { label: 'Ubicación', value: project.ubicación },
-    { label: 'Metros cuadrados', value: `${project.metrosCuadrados.toLocaleString('es-PE')} m2` },
+    { label: 'Metros cuadrados', value: `${project.metrosCuadrados.toLocaleString('es-PE')} m` },
     { label: 'Plazo', value: project.plazo }
   ]
 
