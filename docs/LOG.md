@@ -361,3 +361,4 @@ pm run build OK.
 - Proyectos: actualizado contenido de Aeropuerto Jorge Chávez (Ampliación), Cineplanet Cayma, Clínica Arequipa.
 - Proyectos: reordenados (1° Aeropuerto, 2° VIDENA, 3° TECSUP).
 - Proyectos: reordenados (° Aeropuerto, 2° VIDENA, 3° TECSUP). Cómo probar: /es/proyectos.
+- Dominio sgsac.com: middleware con rewrite / -> /es, redirect /es/*, robots/sitemap en raiz. Como probar: npm run dev; visitar /, /contacto y confirmar /es/* redirige y assets cargan.

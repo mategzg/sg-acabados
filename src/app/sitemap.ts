@@ -1,13 +1,18 @@
 import type { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? ''
-  const origin = base ? (base as string).replace(/\/$/, '') : ''
-  const urls = ['/es', '/es/productos', '/es/soluciones', '/es/proyectos', '/es/contacto', '/es/cotizar']
-  return urls.map((p) => ({
-    url: origin ? `${origin}${p}` : p,
-    changeFrequency: 'weekly',
-    priority: p === '/es' ? 1 : 0.7
-  }))
+function normalizeBase() {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, '') ?? ''
+  if (!raw) return ''
+  return raw.endsWith('/es') ? raw.slice(0, -3) : raw
 }
 
+export default function sitemap(): MetadataRoute.Sitemap {
+  const origin = normalizeBase()
+  const pages = ['/', '/productos', '/soluciones', '/proyectos', '/contacto', '/cotizar']
+
+  return pages.map((path) => ({
+    url: origin ? `${origin}${path}` : path,
+    changeFrequency: 'weekly',
+    priority: path === '/' ? 1 : 0.7
+  }))
+}
