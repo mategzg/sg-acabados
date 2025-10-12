@@ -54,7 +54,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'clínica-arequipa',
     name: 'Clínica Arequipa',
     sector: 'Salud',
-    summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en areas criticas de hospitalización.',
+    summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en áreas criticas de hospitalización.',
     metrics: [
       { label: 'Metros intervenidos', value: '2 100 m', icon: Ruler },
       { label: 'Especialidades', value: 'Pisos, HVAC, carpinteria', icon: Stethoscope },

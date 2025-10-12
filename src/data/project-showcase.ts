@@ -158,7 +158,7 @@ export const projectShowcase: ProjectShowcase[] = [
     specialties: ['Muros acústicos', 'Muros RF', 'Cielo raso acústico'],
     image: {
       src: '/images/proyectos/cineplanet-cayma-1.jpg',
-      alt: 'Sala premium Cineplanet Cayma con iluminacion indirecta'
+      alt: 'Sala premium Cineplanet Cayma con iluminación indirecta'
     },
     href: '/cotizar?proyecto=cineplanet'
   },
@@ -172,7 +172,7 @@ export const projectShowcase: ProjectShowcase[] = [
     timeframe: '— (Año de ejecución: 2012)',
     summary: 'Implementación del sistema de tabiquería, pisos y carpintería en edificio de 8 pisos.',
     challenges: [
-      'Intervención por etapas con areas en servicio',
+      'Intervención por etapas con áreas en servicio',
       'Validaciones de presión positiva y particulado',
       'Trazabilidad documental para auditorias clínicas'
     ],

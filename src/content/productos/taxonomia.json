@@ -17,7 +17,7 @@
       ]
     },
     {
-      "slug": "iluminacion",
+      "slug": "iluminación",
       "titulo": "Iluminación",
       "intro": "Soluciones LED para interior y exterior; escenas configurables e integración BMS.",
       "brands": ["Lightech", "Josfel"],
@@ -57,7 +57,7 @@
       "brands": ["Fursys", "Quadrifoglio", "Aresline", "EUN Mobile"],
       "subfamilias": [
         {"slug": "hospitalario", "nombre": "Hospitalario", "resumen": "Superficies y piezas para entornos clínicos.", "image": "/images/subfamilias/mobiliario-hospitalario-1.webp"},
-        {"slug": "tandem", "nombre": "Tándem", "resumen": "Sillas corridas para salas de espera.", "image": "/images/subfamilias/mobiliario-tandem-1.webp"},
+        {"slug": "tándem", "nombre": "Tándem", "resumen": "Sillas corridas para salas de espera.", "image": "/images/subfamilias/mobiliario-tandem-1.webp"},
         {"slug": "butacas", "nombre": "Butacas", "resumen": "Auditorios y cines; tapices y accesorios.", "image": "/images/subfamilias/mobiliario-butacas-1.webp"},
         {"slug": "archivos-moviles", "nombre": "Archivos móviles", "resumen": "Sistemas compactos de alta densidad.", "image": "/images/subfamilias/mobiliario-archivos-moviles-1.webp"},
         {"slug": "mesas-escritorios", "nombre": "Mesas y escritorios", "resumen": "Bench, ejecutivas y regulación en altura.", "image": "/images/subfamilias/mobiliario-mesas-escritorios-1.webp"},
