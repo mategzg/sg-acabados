@@ -163,7 +163,7 @@ export const projectShowcase: ProjectShowcase[] = [
     href: '/cotizar?proyecto=cineplanet'
   },
   {
-    id: 'clinica-arequipa',
+    id: 'clínica-arequipa',
     name: 'Clínica Arequipa',
     sector: 'Salud',
     location: 'Arequipa',
@@ -174,7 +174,7 @@ export const projectShowcase: ProjectShowcase[] = [
     challenges: [
       'Intervención por etapas con areas en servicio',
       'Validaciones de presión positiva y particulado',
-      'Trazabilidad documental para auditorias clinicas'
+      'Trazabilidad documental para auditorias clínicas'
     ],
     solution: [
       'Suministro e implementación de tabiquería, pisos y carpintería para 8 niveles.'
@@ -187,9 +187,9 @@ export const projectShowcase: ProjectShowcase[] = [
     specialties: ['Drywall', 'Pisos', 'Carpintería'],
     image: {
       src: '/images/proyectos/clinica-arequipa-1.jpg',
-      alt: 'Pasillo clinica Arequipa con acabados sanitarios'
+      alt: 'Pasillo clínica Arequipa con acabados sanitarios'
     },
-    href: '/cotizar?proyecto=clinica-arequipa'
+    href: '/cotizar?proyecto=clínica-arequipa'
   },
   {
     id: 'linde-peru-oficinas-administrativas',
@@ -640,7 +640,7 @@ export const projectShowcase: ProjectShowcase[] = [
     href: '/cotizar?proyecto=mibanco-agencia-cayma'
   },
   {
-    id: 'clinica-san-juan-de-dios-aire-acondicionado',
+    id: 'clínica-san-juan-de-dios-aire-acondicionado',
     name: 'Cl\xednica San Juan de Dios \u2014 Sistema de A/A',
     sector: 'Salud',
     location: 'Arequipa',
@@ -668,7 +668,7 @@ export const projectShowcase: ProjectShowcase[] = [
       src: '/images/proyectos/clinica-san-juan-de-dios-aire-acondicionado-1.webp',
       alt: 'Sistema de aire acondicionado instalado en la Cl\xednica San Juan de Dios'
     },
-    href: '/cotizar?proyecto=clinica-san-juan-de-dios-aire-acondicionado'
+    href: '/cotizar?proyecto=clínica-san-juan-de-dios-aire-acondicionado'
   },
   {
     id: 'universidad-andina-sicuani',

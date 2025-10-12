@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       'Tres proyectos ejecutados por SG Acabados en aeropuertos, retail y salud, coordinando acabados, mobiliario y sistemas integrales sin retrasos.',
     path: '/proyectos',
-    keywords: ['proyectos sg acabados', 'remodelación oficinas', 'implementación retail', 'clinicas llave en mano']
+    keywords: ['proyectos sg acabados', 'remodelación oficinas', 'implementación retail', 'clínicas llave en mano']
   })
 }
 

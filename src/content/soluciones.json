@@ -64,7 +64,7 @@
           ]
         }
       ],
-      "evidenceSlugs": ["jorge-chavez", "cineplanet-cayma", "clinica-arequipa"],
+      "evidenceSlugs": ["jorge-chavez", "cineplanet-cayma", "clínica-arequipa"],
       "form": {
         "fields": [
           "empresa",

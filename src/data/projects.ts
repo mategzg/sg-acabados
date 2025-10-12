@@ -51,8 +51,8 @@ export const featuredProjects: FeaturedProject[] = [
     href: '/proyectos/cineplanet-cayma'
   },
   {
-    id: 'clinica-arequipa',
-    name: 'Clinica Arequipa',
+    id: 'clínica-arequipa',
+    name: 'Clínica Arequipa',
     sector: 'Salud',
     summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en areas criticas de hospitalización.',
     metrics: [
@@ -62,7 +62,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     image: {
       src: '/images/proyectos/clinica-arequipa-1.jpg',
-      alt: 'Pasillo de la Clinica Arequipa con acabados sanitarios'
+      alt: 'Pasillo de la Clínica Arequipa con acabados sanitarios'
     },
     href: '/proyectos/clinica-arequipa'
   }

@@ -3,3 +3,4 @@ Soluciones: removida barra de pestañas duplicada bajo header; se mantiene únic
 Ortografía: tildes corregidas en textos ES (cotizar, contacto, proyectos, contenidos). Cómo probar: navegar /, /cotizar, /proyectos.
 Ortografía: interrogativos + 'posventa' normalizados; métricas en m (antes m2). Cómo probar: /soluciones y destacados de /proyectos.
 Ortografía: 'Perú' capitalizado en keywords (home/contacto/cotizar). Cómo probar: revisar metadata de esas vistas.
+Ortografía: 'WhatsApp' visible + 'clínica' ajustados; script scripts/fix-accents.ts creado. Cómo probar: /contacto, /proyectos, revisar script (--dry-run).
