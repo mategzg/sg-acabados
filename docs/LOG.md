@@ -365,5 +365,5 @@ pm run build OK.
 - Sitio raíz sin /es: middleware rewrite activo y redirect 308 desde /es/*; robots/sitemap/canonical actualizados. Cómo probar: https://www.sgsac.com/ (carga home) y https://www.sgsac.com/es/proyectos (redirige a /proyectos).
 - Header: logo ampliado y tagline actualizado (Más de 20 años cumpliendo). Cómo probar: https://www.sgsac.com/ (ver header).
 - Home: sincronizado con Productos (6 familias actualizadas) y Proyectos destacados (Aeropuerto, VIDENA, TECSUP). Cómo probar: / (botones enlazan a /productos/<slug>).
-- Soluciones: router por segmento (Corporativo/Inmobiliario/Particular) con formularios segmentados y GA activos. Cómo probar: /soluciones (tabs + formulario por segmento).
-- Soluciones: router de intención con tabs (Corporativo/Inmobiliario/Particular), formularios segmentados y GA (kit clicks + leads). Cómo probar: /soluciones (tabs actualizan query, CTA hero y formularios envían a /api/lead).
+
+- Soluciones: router de intención (tabs Corporativo/Inmobiliario/Particular) con formularios segmentados y GA (select_segment, click_quote_kit, click_whatsapp, generate_lead). Cómo probar: /soluciones (?segment, CTA hero/final y formularios envían a /api/lead).

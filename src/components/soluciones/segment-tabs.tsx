@@ -9,10 +9,10 @@ import { EvidenceCarousel } from "@/components/soluciones/evidence-carousel"
 import { SegmentForm } from "@/components/soluciones/segment-form"
 import { LocalizedLink as Link } from "@/components/localized-link"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { sendEvent } from "@/lib/gtag"
+import { track } from "@/lib/analytics"
 import type { SolutionsSegment } from "@/types/solutions"
 
 export type SegmentWithProjects = SolutionsSegment & {
@@ -79,7 +79,7 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
       setActiveSegment(value)
       updateQueryParam(value)
       onSegmentChange?.(value)
-      sendEvent("select_solution_segment", { segment: value })
+      track("select_segment", { segment: value })
     }
 
     const handleKitSelect = (segmentId: string, kitName: string) => {
@@ -172,8 +172,8 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
                   <div>
                     <h3 className="font-heading text-lg font-semibold text-foreground">Kits listos para ejecutar</h3>
                     <p className="text-sm text-muted-foreground">
-                      Selecciona un kit para prellenar la solicitud y coordinar la visita técnica.
-                    </p>
+                    Envía la solicitud o agenda una llamada por WhatsApp con nuestro equipo.
+                  </p>
                   </div>
                 </div>
                 <div className="grid gap-space-md md:grid-cols-2 xl:grid-cols-3">
@@ -224,6 +224,7 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
                   <Button asChild variant="outline" className="w-full md:w-auto">
                     <Link
                       href={segment.whatsappHref}
+                      onClick={() => track("click_whatsapp", { segment: segment.id })}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`Abrir WhatsApp para segmento ${segment.label}`}
@@ -252,6 +253,15 @@ export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
 )
 
 SegmentTabs.displayName = "SegmentTabs"
+
+
+
+
+
+
+
+
+
 
 
 

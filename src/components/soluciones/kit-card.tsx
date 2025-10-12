@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { sendEvent } from "@/lib/gtag"
+import { track } from "@/lib/analytics"
 import type { SolutionsKit } from "@/types/solutions"
 
 type KitCardProps = {
@@ -16,7 +16,7 @@ type KitCardProps = {
 export function KitCard({ segmentId, kit, onSelect }: KitCardProps) {
   const handleClick = () => {
     onSelect(kit.name)
-    sendEvent("click_quote_kit", { segment: segmentId, kit_name: kit.name })
+    track("click_quote_kit", { segment: segmentId, kit_name: kit.name })
   }
 
   return (

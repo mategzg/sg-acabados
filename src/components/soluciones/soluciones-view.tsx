@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Section } from "@/components/section"
-import { sendEvent } from "@/lib/gtag"
+import { track } from "@/lib/analytics"
 import type { SolutionsHero } from "@/types/solutions"
 
 import { siteConfig } from "@/config/site"
@@ -26,7 +26,7 @@ export function SolucionesView({ hero, segments, benefitsBar, defaultSegmentId }
   const [activeSegment, setActiveSegment] = useState(defaultSegmentId)
 
   const handleHeroCta = () => {
-    sendEvent("click_solution_hero_cta", { segment: activeSegment })
+    track("click_solution_hero_cta", { segment: activeSegment })
     segmentTabsRef.current?.scrollToActiveForm()
   }
 
@@ -54,6 +54,7 @@ export function SolucionesView({ hero, segments, benefitsBar, defaultSegmentId }
               <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
                 <a
                   href={createWhatsappLink(activeSegment)}
+                  onClick={() => track("click_whatsapp", { segment: activeSegment })}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Abrir WhatsApp para soluciones"
@@ -107,3 +108,5 @@ function createWhatsappLink(segmentId: string) {
   const text = `Quiero cotizar (${segmentId}) desde /soluciones`
   return `${WHATSAPP_BASE}?text=${encodeURIComponent(text)}`
 }
+
+

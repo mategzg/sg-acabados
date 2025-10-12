@@ -62,20 +62,34 @@ function mapEvidenceSlugs(
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  return createMetadata({
-    locale: 'es',
-    title: 'Soluciones por tipo de proyecto',
-    description: 'Selecciona tu segmento (corporativo, inmobiliario o particular) y recibe una propuesta técnica y económica en 24 horas hábiles.',
-    path: '/soluciones',
+  const content = getSolutionsContent()
+  const title = "Soluciones por tipo de proyecto | SG Acabados"
+  const description = content.hero.subtitle
+  const baseMetadata = createMetadata({
+    locale: "es",
+    title,
+    description,
+    path: "/soluciones",
     keywords: [
-      'soluciones corporativas',
-      'proyectos inmobiliarios',
-      'implementaciones particulares',
-      'kits de acabados',
-      'coordinación multiespecialidad'
+      "soluciones corporativas",
+      "proyectos inmobiliarios",
+      "implementaciones particulares",
+      "kits de acabados",
+      "coordinación multiespecialidad"
     ]
   })
+
+  return {
+    ...baseMetadata,
+    title,
+    description,
+    alternates: {
+      ...baseMetadata.alternates,
+      canonical: "/soluciones"
+    }
+  }
 }
+
 
 type SolucionesPageProps = {
   searchParams?: { segment?: string }
@@ -107,3 +121,4 @@ export default async function SolucionesPage({ searchParams }: SolucionesPagePro
     </Suspense>
   )
 }
+
