@@ -17,19 +17,19 @@ const projectOptions = [
   { label: 'Retail y hospitality', value: 'retail' },
   { label: 'Salud y laboratorios', value: 'salud' },
   { label: 'Aeropuertos y transporte', value: 'aeropuertos-transporte' },
-  { label: 'Industrial y logistica', value: 'industrial-logistica' },
+  { label: 'Industrial y logística', value: 'industrial-logistica' },
   { label: 'Otros proyectos', value: 'otros' }
 ]
 const budgetOptions = [
-  { label: 'Menos de $50 / m2', value: 'bajo' },
+  { label: 'Menos de $50 / m²', value: 'bajo' },
   { label: '$50 - $120 / m2', value: 'medio' },
-  { label: 'Mas de $120 / m2', value: 'alto' }
+  { label: 'Más de $120 / m²', value: 'alto' }
 ]
 const timeframeOptions = [
   { label: 'Inmediato (0-30 dias)', value: 'inmediato' },
   { label: '1 - 3 meses', value: '1-3 meses' },
   { label: '3 - 6 meses', value: '3-6 meses' },
-  { label: 'Mas de 6 meses', value: '6-plus' }
+  { label: 'Más de 6 meses', value: '6-plus' }
 ]
 const quoteLeadSchema = z.object({
   name: z.string().trim().min(2, 'Ingresa tu nombre completo'),
@@ -105,7 +105,7 @@ export function QuoteLeadForm({ defaultValues }: QuoteLeadFormProps) {
       if (!response.ok || !result?.ok) {
         throw new Error(result?.error ?? 'No pudimos enviar tu solicitud. Intenta nuevamente en unos minutos.')
       }
-      toast({ title: 'Enviado', description: 'Te contactaremos en menos de 24 horas habiles.' })
+      toast({ title: 'Enviado', description: 'Te contactaremos en menos de 24 horas hábiles.' })
       trackLead({ origin: 'quote-form', sector: values.sector, city: values.city, family: values.familia || undefined })
       reset({
         name: '',
@@ -148,7 +148,7 @@ export function QuoteLeadForm({ defaultValues }: QuoteLeadFormProps) {
         </Field>
         <Field label="Tipo de proyecto" error={errors.sector?.message}>
           <select className="h-11 rounded-2xl border border-border bg-white px-4 text-sm" {...register('sector')}>
-            <option value="">Selecciona una opcion</option>
+            <option value="">Selecciona una opción</option>
             {projectOptions.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}

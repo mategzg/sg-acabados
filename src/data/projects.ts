@@ -22,7 +22,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'jorge-chavez',
     name: 'Aeropuerto Jorge Chavez',
     sector: 'Aeropuertos',
-    summary: 'Renovacion de salas de embarque con pisos vinilicos, control solar y sistemas de audio evac.',
+    summary: 'Renovación de salas de embarque con pisos vinilicos, control solar y sistemas de audio evac.',
     metrics: [
       { label: 'Metros intervenidos', value: '3 200 m2', icon: Ruler },
       { label: 'Especialidades', value: 'Pisos, audio, control solar', icon: Layers3 },
@@ -38,15 +38,15 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'cineplanet-cayma',
     name: 'Cineplanet Cayma',
     sector: 'Retail',
-    summary: 'Implementacion integral de salas premium con butacas, iluminacion y revestimientos acusticos.',
+    summary: 'Implementación integral de salas premium con butacas, iluminación y revestimientos acústicos.',
     metrics: [
       { label: 'Metros intervenidos', value: '1 450 m2', icon: Ruler },
-      { label: 'Especialidades', value: 'Mobiliario, iluminacion', icon: Sparkles },
+      { label: 'Especialidades', value: 'Mobiliario, iluminación', icon: Sparkles },
       { label: 'Plazo', value: '6 semanas', icon: Clock4 }
     ],
     image: {
       src: '/images/proyectos/cineplanet-cayma-1.jpg',
-      alt: 'Sala de cine Cineplanet Cayma con iluminacion indirecta'
+      alt: 'Sala de cine Cineplanet Cayma con iluminación indirecta'
     },
     href: '/proyectos/cineplanet-cayma'
   },
@@ -54,7 +54,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'clinica-arequipa',
     name: 'Clinica Arequipa',
     sector: 'Salud',
-    summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en areas criticas de hospitalizacion.',
+    summary: 'Pisos conductivos, carpinteria sanitaria y sistemas HVAC en areas criticas de hospitalización.',
     metrics: [
       { label: 'Metros intervenidos', value: '2 100 m2', icon: Ruler },
       { label: 'Especialidades', value: 'Pisos, HVAC, carpinteria', icon: Stethoscope },

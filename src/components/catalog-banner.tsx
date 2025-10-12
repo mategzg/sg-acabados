@@ -15,10 +15,10 @@ export function CatalogBanner() {
             <p className="text-xs uppercase tracking-[0.3em] text-primary-foreground/70">Recursos</p>
             <div className="flex items-center gap-space-sm">
               <FileDown className="h-7 w-7 flex-shrink-0 text-primary-foreground" aria-hidden="true" />
-              <h2 className="text-balance font-heading text-2xl font-semibold md:text-3xl">Descarga el Catalogo SG 2025</h2>
+              <h2 className="text-balance font-heading text-2xl font-semibold md:text-3xl">Descarga el Catálogo SG 2025</h2>
             </div>
             <p className="max-w-2xl text-sm text-primary-foreground/80 md:text-base">
-              Fichas tecnicas de pisos, iluminacion, control solar, mobiliario y sistemas integrales listas para especificar.
+              Fichas técnicas de pisos, iluminación, control solar, mobiliario y sistemas integrales listas para especificar.
             </p>
           </div>
           <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
@@ -28,7 +28,7 @@ export function CatalogBanner() {
               rel="noreferrer"
               onClick={() => trackCatalogDownload('catalog-banner')}
             >
-              Descargar catalogo
+              Descargar catálogo
             </Link>
           </Button>
         </div>

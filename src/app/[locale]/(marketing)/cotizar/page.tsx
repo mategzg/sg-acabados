@@ -32,15 +32,15 @@ export const revalidate = 3600
 export async function generateMetadata(): Promise<Metadata> {
   return createMetadata({
     locale: 'es',
-    title: 'Solicitar cotizacion de acabados integrales',
+    title: 'Solicitar cotización de acabados integrales',
     description:
-      'Coordina acabados, mobiliario y sistemas MEP con SG Acabados. Respondemos en menos de 24 horas habiles para proyectos en todo el Peru.',
+      'Coordina acabados, mobiliario y sistemas MEP con SG Acabados. Respondemos en menos de 24 horas hábiles para proyectos en todo el Perú.',
     path: '/cotizar',
     keywords: [
-      'cotizacion sg acabados',
-      'acabados integrales peru',
+      'cotización sg acabados',
+      'acabados integrales perú',
       'cotizar proyecto oficinas',
-      'cotizar remodelacion retail'
+      'cotizar remodelación retail'
     ]
   })
 }
@@ -87,7 +87,7 @@ export default function CotizarPage({ searchParams }: CotizarPageProps) {
                 Cuentanos sobre tu proyecto
               </h1>
               <p className="max-w-2xl text-balance text-muted-foreground">
-                Integramos acabados, mobiliario y sistemas MEP para entregar espacios listos para operar sin mover la fecha acordada. Completa el formulario y coordinaremos la primera reunion en menos de un dia habil.
+                Integramos acabados, mobiliario y sistemas MEP para entregar espacios listos para operar sin mover la fecha acordada. Completa el formulario y coordinaremos la primera reunión en menos de un dia habil.
               </p>
             </div>
             <div className="grid gap-space-sm md:grid-cols-3">
@@ -102,7 +102,7 @@ export default function CotizarPage({ searchParams }: CotizarPageProps) {
           <Card className="space-y-space-sm rounded-3xl border border-border/70 bg-secondary/20 p-space-lg shadow-soft">
             <h2 className="font-heading text-xl font-semibold text-foreground">Necesitas respuesta inmediata?</h2>
             <p className="text-sm text-muted-foreground">
-              Contacta al equipo de SG Acabados por WhatsApp para coordinar una llamada o descarga el catalogo y revisa alternativas antes de la reunion.
+              Contacta al equipo de SG Acabados por WhatsApp para coordinar una llamada o descarga el catálogo y revisa alternativas antes de la reunión.
             </p>
             <div className="flex flex-col gap-space-sm sm:flex-row">
               <Button asChild className="w-full sm:w-auto">
@@ -122,7 +122,7 @@ export default function CotizarPage({ searchParams }: CotizarPageProps) {
                   rel="noreferrer"
                   context="cotizar-top"
                 >
-                  Descargar catalogo
+                  Descargar catálogo
                 </CatalogDownloadLink>
               </Button>
             </div>
@@ -162,8 +162,8 @@ export default function CotizarPage({ searchParams }: CotizarPageProps) {
             <Card className="rounded-3xl border border-border/70 bg-white/95 p-space-lg shadow-soft">
               <h2 className="font-heading text-lg font-semibold text-foreground">Tres pasos para avanzar</h2>
               <ol className="mt-space-sm space-y-2 text-sm text-muted-foreground">
-                <li>1. Revisamos tu solicitud y confirmamos la reunion virtual en menos de 24 horas.</li>
-                <li>2. Validamos visita tecnica, seguridad y compatibilizacion de especialidades.</li>
+                <li>1. Revisamos tu solicitud y confirmamos la reunión virtual en menos de 24 horas.</li>
+                <li>2. Validamos visita técnica, seguridad y compatibilización de especialidades.</li>
                 <li>3. Entregamos propuesta, cronograma y presupuesto firmado por SG Acabados.</li>
               </ol>
             </Card>

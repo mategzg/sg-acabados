@@ -76,14 +76,14 @@ export default async function ProyectoPage({
     name: project.nombre,
     description: project.resumen,
     client: project.cliente,
-    locationCreated: project.ubicacion,
+    locationCreated: project.ubicación,
     duration: project.plazo,
     url: `${siteConfig.siteUrl.replace(/\/$/, '')}/proyectos/${project.slug}`
   }
 
   const metrics = [
     { label: 'Cliente', value: project.cliente },
-    { label: 'Ubicacion', value: project.ubicacion },
+    { label: 'Ubicación', value: project.ubicación },
     { label: 'Metros cuadrados', value: `${project.metrosCuadrados.toLocaleString('es-PE')} m2` },
     { label: 'Plazo', value: project.plazo }
   ]

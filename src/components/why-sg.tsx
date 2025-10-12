@@ -4,12 +4,12 @@ const pillars = [
   {
     icon: CheckCircle2,
     title: 'Plazos cumplidos',
-    description: 'Planificacion Last Planner y seguimiento diario con reportes ejecutivos.'
+    description: 'Planificación Last Planner y seguimiento diario con reportes ejecutivos.'
   },
   {
     icon: Layers3,
     title: 'Soluciones integrales',
-    description: 'Coordinamos pisos, iluminacion, mobiliario y sistemas con un unico responsable.'
+    description: 'Coordinamos pisos, iluminación, mobiliario y sistemas con un unico responsable.'
   },
   {
     icon: ShieldCheck,

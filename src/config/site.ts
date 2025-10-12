@@ -5,11 +5,11 @@ export const siteConfig = {
   name: 'SG Acabados',
   legalName: 'SG Acabados S.A.C.',
   description:
-    'Acabados integrales, mobiliario y sistemas para proyectos corporativos y de infraestructura en todo el Peru.',
+    'Acabados integrales, mobiliario y sistemas para proyectos corporativos y de infraestructura en todo el Perú.',
   keywords: [
     'acabados integrales',
-    'pisos vinilicos',
-    'iluminacion',
+    'pisos vinílicos',
+    'iluminación',
     'mobiliario corporativo',
     'control solar',
     'SG Servicios Generales'
@@ -37,15 +37,15 @@ export const siteConfig = {
       { label: 'Cotizar', href: '/cotizar' }
     ],
     footer: [
-      { label: 'Descargar catalogo', href: '/descargas/CATALOGO-SG-2025.pdf', external: true },
-      { label: 'Politica de privacidad', href: '/politica-privacidad' },
-      { label: 'Terminos y condiciones', href: '/terminos-condiciones' }
+      { label: 'Descargar catálogo', href: '/descargas/CATALOGO-SG-2025.pdf', external: true },
+      { label: 'Política de privacidad', href: '/politica-privacidad' },
+      { label: 'Términos y condiciones', href: '/terminos-condiciones' }
     ]
   },
   hero: {
     title: 'Acabados que elevan y cumplen plazos',
-    subtitle: 'Pisos, iluminacion, control solar, mobiliario y sistemas integrales para proyectos en todo el Peru.',
-    primaryCta: { label: 'Solicitar cotizacion', href: '/cotizar' },
+    subtitle: 'Pisos, iluminación, control solar, mobiliario y sistemas integrales para proyectos en todo el Perú.',
+    primaryCta: { label: 'Solicitar cotización', href: '/cotizar' },
     secondaryCta: { label: 'Ver proyectos', href: '/proyectos' }
   }
 }

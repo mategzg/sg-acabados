@@ -53,8 +53,8 @@ export const projectShowcase: ProjectShowcase[] = [
     ],
     results: [
       'Reapertura de salas sin retrasos',
-      'Satisfaccion del operador aeroportuario',
-      'Reduccion de tiempos de limpieza post turno'
+      'Satisfacción del operador aeroportuario',
+      'Reducción de tiempos de limpieza post turno'
     ],
     specialties: ['Tabiquería drywall'],
     image: {
@@ -143,8 +143,8 @@ export const projectShowcase: ProjectShowcase[] = [
     summary: 'Implementación del sistema total de tabiquería en salas de cine, con muros acústicos y resistentes al fuego y cielo raso acústico negro en 9 salas.',
     challenges: [
       'Plazo fijo previo al estreno de temporada',
-      'Coordinacion con mall management para descargas nocturnas',
-      'Integracion de butacas motorizadas y audio envolvente'
+      'Coordinación con mall management para descargas nocturnas',
+      'Integración de butacas motorizadas y audio envolvente'
     ],
     solution: [
       'Suministro e instalación de muros acústicos y muros RF.',
@@ -153,7 +153,7 @@ export const projectShowcase: ProjectShowcase[] = [
     results: [
       'Apertura en fecha de estreno',
       'Experiencia premium validada por cliente',
-      'Reduccion de ruido a salas contiguas'
+      'Reducción de ruido a salas contiguas'
     ],
     specialties: ['Muros acústicos', 'Muros RF', 'Cielo raso acústico'],
     image: {
@@ -172,15 +172,15 @@ export const projectShowcase: ProjectShowcase[] = [
     timeframe: '— (Año de ejecución: 2012)',
     summary: 'Implementación del sistema de tabiquería, pisos y carpintería en edificio de 8 pisos.',
     challenges: [
-      'Intervencion por etapas con areas en servicio',
-      'Validaciones de presion positiva y particulado',
+      'Intervención por etapas con areas en servicio',
+      'Validaciones de presión positiva y particulado',
       'Trazabilidad documental para auditorias clinicas'
     ],
     solution: [
       'Suministro e implementación de tabiquería, pisos y carpintería para 8 niveles.'
     ],
     results: [
-      'Habilitacion de UCI y salas de procedimientos',
+      'Habilitación de UCI y salas de procedimientos',
       'Auditoria sanitaria aprobada sin observaciones',
       'Plan de mantenimiento preventivo entregado'
     ],

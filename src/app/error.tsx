@@ -16,7 +16,7 @@ export default function GlobalError({ reset }: { reset: () => void }) {
               Algo salio mal
             </h1>
             <p className="max-w-xl text-muted-foreground">
-              Hemos registrado la incidencia. Intenta recargar la pagina o vuelve al inicio mientras resolvemos el
+              Hemos registrado la incidencia. Intenta recargar la página o vuelve al inicio mientras resolvemos el
               problema.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">

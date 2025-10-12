@@ -61,7 +61,7 @@ export type Project = {
   slug: string
   nombre: string
   cliente: string
-  ubicacion: string
+  ubicación: string
   metrosCuadrados: number
   plazo: string
   especialidades: string[]

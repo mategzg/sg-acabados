@@ -80,7 +80,7 @@ export default async function SubFamilyPage({
     'transito-alto': 'Transito alto',
     impermeable: 'Impermeable',
     ignifugo: 'Ignifugo',
-    acustica: 'Acustica'
+    acustica: 'Acústica'
   } as const
 
   const families = await getFamilies()
@@ -116,7 +116,7 @@ export default async function SubFamilyPage({
           </div>
           <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr]">
             <div className="space-y-4">
-              <Badge variant="accent" className="w-fit">Ficha tecnica</Badge>
+              <Badge variant="accent" className="w-fit">Ficha técnica</Badge>
               <h1 className="font-heading text-4xl font-semibold text-foreground md:text-5xl">
                 {subFamily.nombre}
               </h1>
@@ -141,7 +141,7 @@ export default async function SubFamilyPage({
                 </ul>
                 <div className="flex flex-wrap gap-3">
                   <Button asChild size="sm">
-                    <Link href="/cotizar">Solicitar cotizacion</Link>
+                    <Link href="/cotizar">Solicitar cotización</Link>
                   </Button>
                   <Button asChild size="sm" variant="outline">
                     <a href={`${siteConfig.whatsapp.link}?text=${whatsappMessage}`} target="_blank" rel="noreferrer">
@@ -257,7 +257,7 @@ export default async function SubFamilyPage({
           <div className="space-y-4">
             <h2 className="font-heading text-3xl font-semibold text-foreground">Construyamos el alcance ideal</h2>
             <p className="text-sm text-muted-foreground">
-              Cuentanos sobre tu proyecto y nuestro equipo te contactara con una propuesta personalizada en menos de 24 horas habiles.
+              Cuentanos sobre tu proyecto y nuestro equipo te contactara con una propuesta personalizada en menos de 24 horas hábiles.
             </p>
           </div>
           <QuoteBuilder

@@ -28,7 +28,7 @@ export function ProjectShowcaseCard({ project }: { project: ProjectShowcase }) {
         <p className="text-sm text-muted-foreground">{project.summary}</p>
         <dl className="grid grid-cols-2 gap-space-sm text-xs text-muted-foreground">
           <div>
-            <dt className="font-semibold text-foreground/80">Ubicacion</dt>
+            <dt className="font-semibold text-foreground/80">Ubicación</dt>
             <dd>{project.location}</dd>
           </div>
           <div>
@@ -45,7 +45,7 @@ export function ProjectShowcaseCard({ project }: { project: ProjectShowcase }) {
           </div>
         </dl>
         <div className="space-y-2">
-          <h4 className="font-heading text-sm font-semibold text-foreground">Solucion coordinada</h4>
+          <h4 className="font-heading text-sm font-semibold text-foreground">Solución coordinada</h4>
           <ul className="space-y-1 text-sm text-foreground/80">
             {project.solution.map((item) => (
               <li key={item}>- {item}</li>
@@ -56,7 +56,7 @@ export function ProjectShowcaseCard({ project }: { project: ProjectShowcase }) {
           <Link
             href={project.href}
             className="inline-flex items-center text-sm font-semibold text-primary underline-offset-4 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-            aria-label={`Solicitar informacion del proyecto ${project.name}`}
+            aria-label={`Solicitar información del proyecto ${project.name}`}
           >
             Solicitar un proyecto similar
           </Link>

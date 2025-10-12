@@ -24,8 +24,8 @@ describe('seo helpers', () => {
   it('generates Open Graph metadata with local image', () => {
     const metadata = createMetadata({
       locale: 'es',
-      title: 'Pagina de prueba',
-      description: 'Descripcion demostrativa',
+      title: 'Página de prueba',
+      description: 'Descripción demostrativa',
       path: '/demo'
     })
 

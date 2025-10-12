@@ -15,24 +15,24 @@ export const productFamilies: ProductFamily[] = [
     id: 'pisos-vinilicos',
     name: 'Pisos vinilicos y SPC',
     description:
-      'Soluciones de alto transito con instalacion flotante o pegada que aseguran continuidad visual y mantenimiento rapido.',
+      'Soluciones de alto tránsito con instalación flotante o pegada que aseguran continuidad visual y mantenimiento rápido.',
     image: {
       src: '/images/familias/pisos-1.jpg',
       alt: 'Pisos vinilicos instalados en oficina corporativa'
     },
-    highlights: ['Garantia hasta 15 años', 'Resistentes a humedad y rayones', 'Instalacion limpia y rapida'],
+    highlights: ['Garantía hasta 15 años', 'Resistentes a humedad y rayones', 'Instalación limpia y rápida'],
     href: '/cotizar?interes=pisos'
   },
   {
     id: 'iluminacion',
-    name: 'Iluminacion',
+    name: 'Iluminación',
     description:
-      'Luminarias LED con control DALI y escenas configurables para oficinas, retail y espacios de atencion al cliente.',
+      'Luminarias LED con control DALI y escenas configurables para oficinas, retail y espacios de atención al cliente.',
     image: {
       src: '/images/familias/iluminacion-1.jpg',
-      alt: 'Iluminacion en sala de reuniones'
+      alt: 'Iluminación en sala de reuniones'
     },
-    highlights: ['Eficiencia energetica certificada', 'Layouts fotometricos incluidos', 'Integracion con BMS existente'],
+    highlights: ['Eficiencia energética certificada', 'Layouts fotométricos incluidos', 'Integración con BMS existente'],
     href: '/cotizar?interes=iluminacion'
   },
   {
@@ -44,31 +44,31 @@ export const productFamilies: ProductFamily[] = [
       src: '/images/familias/control-solar-1.jpg',
       alt: 'Cortinas roller motorizadas en sala de directorio'
     },
-    highlights: ['Tejidos certificados Greenguard', 'Motorizacion Somfy y Lutron', 'Programacion segun horario solar'],
+    highlights: ['Tejidos certificados Greenguard', 'Motorización Somfy y Lutron', 'Programación segun horario solar'],
     href: '/cotizar?interes=control-solar'
   },
   {
     id: 'mobiliario-corporativo',
     name: 'Mobiliario corporativo',
     description:
-      'Workstations, salas colaborativas y recepciones con fabricacion modular que optimiza montaje y cableado.',
+      'Workstations, salas colaborativas y recepciones con fabricación modular que optimiza montaje y cableado.',
     image: {
       src: '/images/familias/mobiliario-1.jpg',
       alt: 'Mobiliario corporativo modular en open space'
     },
-    highlights: ['Configurable por celula', 'Ergonomia certificada BIFMA', 'Integracion con electrificacion oculta'],
+    highlights: ['Configurable por celula', 'Ergonomia certificada BIFMA', 'Integración con electrificación oculta'],
     href: '/cotizar?interes=mobiliario'
   },
   {
     id: 'recubrimientos-verticales',
     name: 'Recubrimientos verticales',
     description:
-      'Paneles acusticos, revestimientos en MDF laminado y pieles metalicas para auditorios, retail y hospitality.',
+      'Paneles acústicos, revestimientos en MDF laminado y pieles metalicas para auditorios, retail y hospitality.',
     image: {
       src: '/images/familias/recubrimientos-ventanas-1.jpg',
-      alt: 'Revestimientos acusticos en lobby corporativo'
+      alt: 'Revestimientos acústicos en lobby corporativo'
     },
-    highlights: ['Absorcion acustica NRC 0.75', 'Tratamientos ignifugos certificados', 'Disenos curvos y volumetricos'],
+    highlights: ['Absorción acústica NRC 0.75', 'Tratamientos ignifugos certificados', 'Diseños curvos y volumetricos'],
     href: '/cotizar?interes=recubrimientos'
   },
   {

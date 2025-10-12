@@ -42,7 +42,7 @@ export function Navbar() {
 
         <nav
           id={menuId}
-          aria-label="Navegacion principal"
+          aria-label="Navegación principal"
           className="hidden items-center gap-space-lg text-sm font-heading md:flex"
         >
           {navLinks.map((item) => (

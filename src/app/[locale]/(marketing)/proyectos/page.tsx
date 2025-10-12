@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       'Tres proyectos ejecutados por SG Acabados en aeropuertos, retail y salud, coordinando acabados, mobiliario y sistemas integrales sin retrasos.',
     path: '/proyectos',
-    keywords: ['proyectos sg acabados', 'remodelacion oficinas', 'implementacion retail', 'clinicas llave en mano']
+    keywords: ['proyectos sg acabados', 'remodelación oficinas', 'implementación retail', 'clinicas llave en mano']
   })
 }
 
@@ -30,7 +30,7 @@ export default function ProyectosPage() {
 
   const metrics = [
     { label: 'Metros intervenidos', value: `${formatter.format(totalArea)} m2` },
-    { label: 'Duracion promedio', value: '8 semanas' },
+    { label: 'Duración promedio', value: '8 semanas' },
     { label: 'Especialidades por proyecto', value: averageSpecialties.toFixed(1) }
   ]
 

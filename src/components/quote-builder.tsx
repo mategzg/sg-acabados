@@ -49,22 +49,22 @@ const sectorOptions = [
   { label: 'Oficinas', value: 'oficinas' },
   { label: 'Retail', value: 'retail' },
   { label: 'Salud', value: 'salud' },
-  { label: 'Educacion', value: 'educacion' },
+  { label: 'Educación', value: 'educacion' },
   { label: 'Industrial / Minero', value: 'industrial-minero' },
   { label: 'Aeropuertos / Transporte', value: 'aeropuertos-transporte' }
 ]
 
 const presupuestoOptions = [
-  { label: 'Menos de $50 / m2', value: 'bajo' },
+  { label: 'Menos de $50 / m²', value: 'bajo' },
   { label: '$50 - $120 / m2', value: 'medio' },
-  { label: 'Mas de $120 / m2', value: 'alto' }
+  { label: 'Más de $120 / m²', value: 'alto' }
 ]
 
 const plazoOptions = [
   { label: 'Inmediato (0-30 dias)', value: 'inmediato' },
   { label: '1 - 3 meses', value: '1-3 meses' },
   { label: '3 - 6 meses', value: '3-6 meses' },
-  { label: 'Mas de 6 meses', value: '6+ meses' }
+  { label: 'Más de 6 meses', value: '6+ meses' }
 ]
 
 const usoOptions = [
@@ -308,7 +308,7 @@ export function QuoteBuilder({ defaultValues, className }: QuoteBuilderProps) {
             </Field>
             <Field label="Sector" error={errors.sector?.message}>
               <select className="h-11 rounded-2xl border border-border bg-white px-4 text-sm" {...register('sector')}>
-                <option value="">Selecciona una opcion</option>
+                <option value="">Selecciona una opción</option>
                 {sectorOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
@@ -333,7 +333,7 @@ export function QuoteBuilder({ defaultValues, className }: QuoteBuilderProps) {
             <div className="grid gap-4 md:grid-cols-2">
               <Field label="Uso" error={errors.uso?.message} optional>
                 <select className="h-11 rounded-2xl border border-border bg-white px-4 text-sm" {...register('uso')}>
-                  <option value="">Selecciona una opcion</option>
+                  <option value="">Selecciona una opción</option>
                   {usoOptions.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
@@ -343,7 +343,7 @@ export function QuoteBuilder({ defaultValues, className }: QuoteBuilderProps) {
               </Field>
               <Field label="Transito" error={errors.transito?.message} optional>
                 <select className="h-11 rounded-2xl border border-border bg-white px-4 text-sm" {...register('transito')}>
-                  <option value="">Selecciona una opcion</option>
+                  <option value="">Selecciona una opción</option>
                   {transitoOptions.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
@@ -353,7 +353,7 @@ export function QuoteBuilder({ defaultValues, className }: QuoteBuilderProps) {
               </Field>
               <Field label="Presupuesto" error={errors.presupuesto?.message}>
                 <select className="h-11 rounded-2xl border border-border bg-white px-4 text-sm" {...register('presupuesto')}>
-                  <option value="">Selecciona una opcion</option>
+                  <option value="">Selecciona una opción</option>
                   {presupuestoOptions.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
@@ -363,7 +363,7 @@ export function QuoteBuilder({ defaultValues, className }: QuoteBuilderProps) {
               </Field>
               <Field label="Plazo estimado" error={errors.plazo?.message}>
                 <select className="h-11 rounded-2xl border border-border bg-white px-4 text-sm" {...register('plazo')}>
-                  <option value="">Selecciona una opcion</option>
+                  <option value="">Selecciona una opción</option>
                   {plazoOptions.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}

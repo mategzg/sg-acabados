@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return createMetadata({
     locale: 'es',
     title: 'Politica de privacidad',
-    description: 'Conoce como SG Acabados protege tus datos personales y gestiona las solicitudes de cotizacion.',
+    description: 'Conoce como SG Acabados protege tus datos personales y gestiona las solicitudes de cotización.',
     path: '/politica-privacidad'
   })
 }
@@ -25,22 +25,22 @@ export default function PoliticaPrivacidadPage() {
     {
       title: '2. Finalidades',
       content:
-        'Utilizamos tu informacion para responder consultas comerciales, preparar propuestas, coordinar visitas tecnicas y brindar seguimiento postventa.'
+        'Utilizamos tu información para responder consultas comerciales, preparar propuestas, coordinar visitas técnicas y brindar seguimiento postventa.'
     },
     {
       title: '3. Datos que recolectamos',
       content:
-        'Nombre, correo, telefono, empresa, ciudad, informacion del proyecto y archivos adjuntos como planos o especificaciones tecnicas.'
+        'Nombre, correo, telefono, empresa, ciudad, información del proyecto y archivos adjuntos como planos o especificaciones técnicas.'
     },
     {
-      title: '4. Conservacion',
+      title: '4. Conservación',
       content:
-        'Los datos se almacenan en infraestructura segura y se conservan mientras exista una relacion comercial o sea necesario para fines contables y legales.'
+        'Los datos se almacenan en infraestructura segura y se conservan mientras exista una relación comercial o sea necesario para fines contables y legales.'
     },
     {
       title: '5. Derechos ARCO',
       content:
-        'Puedes solicitar acceso, rectificacion, cancelacion u oposicion escribiendo a sgacabadossac@gmail.com. Respondemos en un maximo de 15 dias habiles.'
+        'Puedes solicitar acceso, rectificación, cancelación u oposición escribiendo a sgacabadossac@gmail.com. Respondemos en un maximo de 15 dias hábiles.'
     },
     {
       title: '6. Seguridad',
@@ -50,7 +50,7 @@ export default function PoliticaPrivacidadPage() {
     {
       title: '7. Actualizaciones',
       content:
-        'Esta politica puede actualizarse para reflejar nuevas regulaciones o servicios. Publicaremos la fecha de vigencia de la ultima modificacion.'
+        'Esta politica puede actualizarse para reflejar nuevas regulaciones o servicios. Publicaremos la fecha de vigencia de la última modificación.'
     }
   ]
 
@@ -63,8 +63,8 @@ export default function PoliticaPrivacidadPage() {
             Protegemos tus datos personales
           </h1>
           <p className="max-w-2xl text-muted-foreground">
-            Esta politica describe como recolectamos, usamos y protegemos la informacion que nos confias
-            cuando solicitas una cotizacion o nos contactas.
+            Esta politica describe como recolectamos, usamos y protegemos la información que nos confias
+            cuando solicitas una cotización o nos contactas.
           </p>
         </div>
         <div className="space-y-6">
@@ -76,7 +76,7 @@ export default function PoliticaPrivacidadPage() {
           ))}
         </div>
         <p className="text-xs text-muted-foreground">
-          Vigente desde septiembre 2025. Ultima revision: {new Date().toLocaleDateString('es-PE')}.
+          Vigente desde septiembre 2025. Última revision: {new Date().toLocaleDateString('es-PE')}.
         </p>
       </div>
     </Section>

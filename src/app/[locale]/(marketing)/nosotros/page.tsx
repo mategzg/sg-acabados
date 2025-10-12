@@ -21,19 +21,19 @@ export async function generateMetadata(): Promise<Metadata> {
 const values = [
   {
     title: 'Excelencia operativa',
-    description: 'Metodologias Lean y coordinacion Last Planner para cumplir los cronogramas sin sacrificar calidad.'
+    description: 'Metodologias Lean y coordinación Last Planner para cumplir los cronogramas sin sacrificar calidad.'
   },
   {
     title: 'Seguridad y sostenibilidad',
     description: 'Protocolos HSE, materiales certificados y planes de manejo ambiental para cada obra.'
   },
   {
-    title: 'Integracion 360o',
+    title: 'Integración 360o',
     description: 'Un unico equipo coordina acabados, mobiliario y sistemas MEP para reducir interferencias y retrabajos.'
   },
   {
     title: 'Cercania y servicio',
-    description: 'Acompanamos al cliente desde la ingenieria hasta la postventa con indicadores de satisfaccion compartidos.'
+    description: 'Acompanamos al cliente desde la ingenieria hasta la postventa con indicadores de satisfacción compartidos.'
   }
 ]
 
@@ -41,14 +41,14 @@ const values = [
 const certifications = [
   'ISO 9001:2015 - Gestion de calidad',
   'ISO 45001:2018 - Seguridad y salud ocupacional',
-  'Miembros de Green Building Council Peru',
+  'Miembros de Green Building Council Perú',
   'Integradores certificados NFPA y ASHRAE'
 ]
 
 const timeline = [
   {
     year: '2003',
-    title: 'Fundacion en Arequipa',
+    title: 'Fundación en Arequipa',
     description: 'SG Servicios Generales inicia operaciones especializadas en acabados corporativos.'
   },
   {
@@ -59,12 +59,12 @@ const timeline = [
   {
     year: '2016',
     title: 'Nace SG Acabados',
-    description: 'Se consolida la unidad multiespecialidad que integra acabados, mobiliario y sistemas tecnicos.'
+    description: 'Se consolida la unidad multiespecialidad que integra acabados, mobiliario y sistemas técnicos.'
   },
   {
     year: '2023',
-    title: 'Operacion nacional',
-    description: 'Coordinamos proyectos simultaneos en aeropuertos, salud y oficinas en todo el Peru.'
+    title: 'Operación nacional',
+    description: 'Coordinamos proyectos simultaneos en aeropuertos, salud y oficinas en todo el Perú.'
   }
 ]
 
@@ -77,7 +77,7 @@ export default function NosotrosPage() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
             <div className="space-y-4">
               <h1 className="font-heading text-4xl font-semibold text-foreground md:text-5xl">
-                +20 años elevando proyectos en el Peru
+                +20 años elevando proyectos en el Perú
               </h1>
               <p className="text-lg text-muted-foreground">
                 SG Acabados es la unidad especializada de SG Acabados S.A.C. enfocada en integrar acabados, mobiliario y sistemas para proyectos corporativos, retail, salud y aeropuertos.

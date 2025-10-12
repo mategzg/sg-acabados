@@ -21,7 +21,7 @@ export function FinalCallToAction() {
           <div className="flex flex-col gap-space-sm self-center text-brand-arena">
             <Button asChild size="lg" className="flex w-full items-center justify-center gap-2 bg-brand-arena text-brand-carbon hover:bg-brand-arena/90 sm:w-auto">
               <Link href="/cotizar">
-                Solicitar cotizacion
+                Solicitar cotización
                 <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
               </Link>
             </Button>

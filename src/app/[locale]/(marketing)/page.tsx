@@ -14,9 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: 'es',
     title: 'Acabados corporativos integrales que cumplen plazos',
     description:
-      'Especialistas en acabados corporativos en Peru: coordinamos arquitectura interior, mobiliario y sistemas MEP para entregar oficinas, retail y salud sin retrasos.',
+      'Especialistas en acabados corporativos en Perú: coordinamos arquitectura interior, mobiliario y sistemas MEP para entregar oficinas, retail y salud sin retrasos.',
     path: '/',
-    keywords: ['acabados corporativos', 'interiorismo corporativo', 'proyectos llave en mano', 'acabados retail', 'constructoras peru']
+    keywords: ['acabados corporativos', 'interiorismo corporativo', 'proyectos llave en mano', 'acabados retail', 'constructoras perú']
   })
 }
 

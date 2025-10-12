@@ -22,9 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
     locale: 'es',
     title: 'Contacto SG Acabados',
     description:
-      'Agenda visitas tecnicas, soporte y nuevas cotizaciones con el equipo de SG Acabados en Arequipa y proyectos a nivel nacional.',
+      'Agenda visitas técnicas, soporte y nuevas cotizaciones con el equipo de SG Acabados en Arequipa y proyectos a nivel nacional.',
     path: '/contacto',
-    keywords: ['contacto sg acabados', 'visita tecnica', 'proyectos corporativos peru']
+    keywords: ['contacto sg acabados', 'visita técnica', 'proyectos corporativos perú']
   })
 }
 
@@ -92,7 +92,7 @@ export default function ContactoPage() {
               </div>
               <div className="mt-space-md flex flex-col gap-space-sm sm:flex-row">
                 <Button asChild size="lg" className="w-full sm:w-auto">
-                  <Link href="/cotizar">Solicitar cotizacion</Link>
+                  <Link href="/cotizar">Solicitar cotización</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
                   <Link href="/proyectos">Ver proyectos entregados</Link>
@@ -103,7 +103,7 @@ export default function ContactoPage() {
           <Card className="rounded-3xl border border-border/70 bg-white/95 p-space-lg shadow-soft">
             <h2 className="font-heading text-xl font-semibold text-foreground">Escribe a nuestro equipo</h2>
             <p className="mt-space-xs text-sm text-muted-foreground">
-              Cuentanos el tipo de espacio, ubicacion y plazos estimados para ayudarte con rapidez.
+              Cuentanos el tipo de espacio, ubicación y plazos estimados para ayudarte con rapidez.
             </p>
             <div className="mt-space-md">
               <ContactLeadForm />
@@ -117,14 +117,14 @@ export default function ContactoPage() {
           <div className="space-y-space-sm">
             <h2 className="font-heading text-3xl font-semibold text-foreground">Oficinas y cobertura</h2>
             <p className="text-sm text-muted-foreground">
-              Atendemos proyectos en todo el Peru desde nuestra base en Arequipa y equipos itinerantes. Coordinamos visitas segun agenda y protocolos de seguridad.
+              Atendemos proyectos en todo el Perú desde nuestra base en Arequipa y equipos itinerantes. Coordinamos visitas segun agenda y protocolos de seguridad.
             </p>
             <div className="grid gap-space-sm sm:grid-cols-2">
               {siteConfig.offices.map((office) => (
                 <Card key={office.city} className="rounded-3xl border border-border/70 bg-secondary/20 p-space-lg shadow-soft">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{office.city}</p>
                   <p className="mt-space-xs font-heading text-xl font-semibold text-foreground">{office.address}</p>
-                  <p className="mt-space-xs text-sm text-muted-foreground">Visitas previa coordinacion.</p>
+                  <p className="mt-space-xs text-sm text-muted-foreground">Visitas previa coordinación.</p>
                 </Card>
               ))}
             </div>
@@ -133,7 +133,7 @@ export default function ContactoPage() {
             <iframe
               src={mapEmbedUrl}
               title="Mapa SG Acabados"
-              aria-label="Mapa con ubicacion de SG Acabados en Yanahuara, Arequipa"
+              aria-label="Mapa con ubicación de SG Acabados en Yanahuara, Arequipa"
               className="h-[360px] w-full rounded-3xl"
               loading="lazy"
             />

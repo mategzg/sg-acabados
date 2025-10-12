@@ -21,7 +21,7 @@ const highlights = [
   },
   {
     icon: MapPin,
-    label: 'Equipos desplegables en todo el Peru'
+    label: 'Equipos desplegables en todo el Perú'
   }
 ]
 
