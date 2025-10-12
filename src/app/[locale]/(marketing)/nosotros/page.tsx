@@ -76,30 +76,26 @@ export default function NosotrosPage() {
           <div className="space-y-10">
             <Badge variant="accent" className="w-fit">Nosotros</Badge>
             <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-              <div className="space-y-6 lg:col-span-7">
+              <div className="lg:col-span-7">
                 <h1 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-foreground">
                   +20 años elevando proyectos en el Perú
                 </h1>
-                <p className="text-lg text-muted-foreground">
+                <p className="mt-4 max-w-xl text-base text-muted-foreground">
                   SG Acabados es la unidad especializada de SG Acabados S.A.C. enfocada en integrar acabados, mobiliario y sistemas para proyectos corporativos, retail, salud y aeropuertos.
                 </p>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <Card className="bg-white/95">
-                    <CardContent className="space-y-2 p-6">
-                      <h2 className="font-heading text-xl font-semibold text-foreground">Mision</h2>
-                      <p className="text-sm text-muted-foreground">
-                        Entregar espacios listos para operar, garantizando plazos, seguridad y sostenibilidad en cada especialidad.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-white/95">
-                    <CardContent className="space-y-2 p-6">
-                      <h2 className="font-heading text-xl font-semibold text-foreground">Vision</h2>
-                      <p className="text-sm text-muted-foreground">
-                        Ser el aliado preferido de las empresas lideres del pais para transformar infraestructura compleja en experiencias memorables.
-                      </p>
-                    </CardContent>
-                  </Card>
+                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border bg-card p-5 shadow-sm">
+                    <h3 className="text-lg font-medium">Misión</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Entregar espacios listos para operar, garantizando plazos, seguridad y sostenibilidad en cada especialidad.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border bg-card p-5 shadow-sm">
+                    <h3 className="text-lg font-medium">Visión</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Ser el aliado preferido de las empresas líderes del país para transformar infraestructura compleja en experiencias memorables.
+                    </p>
+                  </div>
                 </div>
               </div>
               <aside className="mt-10 lg:mt-0 lg:col-span-5">
