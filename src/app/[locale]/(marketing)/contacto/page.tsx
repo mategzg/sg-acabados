@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       'Agenda visitas técnicas, soporte y nuevas cotizaciones con el equipo de SG Acabados en Arequipa y proyectos a nivel nacional.',
     path: '/contacto',
-    keywords: ['contacto sg acabados', 'visita técnica', 'proyectos corporativos perú']
+    keywords: ['contacto sg acabados', 'visita técnica', 'proyectos corporativos Perú']
   })
 }
 

@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
     path: '/cotizar',
     keywords: [
       'cotización sg acabados',
-      'acabados integrales perú',
+      'acabados integrales Perú',
       'cotizar proyecto oficinas',
       'cotizar remodelación retail'
     ]
