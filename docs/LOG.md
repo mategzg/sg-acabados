@@ -359,3 +359,5 @@ pm run build OK.
 - Como probar en localhost: npm run dev; revisar /es/proyectos y confirmar nuevos textos en Aeropuerto Internacional Jorge Chávez — Ampliación, Cineplanet Cayma y Clínica Arequipa.
 - Hallazgos clave: Se añadieron los nuevos sectores "Aeropuertos y transporte" y "Entretenimiento / Cines" y se ajustó el header para alojar un logo más grande.
 - Proyectos: actualizado contenido de Aeropuerto Jorge Chávez (Ampliación), Cineplanet Cayma, Clínica Arequipa.
+- Proyectos: reordenados (1° Aeropuerto, 2° VIDENA, 3° TECSUP).
+- Proyectos: reordenados (° Aeropuerto, 2° VIDENA, 3° TECSUP). Cómo probar: /es/proyectos.

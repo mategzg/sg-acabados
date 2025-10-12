@@ -36,7 +36,7 @@ export type ProjectShowcase = {
 export const projectShowcase: ProjectShowcase[] = [
   {
     id: 'jorge-chavez-terminal',
-    name: 'Aeropuerto Internacional Jorge Chávez — Ampliación',
+    name: 'Aeropuerto Internacional Jorge Chávez  Ampliación',
     sector: 'Aeropuertos y transporte',
     location: 'Aeropuerto Internacional Jorge Chávez, Lima — Perú',
     area: '—',
@@ -62,6 +62,75 @@ export const projectShowcase: ProjectShowcase[] = [
       alt: 'Sala de embarque renovada en el aeropuerto Jorge Chavez'
     },
     href: '/cotizar?proyecto=jorge-chavez'
+  },
+  {
+    id: 'videna-control-solar-y-vientos',
+    name: 'VIDENA  Sistema de Control Solar y de Vientos',
+    sector: 'Deportes / Infraestructura',
+    location: 'San Luis, Lima',
+    area: '\u2014',
+    areaM2: 0,
+    timeframe: 'Junio 2019',
+    summary: 'Venta e instalaci\xf3n de sistemas de control solar y vientos con celos\xedas de lamas orientables exteriores.',
+    challenges: [
+      'Compatibilizar las nuevas celos\xedas con la estructura existente de VIDENA.',
+      'Instalar sistemas de control solar en fachadas de gran altura.',
+      'Cumplir con los lineamientos arquitect\xf3nicos del legado deportivo.'
+    ],
+    solution: [
+      'Suministro e instalaci\xf3n de sistemas de control solar y vientos.',
+      'Celos\xedas de lamas orientables exteriores regulables.'
+    ],
+    results: [
+      'Control de radiaci\xf3n solar y de corrientes de viento en \xe1reas deportivas.',
+      'Mejora del confort t\xe9rmico en ambientes estrat\xe9gicos de VIDENA.',
+      'Entrega aprobada por la administraci\xf3n del complejo deportivo.'
+    ],
+    specialties: [
+      'Control solar',
+      'Celos\xedas orientables'
+    ],
+    image: {
+      src: '/images/placeholders/generic-card.webp',
+      alt: 'Celos\xedas orientables instaladas en la VIDENA'
+    },
+    href: '/cotizar?proyecto=videna-control-solar-y-vientos'
+  },
+  {
+    id: 'tecsup-auditorio-arequipa',
+    name: 'TECSUP  Auditorio (Sede Arequipa)',
+    sector: 'Educaci\xf3n',
+    location: 'Jos\xe9 Luis Bustamante y Rivero, Arequipa',
+    area: '\u2014',
+    areaM2: 0,
+    timeframe: '2017',
+    summary: 'Construcci\xf3n de auditorio con tabiquer\xeda, cielos rasos, recubrimiento de pisos, butacas e iluminaci\xf3n.',
+    challenges: [
+      'Construir un auditorio en campus activo sin interrumpir clases.',
+      'Coordinar butacas e iluminaci\xf3n con requerimientos ac\xfasticos.',
+      'Cumplir el cronograma acad\xe9mico establecido por TECSUP.'
+    ],
+    solution: [
+      'Tabiquer\xeda de muros laterales y cielo raso.',
+      'Recubrimiento de pisos e instalaci\xf3n de butacas e iluminaci\xf3n.'
+    ],
+    results: [
+      'Auditorio entregado listo para eventos institucionales.',
+      'Confort ac\xfastico y visual logrado seg\xfan especificaciones.',
+      'Obra culminada dentro del calendario acad\xe9mico.'
+    ],
+    specialties: [
+      'Tabiquer\xeda',
+      'Cielo raso',
+      'Pisos',
+      'Butacas',
+      'Iluminaci\xf3n'
+    ],
+    image: {
+      src: '/images/placeholders/generic-card.webp',
+      alt: 'Auditorio de TECSUP equipado con butacas e iluminaci\xf3n'
+    },
+    href: '/cotizar?proyecto=tecsup-auditorio-arequipa'
   },
   {
     id: 'cineplanet-cayma',
@@ -158,39 +227,6 @@ export const projectShowcase: ProjectShowcase[] = [
       alt: 'Implementaci\xf3n de oficinas administrativas para Linde Per\xfa'
     },
     href: '/cotizar?proyecto=linde-peru-oficinas-administrativas'
-  },
-  {
-    id: 'videna-control-solar-y-vientos',
-    name: 'VIDENA \u2014 Sistema de Control Solar y de Vientos',
-    sector: 'Deportes / Infraestructura',
-    location: 'San Luis, Lima',
-    area: '\u2014',
-    areaM2: 0,
-    timeframe: 'Junio 2019',
-    summary: 'Venta e instalaci\xf3n de sistemas de control solar y vientos con celos\xedas de lamas orientables exteriores.',
-    challenges: [
-      'Compatibilizar las nuevas celos\xedas con la estructura existente de VIDENA.',
-      'Instalar sistemas de control solar en fachadas de gran altura.',
-      'Cumplir con los lineamientos arquitect\xf3nicos del legado deportivo.'
-    ],
-    solution: [
-      'Suministro e instalaci\xf3n de sistemas de control solar y vientos.',
-      'Celos\xedas de lamas orientables exteriores regulables.'
-    ],
-    results: [
-      'Control de radiaci\xf3n solar y de corrientes de viento en \xe1reas deportivas.',
-      'Mejora del confort t\xe9rmico en ambientes estrat\xe9gicos de VIDENA.',
-      'Entrega aprobada por la administraci\xf3n del complejo deportivo.'
-    ],
-    specialties: [
-      'Control solar',
-      'Celos\xedas orientables'
-    ],
-    image: {
-      src: '/images/placeholders/generic-card.webp',
-      alt: 'Celos\xedas orientables instaladas en la VIDENA'
-    },
-    href: '/cotizar?proyecto=videna-control-solar-y-vientos'
   },
   {
     id: 'agrega-city-center-oficinas',
@@ -358,42 +394,6 @@ export const projectShowcase: ProjectShowcase[] = [
       alt: 'Acondicionamiento de oficinas para Asociaci\xf3n Cerro Verde'
     },
     href: '/cotizar?proyecto=acv-oficinas-cayma'
-  },
-  {
-    id: 'tecsup-auditorio-arequipa',
-    name: 'TECSUP \u2014 Auditorio (Sede Arequipa)',
-    sector: 'Educaci\xf3n',
-    location: 'Jos\xe9 Luis Bustamante y Rivero, Arequipa',
-    area: '\u2014',
-    areaM2: 0,
-    timeframe: '2017',
-    summary: 'Construcci\xf3n de auditorio con tabiquer\xeda, cielos rasos, recubrimiento de pisos, butacas e iluminaci\xf3n.',
-    challenges: [
-      'Construir un auditorio en campus activo sin interrumpir clases.',
-      'Coordinar butacas e iluminaci\xf3n con requerimientos ac\xfasticos.',
-      'Cumplir el cronograma acad\xe9mico establecido por TECSUP.'
-    ],
-    solution: [
-      'Tabiquer\xeda de muros laterales y cielo raso.',
-      'Recubrimiento de pisos e instalaci\xf3n de butacas e iluminaci\xf3n.'
-    ],
-    results: [
-      'Auditorio entregado listo para eventos institucionales.',
-      'Confort ac\xfastico y visual logrado seg\xfan especificaciones.',
-      'Obra culminada dentro del calendario acad\xe9mico.'
-    ],
-    specialties: [
-      'Tabiquer\xeda',
-      'Cielo raso',
-      'Pisos',
-      'Butacas',
-      'Iluminaci\xf3n'
-    ],
-    image: {
-      src: '/images/placeholders/generic-card.webp',
-      alt: 'Auditorio de TECSUP equipado con butacas e iluminaci\xf3n'
-    },
-    href: '/cotizar?proyecto=tecsup-auditorio-arequipa'
   },
   {
     id: 'minera-antares-edificio-nasya',
