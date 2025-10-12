@@ -5,6 +5,8 @@ export type ProjectShowcase = {
     | 'Oficinas'
     | 'Retail'
     | 'Salud'
+    | 'Aeropuertos y transporte'
+    | 'Entretenimiento / Cines'
     | 'Oficinas corporativas'
     | 'Deportes / Infraestructura'
     | 'Industrial / Log\u00edstica'
@@ -34,29 +36,27 @@ export type ProjectShowcase = {
 export const projectShowcase: ProjectShowcase[] = [
   {
     id: 'jorge-chavez-terminal',
-    name: 'Aeropuerto Jorge Chavez',
-    sector: 'Retail',
-    location: 'Callao, Lima',
-    area: '3 200 m2',
+    name: 'Aeropuerto Internacional Jorge Chávez — Ampliación',
+    sector: 'Aeropuertos y transporte',
+    location: 'Aeropuerto Internacional Jorge Chávez, Lima — Perú',
+    area: '—',
     areaM2: 3200,
-    timeframe: '8 semanas',
-    summary: 'Modernizamos salas de embarque coordinando pisos vinilicos, control solar y sistemas de audio evacuacion en horario nocturno.',
+    timeframe: 'Febrero 2024 – Presente',
+    summary: 'Suministro e instalación de tabiquería de drywall para el terminal del proyecto de ampliación.',
     challenges: [
       'Trabajos nocturnos sin cerrar operaciones',
       'Compatibilizar cableado de audio, voz y datos',
       'Control de polvo y limpieza entre turnos'
     ],
     solution: [
-      'Instalacion de pisos SPC con juntas selladas',
-      'Cortinas roller screen y blackout motorizadas',
-      'Sistema de audio evacuacion en rack centralizado'
+      'Suministro e instalación de tabiquería de drywall para el terminal de la ampliación.'
     ],
     results: [
       'Reapertura de salas sin retrasos',
       'Satisfaccion del operador aeroportuario',
       'Reduccion de tiempos de limpieza post turno'
     ],
-    specialties: ['Pisos vinilicos', 'Control solar', 'Audio evacuacion'],
+    specialties: ['Tabiquería drywall'],
     image: {
       src: '/images/proyectos/aeropuerto-jorge-chavez-1.jpg',
       alt: 'Sala de embarque renovada en el aeropuerto Jorge Chavez'
@@ -66,28 +66,27 @@ export const projectShowcase: ProjectShowcase[] = [
   {
     id: 'cineplanet-cayma',
     name: 'Cineplanet Cayma',
-    sector: 'Retail',
-    location: 'Arequipa',
-    area: '1 450 m2',
+    sector: 'Entretenimiento / Cines',
+    location: 'Mall Plaza Arequipa, Av. Ejército — Arequipa',
+    area: '—',
     areaM2: 1450,
-    timeframe: '6 semanas',
-    summary: 'Implementamos salas premium con mobiliario custom, iluminacion escenica y revestimientos acusticos.',
+    timeframe: '— (Año de ejecución: 2001)',
+    summary: 'Implementación del sistema total de tabiquería en salas de cine, con muros acústicos y resistentes al fuego y cielo raso acústico negro en 9 salas.',
     challenges: [
       'Plazo fijo previo al estreno de temporada',
       'Coordinacion con mall management para descargas nocturnas',
       'Integracion de butacas motorizadas y audio envolvente'
     ],
     solution: [
-      'Fabricacion modular de butacas premium y barras',
-      'Iluminacion LED regulable con escenas preprogramadas',
-      'Paneles acusticos y control de sonido certificado'
+      'Suministro e instalación de muros acústicos y muros RF.',
+      'Instalación de cielo raso acústico negro en 9 salas.'
     ],
     results: [
       'Apertura en fecha de estreno',
       'Experiencia premium validada por cliente',
       'Reduccion de ruido a salas contiguas'
     ],
-    specialties: ['Mobiliario', 'Iluminacion', 'Revestimientos acusticos'],
+    specialties: ['Muros acústicos', 'Muros RF', 'Cielo raso acústico'],
     image: {
       src: '/images/proyectos/cineplanet-cayma-1.jpg',
       alt: 'Sala premium Cineplanet Cayma con iluminacion indirecta'
@@ -96,29 +95,27 @@ export const projectShowcase: ProjectShowcase[] = [
   },
   {
     id: 'clinica-arequipa',
-    name: 'Clinica Arequipa',
+    name: 'Clínica Arequipa',
     sector: 'Salud',
     location: 'Arequipa',
-    area: '2 100 m2',
+    area: '—',
     areaM2: 2100,
-    timeframe: '10 semanas',
-    summary: 'Adecuamos areas criticas con pisos conductivos, carpinteria sanitaria y HVAC con presiones diferenciales.',
+    timeframe: '— (Año de ejecución: 2012)',
+    summary: 'Implementación del sistema de tabiquería, pisos y carpintería en edificio de 8 pisos.',
     challenges: [
       'Intervencion por etapas con areas en servicio',
       'Validaciones de presion positiva y particulado',
       'Trazabilidad documental para auditorias clinicas'
     ],
     solution: [
-      'Pisos conductivos con soldadura termo fusion',
-      'Cielos sanitarios y puertas hermeticas en PVC',
-      'HVAC con monitoreo continuo de presiones y temperatura'
+      'Suministro e implementación de tabiquería, pisos y carpintería para 8 niveles.'
     ],
     results: [
       'Habilitacion de UCI y salas de procedimientos',
       'Auditoria sanitaria aprobada sin observaciones',
       'Plan de mantenimiento preventivo entregado'
     ],
-    specialties: ['Pisos conductivos', 'Cielos sanitarios', 'HVAC sanitario'],
+    specialties: ['Drywall', 'Pisos', 'Carpintería'],
     image: {
       src: '/images/proyectos/clinica-arequipa-1.jpg',
       alt: 'Pasillo clinica Arequipa con acabados sanitarios'

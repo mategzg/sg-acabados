@@ -354,3 +354,7 @@ pm run build OK.
 - Archivos tocados: src/content/productos/taxonomia.json; src/lib/product-taxonomy.ts; src/types/product-taxonomy.ts; src/app/[locale]/(marketing)/productos/page.tsx; src/app/[locale]/(marketing)/productos/[familia]/page.tsx; public/images/subfamilias/*; public/brands/*; docs/LOG.md.
 - Como probar en localhost: npm run dev; visitar /es/productos para validar las 6 tarjetas con chips de subfamilias; abrir /es/productos/pisos (y demás familias) para revisar intro, grilla de subfamilias y botón “Cotizar esta subfamilia” con query prellenada; confirmar que el bloque de marcas carga sin 404 en la consola del navegador.
 - Hallazgos clave: Se centralizó la taxonomía en JSON para lectura directa, se añadieron placeholders WebP y PNG para subfamilias/marcas y se simplificó la página de familia a CTA coordinada con /es/cotizar.
+- Tarea: Portafolio proyectos (/es/proyectos) — copy actualizado para los 3 casos destacados.
+- Archivos tocados: src/data/project-showcase.ts; src/components/layout/navbar.tsx.
+- Como probar en localhost: npm run dev; revisar /es/proyectos y confirmar nuevos textos en Aeropuerto Internacional Jorge Chávez — Ampliación, Cineplanet Cayma y Clínica Arequipa.
+- Hallazgos clave: Se añadieron los nuevos sectores "Aeropuertos y transporte" y "Entretenimiento / Cines" y se ajustó el header para alojar un logo más grande.
