@@ -1,4 +1,4 @@
-const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+﻿const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 const normalizedSiteUrl = rawSiteUrl.replace(/\/+$/, '').replace(/\/es$/, '')
 
 export const siteConfig = {
@@ -44,7 +44,8 @@ export const siteConfig = {
   },
   hero: {
     title: 'Acabados que elevan y cumplen plazos',
-    subtitle: 'Pisos, iluminación, control solar, mobiliario y sistemas integrales para proyectos en todo el Perú.',
+    subtitle:
+      'Pisos, iluminación, recubrimiento de ventanas, control solar, mobiliario y sistemas integrales para proyectos en todo el Perú.',
     primaryCta: { label: 'Solicitar cotización', href: '/cotizar' },
     secondaryCta: { label: 'Ver proyectos', href: '/proyectos' }
   }
