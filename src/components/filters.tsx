@@ -18,7 +18,7 @@ export type FilterGroup = {
 
 export function Filters({ groups }: { groups: FilterGroup[] }) {
   const router = useRouter()
-  const pathname = usePathname()
+  const pathname = usePathname() ?? '/'
   const searchParams = useSearchParams()
 
   const toggleValue = (id: string, value: string, type: 'single' | 'multi' = 'single') => {

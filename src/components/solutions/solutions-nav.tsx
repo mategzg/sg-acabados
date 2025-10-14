@@ -11,7 +11,7 @@ export type SolutionsNavItem = {
 }
 
 export function SolutionsNav({ items }: { items: SolutionsNavItem[] }) {
-  const pathname = usePathname()
+  const pathname = usePathname() ?? '/'
 
   return (
     <nav aria-label="Soluciones" className="flex flex-wrap gap-2 py-space-sm">

@@ -85,6 +85,11 @@ function shouldSkip(text: string, start: number, end: number): boolean {
     return true
   }
 
+  const slugPrefixes = ['slug: ', 'slug": ', 'familia: ', 'familia": ']
+  if (slugPrefixes.some((prefix) => before.endsWith(prefix))) {
+    return true
+  }
+
   const after = text.slice(end, end + 12).toLowerCase()
   if (AFTER_URL_EXTENSIONS.some((ext) => after.startsWith(ext))) {
     return true

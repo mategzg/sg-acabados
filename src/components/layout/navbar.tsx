@@ -15,7 +15,7 @@ const navLinks = siteConfig.navigation.main
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
+  const pathname = usePathname() ?? '/'
   const menuId = 'primary-navigation'
 
   const isActive = (href: string) => {

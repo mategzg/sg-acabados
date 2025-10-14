@@ -25,7 +25,7 @@ type SegmentTabsProps = {
 export const SegmentTabs = forwardRef<SegmentTabsHandle, SegmentTabsProps>(
   ({ segments, defaultSegmentId }, ref) => {
     const router = useRouter()
-    const pathname = usePathname()
+    const pathname = usePathname() ?? '/'
     const searchParams = useSearchParams()
     const initialFromQuery = searchParams?.get("segment") ?? undefined
     const validInitial = segments.some((segment) => segment.id === initialFromQuery)
